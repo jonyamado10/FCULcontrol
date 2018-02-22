@@ -15,21 +15,20 @@ $serverName = "tcp:fcul-acm.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 echo "ok";
 
-$dbname = "fcul-acm";
-$sql = "SHOW TABLES FROM $dbname";
-$result = mysql_query($sql);
+    $stmt = $conn->prepare("SELECT * FROM acessos"); 
+    $stmt->execute();
 
-if (!$result) {
-    echo "DB Error, could not list tables\n";
-    echo 'MySQL Error: ' . mysql_error();
-    exit;
+    // set the resulting array to associative
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { 
+        echo $v;
+    }
 }
-
-while ($row = mysql_fetch_row($result)) {
-    echo "Table: {$row[0]}\n";
+catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
 }
-
-mysql_free_result($result);
+$conn = null;
+echo "</table>";
 ?>
 
 
