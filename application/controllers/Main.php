@@ -25,6 +25,7 @@ class Main extends CI_Controller {
 	}
 	public function index()
 	{
+		$this->load->model('Acessos_model');
 		$data['users'] = $this->Acessos_model->get_members();
 		$this->load->view('welcome-page');
 	}
