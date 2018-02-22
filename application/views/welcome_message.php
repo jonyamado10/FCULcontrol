@@ -68,6 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
+	<?php echo $acessos ?>
 	<h1>Welcome to aaa CodeIgniter!</h1>
 
 	<div id="body">
