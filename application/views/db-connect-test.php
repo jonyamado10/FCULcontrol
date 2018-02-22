@@ -1,26 +1,16 @@
 <?php
-# Fill our vars and run on cli
-# $ php -f db-connect-test.php
-
-$dbname = 'fcul-acm';
-$dbuser = 'ptiptr4';
-$dbpass = 'PTIptr04';
-$dbhost = 'fcul-acm.database.windows.net';
-
-$connect = mysqli_connect($dbhost, $dbuser, $dbpass) or die("Unable to Connect to '$dbhost'");
-mysqli_select_db($dbname) or die("Could not open the db '$dbname'");
-
-$test_query = "SHOW TABLES FROM $dbname";
-$result = mysqli_query($test_query);
-
-$tblCnt = 0;
-while($tbl = mysqli_fetch_array($result)) {
-  $tblCnt++;
-  #echo $tbl[0]."<br />\n";
+// PHP Data Objects(PDO) Sample Code:
+try {
+    $conn = new PDO("sqlsrv:server = tcp:fcul-acm.database.windows.net,1433; Database = fcul-acm", "ptiptr4", "{your_password_here}");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
 }
 
-if (!$tblCnt) {
-  echo "There are no tables<br />\n";
-} else {
-  echo "There are $tblCnt tables<br />\n";
-}
+// SQL Server Extension Sample Code:
+$connectionInfo = array("UID" => "ptiptr4@fcul-acm", "pwd" => "{your_password_here}", "Database" => "fcul-acm", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:fcul-acm.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
+
