@@ -15,7 +15,7 @@ $serverName = "tcp:fcul-acm.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 echo "ok";
 
-$dbname = "fcul-acm"
+$dbname = "fcul-acm";
 $sql = "SHOW TABLES FROM $dbname";
 $result = mysql_query($sql);
 
