@@ -75,14 +75,14 @@
 				<div class="wrap-input100 validate-input">
 					<select name="edificio" id="edificio" class="input100" style = "height: 60px;")">
 							<option value=""<?php echo  set_select('edificio', 'none', TRUE); ?>>Edifício..</option>
-								<option value="C1">C1</option>
-								<option value="C2">C2</option>
-								<option value="C3">C3</option>
-								<option value="C4">C4</option>
-								<option value="C5">C5</option>
-								<option value="C6">C6</option>
-								<option value="C7">C7</option>
-								<option value="C8">C8</option>
+								<option value="1">C1</option>
+								<option value="2">C2</option>
+								<option value="3">C3</option>
+								<option value="4">C4</option>
+								<option value="5">C5</option>
+								<option value="6">C6</option>
+								<option value="7">C7</option>
+								<option value="8">C8</option>
 								<option value="G">Garagem</option>
 					</select>
 		
