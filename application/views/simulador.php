@@ -118,7 +118,7 @@
 <!--===============================================================================================-->
 	<script src=<?php echo base_url("assets/vendor/countdowntime/countdowntime.js") ?>></script>
 <!--===============================================================================================-->
-	<script src=<?php echo base_url("assets/js/main.js"></script>
+	<script src=<?php echo base_url("assets/js/main.js") ?>></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 	<script>
