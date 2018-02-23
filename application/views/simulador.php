@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
 	<title>Simulador</title>
+	<?php echo base_url("assets/vendor/bootstrap/css/bootstrap.min.css") ?>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
