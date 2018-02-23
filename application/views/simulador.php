@@ -30,6 +30,9 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/util.css") ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/main.css") ?>">
 <!--===============================================================================================-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -41,7 +44,7 @@
 
 			<div>
 				<button class="btn-show-contact100">
-					Contact Us
+					Simular
 				</button>
 			</div>
 		</div>
@@ -54,48 +57,48 @@
 			</button>
 
 			<div class="contact100-form-title" style="background-image: url(<?php echo base_url("assets/images/bg-02.jpg"); ?>">
-				<span>Contact Us</span>
+				<span>Simulador</span>
 			</div>
 
 			<form class="contact100-form validate-form">
 				<div class="wrap-input100 validate-input">
-					<input id="name" class="input100" type="text" name="name" placeholder="Full name">
+					<input id="name" class="input100" type="text" name="name" placeholder="Cartão">
 					<span class="focus-input100"></span>
 					<label class="label-input100" for="name">
-						<span class="lnr lnr-user m-b-2"></span>
+						<span class="glyphicon glyphicon-credit-card"></span>
 					</label>
 				</div>
 
 
 				<div class="wrap-input100 validate-input">
-					<input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com">
+					<input id="edificio" class="input100" type="text" name="edificio" placeholder="Edifício">
 					<span class="focus-input100"></span>
-					<label class="label-input100" for="email">
-						<span class="lnr lnr-envelope m-b-5"></span>
+					<label class="label-input100" for="edificio">
+						<span class="glyphicon glyphicon-tower"></span>
 					</label>
 				</div>
 
 
 				<div class="wrap-input100 validate-input">
-					<input id="phone" class="input100" type="text" name="phone" placeholder="Eg. +1 800 000000">
+					<input id="piso" class="input100" type="text" name="piso" placeholder="Piso">
 					<span class="focus-input100"></span>
-					<label class="label-input100" for="phone">
-						<span class="lnr lnr-smartphone m-b-2"></span>
+					<label class="label-input100" for="piso">
+						<span class="glyphicon glyphicon-triangle-top"></span>
 					</label>
 				</div>
 
 
 				<div class="wrap-input100 validate-input">
-					<textarea id="message" class="input100" name="message" placeholder="Your comments..."></textarea>
+					<input id="porta" class="input100" type="text" name="porta" placeholder="Sala/Porta">
 					<span class="focus-input100"></span>
-					<label class="label-input100 rs1" for="message">
-						<span class="lnr lnr-bubble"></span>
+					<label class="label-input100" for="porta">
+						<span class="glyphicon glyphicon-modal-window"></span>
 					</label>
 				</div>
 
 				<div class="container-contact100-form-btn">
 					<button class="contact100-form-btn">
-						Send Now
+						Submeter
 					</button>
 				</div>
 			</form>
