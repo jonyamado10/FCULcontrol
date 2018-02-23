@@ -49,7 +49,7 @@
 			</div>
 		</div>
 	</div>
-
+			
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<button class="btn-hide-contact100">
@@ -60,9 +60,11 @@
 				<span>Simulador</span>
 			</div>
 
-			<form class="contact100-form validate-form">
-				<div class="wrap-input100 validate-input">
-					<input id="name" class="input100" type="text" name="name" placeholder="Cartão">
+				<?php  
+				echo form_open('Acessos/acessos_validation','class="contact100-form validate-form"'); 
+				echo validation_errors();
+				?>
+				<div class="wrap-input100 validate-input"> <?php echo form_input('cardnumber',$this->input->post('cardnumber'),'class="input100", placeholder="Cartão" id="cardnumber" type="number"');?>
 					<span class="focus-input100"></span>
 					<label class="label-input100" for="name">
 						<span class="glyphicon glyphicon-credit-card"></span>
@@ -71,7 +73,19 @@
 
 
 				<div class="wrap-input100 validate-input">
-					<input id="edificio" class="input100" type="text" name="edificio" placeholder="Edifício">
+					<select name="edificio" id="edificio" class="input100" style = "height: 60px;")">
+							<option value=""<?php echo  set_select('edificio', 'none', TRUE); ?>>Edifício..</option>
+								<option value="C1">C1</option>
+								<option value="C2">C2</option>
+								<option value="C3">C3</option>
+								<option value="C4">C4</option>
+								<option value="C5">C5</option>
+								<option value="C6">C6</option>
+								<option value="C7">C7</option>
+								<option value="C8">C8</option>
+								<option value="G">Garagem</option>
+					</select>
+		
 					<span class="focus-input100"></span>
 					<label class="label-input100" for="edificio">
 						<span class="glyphicon glyphicon-tower"></span>
@@ -80,7 +94,14 @@
 
 
 				<div class="wrap-input100 validate-input">
-					<input id="piso" class="input100" type="text" name="piso" placeholder="Piso">
+					<select name="piso" id="piso" class="input100" style = "height: 60px;")">
+							<option value=""<?php echo  set_select('piso', 'none', TRUE); ?>>Piso..</option>
+								<option value="1">Piso 1</option>
+								<option value="2">Piso 2</option>
+								<option value="3">Piso 3</option>
+								<option value="4">Piso 4</option>
+								<option value="5">Piso 5</option>
+					</select>
 					<span class="focus-input100"></span>
 					<label class="label-input100" for="piso">
 						<span class="glyphicon glyphicon-triangle-top"></span>
@@ -89,7 +110,17 @@
 
 
 				<div class="wrap-input100 validate-input">
-					<input id="porta" class="input100" type="text" name="porta" placeholder="Sala/Porta">
+					<select name="porta" id="porta" class="input100" style = "height: 60px;")">
+							<option value=""<?php echo  set_select('porta', 'none', TRUE); ?>>Sala/Porta..</option>
+								<option value="E1">Entrada 1</option>
+								<option value="E2">Entrada 2</option>
+								<option value="E3">Entrada 3</option>
+								<option value="E4">Entrada 4</option>
+								<option value="1">Sala 1</option>
+								<option value="2">Sala 2</option>
+								<option value="3">Sala 2</option>
+
+					</select>
 					<span class="focus-input100"></span>
 					<label class="label-input100" for="porta">
 						<span class="glyphicon glyphicon-modal-window"></span>
@@ -97,9 +128,11 @@
 				</div>
 
 				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
-						Submeter
-					</button>
+					<?php  
+			            echo form_submit('simular','Submeter', array('class' =>'contact100-form-btn'));
+			            echo form_close(); 
+			                     
+                    ?>
 				</div>
 			</form>
 		</div>
