@@ -29,4 +29,8 @@ class Main extends CI_Controller {
 		$data['acessos'] = $this->Acessos_model->get_acessos();
 		$this->load->view('welcome_message',$data);
 	}
+	public function simulador()
+	{
+		$this->load->view('simulador');
+	}
 }
