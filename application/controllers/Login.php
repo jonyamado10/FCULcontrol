@@ -28,9 +28,8 @@ class Login extends CI_Controller{
 			return true;
 		}
 		else{
-			$this->form_validation->set_message('validate_credentials','Tente novamente.');
 			$this->form_validation->set_error_delimiters('<p style= "color:red">Email / Palavra-chave Incorrectos.<br>','<br></p>');
-					$this->form_validation->set_message('validate_credentials',' Email / Palavra-chave Incorrectos.');
+			$this->form_validation->set_message('validate_credentials',' Tente Novamente');
 			return false;
 		}
 
