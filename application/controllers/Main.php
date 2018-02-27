@@ -20,14 +20,16 @@ class Main extends CI_Controller {
 	 */
 	function __contruct(){
 		parent::__contruct();
-		$this->load->model('Acessos_model');
-		
+
 	}
 	public function index()
 	{
-		$this->load->model('Acessos_model');
-		$data['acessos'] = $this->Acessos_model->get_acessos();
-		$this->load->view('simulador',$data);
+
+		$this->load->view('login');
+	}
+	public function login()
+	{
+		$this->load->view('login');
 	}
 	public function simulador()
 	{
