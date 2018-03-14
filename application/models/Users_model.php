@@ -10,9 +10,8 @@ class Users_model extends CI_model{
 		// Gera um hash baseado em bcrypt
 		$hash = crypt($password, '$2a$' . $custo . '$' . $salt . '$');
 		$this->db->where('password',$hash);
-		$query2 = $this->db->get('funcionarios');
 		$query = $this->db->get('alunos');
-		
+		$query2 = $this->db->get('funcionarios');
 
 		if($query->num_rows()==1){
 			echo "Entrou";
