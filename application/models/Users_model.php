@@ -23,6 +23,7 @@ class Users_model extends CI_model{
 		}
 		else{
 			$message = "wrong answer";
+			print_r($query2->result());
 echo "<script type='text/javascript'>alert('$message');</script>";
 			return false;
 		}
