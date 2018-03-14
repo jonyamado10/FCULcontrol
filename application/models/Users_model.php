@@ -1,5 +1,5 @@
 <?php  
-class Alunos_model extends CI_model{
+class Users_model extends CI_model{
 
 	public function can_log_in(){
 
@@ -11,8 +11,9 @@ class Alunos_model extends CI_model{
 		$hash = crypt($password, '$2a$' . $custo . '$' . $salt . '$');
 		$this->db->where('password',$hash);
 		$query = $this->db->get('alunos');
+		$query2 = $this->db->get('funcionarios');
 
-		if($query->num_rows()==1){
+		if($query->num_rows()==1 or $query2->num_rows()==1){
 				return true;
 		}
 		else{
@@ -35,16 +36,38 @@ class Alunos_model extends CI_model{
 			return false;
 		}
 	}
-    
-    function get_userInfo($email){
+
+     function is_aluno($email){
+        $this->db->where('email',$email);
+        $query = $this->db->get('alunos');
+     
+		if($query->num_rows()==1){
+				return true;
+		}
+		else
+			return false;
+	}
+    function get_alunoInfo($email){
         $this->db->where('email',$email);
         $query = $this->db->get('alunos');       
         foreach ($query->result() as $row)
             {
-               return $row;
+            	unset($row["password"]);
+                return $row;
             }
           
-		return "Not Found";
+		return "Aluno Nao Encontrado";
+	}
+	function get_funcionarioInfo($email){
+        $this->db->where('email',$email);
+        $query = $this->db->get('funcionarios');       
+        foreach ($query->result() as $row)
+            {
+            	unset($row["password"]);
+                return $row;
+            }
+          
+		return "Funcionario Nao Encontrado";
 	}
 
 }

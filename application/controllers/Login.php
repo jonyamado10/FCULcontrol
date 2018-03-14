@@ -4,21 +4,35 @@ class Login extends CI_Controller{
 	
 
 	public function login_validation(){
-        $this->load->model('Alunos_model');
+        $this->load->model('Users_model');
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('email', 'email', 'required|trim|callback_validate_credentials');
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|md5');
 		if($this->form_validation->run()){
-			$userInfo = $this->Alunos_model->get_userInfo($this->input->post('email'));
-			$data = array('email' =>$this->input->post('email'), 'is_logged_in'=> 1, 'id' => $userInfo ->id, 'nome' => $userInfo->nome, 'Apelido' => $userInfo->apelido, 'Num aluno' => $userInfo->num_aluno  );
-			print_r($data);
-			print_r($userInfo);
-			$data=json_decode(json_encode($userInfo), True);
-			print_r($data);
-			$this->session->set_userdata($data);
-			$this->session->sess_expiration = '14400';// expires in 4 hour
-            print_r($this->session->userdata());
+			$data = array('email' =>$this->input->post('email'), 'is_logged_in'=> 1 );
+			if($this->Users_model->is_aluno($this->input->post('email'))){
+
+				$userInfo = $this->Users_model->get_alunoInfo($this->input->post('email'));
+				$data=json_decode(json_encode($userInfo), True);
+
+				$this->session->set_userdata($data);
+				$this->session->sess_expiration = '14400';// expires in 4 hour
+            	print_r($this->session->userdata());
+            	echo "pagina aluno"
             
+			}
+			else{// se não é aluno, é funcionario
+				$userInfo = $this->Users_model->get_funcionarioInfo($this->input->post('email'));
+				$data=json_decode(json_encode($userInfo), True);
+
+				$this->session->set_userdata($data);
+				$this->session->sess_expiration = '14400';// expires in 4 hour
+            	print_r($this->session->userdata());
+            	echo "pagina funcionario";
+            
+			}
+
+			
 		}
 		else{
 			$this->load->view('login');
@@ -26,9 +40,9 @@ class Login extends CI_Controller{
 		}
 	}
 	public function validate_credentials(){
-		$this->load->model('Alunos_model');
+		$this->load->model('Users_model');
 
-		if($this->Alunos_model->can_log_in()){
+		if($this->Users_model->can_log_in()){
 			return true;
 		}
 	
