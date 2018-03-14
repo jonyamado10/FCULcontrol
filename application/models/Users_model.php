@@ -52,7 +52,7 @@ class Users_model extends CI_model{
         $query = $this->db->get('alunos');       
         foreach ($query->result() as $row)
             {
-            	$userInfo = json_decode(json_encode($row), True)
+            	$userInfo = json_decode(json_encode($row), True);
             	unset($userInfo["password"]);
                 return $userInfo;
             }
@@ -64,7 +64,7 @@ class Users_model extends CI_model{
         $query = $this->db->get('funcionarios');       
         foreach ($query->result() as $row)
             {
-            	$userInfo = json_decode(json_encode($row), True)
+            	$userInfo = json_decode(json_encode($row), True);
             	unset($userInfo["password"]);
                 return $userInfo;
             }
