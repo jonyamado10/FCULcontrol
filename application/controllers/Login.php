@@ -10,7 +10,7 @@ class Login extends CI_Controller{
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|md5');
 		if($this->form_validation->run()){
 			$userInfo = $this->Alunos_model->get_userInfo($this->input->post('email'));
-			$data = array('email' =>$this->input->post('email'), 'is_logged_in'=> 1, 'id' => $userInfo ->id, 'nome' => $userInfo->nome, 'Apelido' => $userInfo->apelido,, 'Num alunos' => $userInfo->num_aluno  );
+			$data = array('email' =>$this->input->post('email'), 'is_logged_in'=> 1, 'id' => $userInfo ->id, 'nome' => $userInfo->nome, 'Apelido' => $userInfo->apelido, 'Num aluno' => $userInfo->num_aluno  );
 			$this->session->set_userdata($data);
 			$this->session->sess_expiration = '14400';// expires in 4 hour
             print_r($this->session->userdata());
