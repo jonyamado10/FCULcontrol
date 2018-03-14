@@ -8,7 +8,8 @@ class Alunos_model extends CI_model{
 		$custo = '08';
 		$salt = 'Cf1f11ePArKlBJomM0F6aJ';
 		// Gera um hash baseado em bcrypt
-		$hash = crypt($senha, '$2a$' . $custo . '$' . $salt . '$');
+		$hash = crypt($password, '$2a$' . $custo . '$' . $salt . '$');
+		echo $hash;
 		$this->db->where('password',$hash);
 		$query = $this->db->get('alunos');
 
