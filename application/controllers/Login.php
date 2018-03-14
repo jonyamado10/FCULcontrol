@@ -27,7 +27,14 @@ class Login extends CI_Controller{
 				$this->session->set_userdata($userInfo);
 				$this->session->sess_expiration = '14400';// expires in 4 hour
             	print_r($this->session->userdata());
-            	echo "pagina funcionario";
+            	if($this->Users_model->$userInfo->id){
+            		echo "pagina admin";
+
+            	}
+            	else{
+            		echo "pagina funcionario";
+            	}
+            	
             
 			}
 

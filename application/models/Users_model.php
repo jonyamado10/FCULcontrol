@@ -16,7 +16,7 @@ class Users_model extends CI_model{
 		$query2 = $this->db->get('funcionarios');
 
 		if($query->num_rows()==1){
-			echo "Entrou";
+		
 				return true;
 		}
 		else if ($query2->num_rows()==1) {
@@ -24,9 +24,6 @@ class Users_model extends CI_model{
 			# code...
 		}
 		else{
-			$message = "wrong answer";
-			print_r($query2->result());
-echo "<script type='text/javascript'>alert('$message');</script>";
 			return false;
 		}
 	}
@@ -49,6 +46,16 @@ echo "<script type='text/javascript'>alert('$message');</script>";
      function is_aluno($email){
         $this->db->where('email',$email);
         $query = $this->db->get('alunos');
+     
+		if($query->num_rows()==1){
+				return true;
+		}
+		else
+			return false;
+	}
+	  function is_admin($id){
+        $this->db->where('id_funcionario',$id);
+        $query = $this->db->get('admin');
      
 		if($query->num_rows()==1){
 				return true;
