@@ -18,8 +18,8 @@ class Users_model extends CI_model{
 				return true;
 		}
 		else{
-			echo "ERROOO";
-
+			$message = "wrong answer";
+echo "<script type='text/javascript'>alert('$message');</script>";
 			return false;
 		}
 	}
