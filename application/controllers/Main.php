@@ -35,7 +35,7 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('admin');
 	}
-	public function admin
+	
 	public function simulador()
 	{
 		$this->load->view('simulador');
