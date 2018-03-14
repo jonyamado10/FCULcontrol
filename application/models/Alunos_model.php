@@ -9,7 +9,6 @@ class Alunos_model extends CI_model{
 		$salt = 'Cf1f11ePArKlBJomM0F6aJ';
 		// Gera um hash baseado em bcrypt
 		$hash = crypt($password, '$2a$' . $custo . '$' . $salt . '$');
-		echo $hash;
 		$this->db->where('password',$hash);
 		$query = $this->db->get('alunos');
 
