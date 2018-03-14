@@ -13,9 +13,8 @@ class Login extends CI_Controller{
 			if($this->Users_model->is_aluno($this->input->post('email'))){
 
 				$userInfo = $this->Users_model->get_alunoInfo($this->input->post('email'));
-				$data=json_decode(json_encode($userInfo), True);
 
-				$this->session->set_userdata($data);
+				$this->session->set_userdata($userInfo);
 				$this->session->sess_expiration = '14400';// expires in 4 hour
             	print_r($this->session->userdata());
             	echo "pagina aluno";
@@ -23,9 +22,8 @@ class Login extends CI_Controller{
 			}
 			else{// se não é aluno, é funcionario
 				$userInfo = $this->Users_model->get_funcionarioInfo($this->input->post('email'));
-				$data=json_decode(json_encode($userInfo), True);
 
-				$this->session->set_userdata($data);
+				$this->session->set_userdata($userInfo);
 				$this->session->sess_expiration = '14400';// expires in 4 hour
             	print_r($this->session->userdata());
             	echo "pagina funcionario";
