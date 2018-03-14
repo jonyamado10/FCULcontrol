@@ -4,12 +4,16 @@ class Alunos_model extends CI_model{
 	public function can_log_in(){
 
 		$this->db->where('email',$this->input->post('email'));
-		$this->db->where('password',md5($this->input->post('password')));
+		$password = $this->input->post('password');
+		$custo = '08';
+		$salt = 'Cf1f11ePArKlBJomM0F6aJ';
+		// Gera um hash baseado em bcrypt
+		$hash = crypt($senha, '$2a$' . $custo . '$' . $salt . '$');
+		$this->db->where('password',$hash);
 		$query = $this->db->get('alunos');
 
 		if($query->num_rows()==1){
 				return true;
-
 		}
 		else{
 
