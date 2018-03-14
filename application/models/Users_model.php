@@ -13,9 +13,13 @@ class Users_model extends CI_model{
 		$query = $this->db->get('alunos');
 		$query2 = $this->db->get('funcionarios');
 
-		if($query->num_rows()==1 or $query2->num_rows()==1){
+		if($query->num_rows()==1){
 			echo "Entrou";
 				return true;
+		}
+		else if ($query2->num_rows()==1) {
+			return true;
+			# code...
 		}
 		else{
 			$message = "wrong answer";
