@@ -17,7 +17,7 @@ class Login extends CI_Controller{
 				$userInfo['is_logged_in_aluno'] = 1;
 				$this->session->set_userdata($userInfo);
 				$this->session->sess_expiration = '14400';// expires in 4 hour
-            redirect('Main/aluno');
+            	redirect('Main/aluno');
             
 			}
 			else{// se não é aluno, é funcionario
