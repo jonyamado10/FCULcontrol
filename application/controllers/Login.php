@@ -24,15 +24,15 @@ class Login extends CI_Controller{
 			}
 			else{// se não é aluno, é funcionario
 				$userInfo = $this->Users_model->get_funcionarioInfo($this->input->post('email'));
-
-				$this->session->set_userdata($userInfo);
-				$this->session->sess_expiration = '14400';// expires in 4 hour
-            	print_r($this->session->userdata());
+		
+				$this->session->sess_expiration = '14400';// expires in 4 hours
             	if($this->Users_model->is_admin($userInfo['id'])){
-            		$this->session->set_userdata('is_admin'=> 1 );
+            		$userInfo['is_admin'] = 1;
+            		$this->session->set_userdata($userInfo);
             		redirect('Admin/dashboard');
             	}
             	else{
+            		$this->session->set_userdata($userInfo);
             		echo "pagina funcionario";
             	}
             	
