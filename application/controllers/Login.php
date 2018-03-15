@@ -18,6 +18,7 @@ class Login extends CI_Controller{
 				$this->session->set_userdata($data);
 				$this->session->sess_expiration = '14400';// expires in 4 hour
 				redirect(base_url('Main/aluno'));
+				exit();
             	print_r($this->session->userdata());
 
             	echo "pagina aluno";
