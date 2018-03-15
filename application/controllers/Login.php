@@ -10,12 +10,11 @@ class Login extends CI_Controller{
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|md5');
 		if($this->form_validation->run()){
 			$this->session->sess_destroy();
-			$data = array('email' =>$this->input->post('email'), 'is_logged_in'=> 1 );
-			$this->session->set_userdata($data);
+
 			if($this->Users_model->is_aluno($this->input->post('email'))){
 
 				$userInfo = $this->Users_model->get_alunoInfo($this->input->post('email'));
-
+				$userInfo['is_logged_in_aluno'] = 1;
 				$this->session->set_userdata($userInfo);
 				$this->session->sess_expiration = '14400';// expires in 4 hour
             	print_r($this->session->userdata());
@@ -27,12 +26,12 @@ class Login extends CI_Controller{
 		
 				$this->session->sess_expiration = '14400';// expires in 4 hours
             	if($this->Users_model->is_admin($userInfo['id'])){
-            		$userInfo['is_admin'] = 1;
-            		$this->session->set_userdata($userInfo);
-            		
+            		$userInfo['is_logged_in_admin'] = 1;
+            		$this->session->set_userdata($userInfo);	
             		print_r($userInfo);
             	}
             	else{
+            		$userInfo['is_logged_in_docente'] = 1;
             		$this->session->set_userdata($userInfo);
             		echo "pagina funcionario";
             	}

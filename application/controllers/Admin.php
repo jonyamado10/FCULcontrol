@@ -14,7 +14,7 @@ class Admin extends CI_Controller {
 	}
 	public function dashboard()
 	{
-		if($this->session->userdata('is_logged_in') and $this->session->userdata('is_admin')){
+		if($this->session->userdata('is_logged_in_admin')){
 			$this->load->view('admin_dashboard');
 		}
 		else{
