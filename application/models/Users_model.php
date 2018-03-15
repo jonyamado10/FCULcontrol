@@ -63,6 +63,16 @@ class Users_model extends CI_model{
 		else
 			return false;
 	}
+	function is_docente($id){
+        $this->db->where('id_funcionario',$id);
+        $query = $this->db->get('docentes');
+     
+		if($query->num_rows()==1){
+				return true;
+		}
+		else
+			return false;
+	}
     function get_alunoInfo($email){
         $this->db->where('email',$email);
         $query = $this->db->get('alunos');       
