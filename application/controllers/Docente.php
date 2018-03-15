@@ -7,11 +7,6 @@ class Docente extends CI_Controller {
 		parent::__contruct();
 
 	}
-	public function index()
-	{
-
-		$this->load->view('docente_dashboard');
-	}
 	public function dashboard()
 	{
 		if($this->session->userdata('is_logged_in_docente')){
