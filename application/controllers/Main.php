@@ -44,7 +44,7 @@ class Main extends CI_Controller {
 		public function aluno()
 	{
 		echo CI_VERSION; 
-		print_r($this->session->userdata('email'));
+		print_r($this->session->userdata());
 	}
 
 }
