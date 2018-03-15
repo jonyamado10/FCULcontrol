@@ -19,6 +19,7 @@ class Main extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	function __contruct(){
+		session_start();
 		parent::__contruct();
 
 	}
