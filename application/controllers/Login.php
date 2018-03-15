@@ -14,10 +14,11 @@ class Login extends CI_Controller{
 			if($this->Users_model->is_aluno($this->input->post('email'))){
 
 				$userInfo = $this->Users_model->get_alunoInfo($this->input->post('email'));
-				$userInfo['is_logged_in_aluno'] = 1;
 				$this->session->set_userdata($userInfo);
 				$this->session->sess_expiration = '14400';// expires in 4 hour
+				redirect('Main/aluno');
             	print_r($this->session->userdata());
+
             	echo "pagina aluno";
             
 			}

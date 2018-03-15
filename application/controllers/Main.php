@@ -40,4 +40,9 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('simulador');
 	}
+		public function aluno()
+	{
+		print_r($this->session->userdata());
+	}
+
 }
