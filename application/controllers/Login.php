@@ -11,6 +11,7 @@ class Login extends CI_Controller{
 		if($this->form_validation->run()){
 			$this->session->sess_destroy();
 			$data = array('email' =>$this->input->post('email'), 'is_logged_in'=> 1 );
+			$this->session->set_userdata($data);
 			if($this->Users_model->is_aluno($this->input->post('email'))){
 
 				$userInfo = $this->Users_model->get_alunoInfo($this->input->post('email'));
