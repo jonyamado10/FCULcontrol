@@ -301,7 +301,7 @@ class CI_Session {
 		else
 		{
 			$params['expiration'] = (int) $expiration;
-			ini_set('session.gc_maxlifetime', $expiration);
+			// ini_set('session.gc_maxlifetime', $expiration);
 		}
 
 		$params['match_ip'] = (bool) (isset($params['match_ip']) ? $params['match_ip'] : config_item('sess_match_ip'));
