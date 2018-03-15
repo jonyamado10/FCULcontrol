@@ -18,8 +18,7 @@ class Admin extends CI_Controller {
 			$this->load->view('admin_dashboard');
 		}
 		else{
-			print_r($this->session->userdata());
-			echo "sem permissao";
+			header('HTTP/1.1 403 Forbidden'); 
 		}
 	}
 	public function table()
