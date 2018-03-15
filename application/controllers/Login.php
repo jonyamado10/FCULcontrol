@@ -9,7 +9,7 @@ class Login extends CI_Controller{
 		$this->form_validation->set_rules('email', 'email', 'required|trim|callback_validate_credentials');
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|md5');
 		if($this->form_validation->run()){
-			sess_destroy();
+			 session_unset(); 
 
 			if($this->Users_model->is_aluno($this->input->post('email'))){
 
