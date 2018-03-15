@@ -43,7 +43,7 @@ class Main extends CI_Controller {
 	}
 		public function aluno()
 	{
-		php_info(); 
+		phpinfo(); 
 		print_r($this->session->userdata());
 	}
 
