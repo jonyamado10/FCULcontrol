@@ -29,7 +29,7 @@ class Login extends CI_Controller{
 				$this->session->sess_expiration = '14400';// expires in 4 hour
             	print_r($this->session->userdata());
             	if($this->Users_model->is_admin($userInfo['id'])){
-            		$this->session->set_userdata(array('is_admin'=> 1 ));
+            		$this->session->set_userdata('is_admin'=> 1 );
             		redirect('Admin/dashboard');
             	}
             	else{
