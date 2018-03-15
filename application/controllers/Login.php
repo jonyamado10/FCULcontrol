@@ -28,7 +28,7 @@ class Login extends CI_Controller{
             	if($this->Users_model->is_admin($userInfo['id'])){
             		$userInfo['is_logged_in_admin'] = 1;
             		$this->session->set_userdata($userInfo);	
-            		print_r($userInfo);
+            		redirect('Admin/dashboard');
             	}
             	else{
             		$userInfo['is_logged_in_docente'] = 1;
