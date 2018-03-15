@@ -1,5 +1,5 @@
 <?php 
-define('SESSION_TIME_OUT', 1550);
+define('SESSION_TIME_OUT', 14400);
 ini_set('session.gc_maxlifetime', SESSION_TIME_OUT);
 ini_set('session.cache_expire', SESSION_TIME_OUT);
 session_start();
