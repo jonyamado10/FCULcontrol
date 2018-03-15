@@ -12,9 +12,9 @@ class Login extends CI_Controller{
 			$this->session->sess_destroy();
 
 			if($this->Users_model->is_aluno($this->input->post('email'))){
-
+$data = array( 'is_logged_in'=> 1);
 				$userInfo = $this->Users_model->get_alunoInfo($this->input->post('email'));
-				$this->session->set_userdata($userInfo);
+				$this->session->set_userdata($data);
 				$this->session->sess_expiration = '14400';// expires in 4 hour
 				redirect('Main/aluno');
             	print_r($this->session->userdata());
