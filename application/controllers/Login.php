@@ -10,7 +10,7 @@ class Login extends CI_Controller{
 		$this->form_validation->set_rules('email', 'email', 'required|trim|callback_validate_credentials');
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|md5');
 		if($this->form_validation->run()){
-			$this->session->sess_destroy();
+			
 
 			if($this->Users_model->is_aluno($this->input->post('email'))){
 				$data = array( 'is_logged_in'=> 1);
