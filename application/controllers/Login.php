@@ -29,6 +29,7 @@ class Login extends CI_Controller{
             	print_r($this->session->userdata());
             	if($this->Users_model->is_admin($userInfo['id'])){
             		echo "pagina admin";
+            		redirect("Main/admin");
 
             	}
             	else{

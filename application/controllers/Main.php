@@ -33,7 +33,7 @@ class Main extends CI_Controller {
 	}
 	public function admin()
 	{
-		$this->load->view('admin');
+		$this->load->view('admin_dashboard');
 	}
 	
 	public function simulador()
