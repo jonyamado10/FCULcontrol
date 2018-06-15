@@ -2,8 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>FCUL</title>
-	<?php echo base_url("assets/vendor/bootstrap/css/bootstrap.min.css") ?>
+	<title>FCUL-Controlo de Acessos</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->

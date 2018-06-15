@@ -26,15 +26,33 @@ class Main extends CI_Controller {
 	public function index()
 	{
 
-		$this->load->view('login');
+		if($this->session->userdata('is_logged_in_admin')){
+			redirect('Admin');
+		}
+		elseif ($this->session->userdata('is_logged_in_docente')){
+			redirect('Docente');
+		}
+		elseif($this->session->userdata('is_logged_in_aluno')){
+			redirect('Aluno');
+		}
+		else {
+			$this->load->view('login');
+		}
 	}
 	public function login()
 	{
-		$this->load->view('login');
-	}
-	public function admin()
-	{
-		$this->load->view('admin_dashboard');
+		if($this->session->userdata('is_logged_in_admin')){
+			redirect('Admin');
+		}
+		elseif ($this->session->userdata('is_logged_in_docente')){
+			redirect('Docente');
+		}
+		elseif($this->session->userdata('is_logged_in_aluno')){
+			redirect('Aluno');
+		}
+		else {
+			$this->load->view('login');
+		}
 	}
 	
 	public function simulador()

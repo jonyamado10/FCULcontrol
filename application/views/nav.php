@@ -8,7 +8,11 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Fcul - Controlo de Acessos</title>
+  <link rel="icon" type="image/png" href="<?php echo base_url("assets/images/icons/favicon.ico") ?>"/>
+
   <!-- Bootstrap core CSS-->
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/main.css") ?>">
+      <link rel="stylesheet" href="<?php echo base_url("assets/css/util.css") ?>">
   <link href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url('assets/vendor/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet" type="text/css">
@@ -16,67 +20,125 @@
   <link href="<?php echo base_url('assets/css/sb-admin.css') ?>" rel="stylesheet">
   <!-- Page level plugin CSS-->
   <link href="<?php echo base_url('assets/vendor/datatables/dataTables.bootstrap4.css') ?>" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+
 
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html"><img src = "<?php echo base_url('assets/img/logo.png') ?>" style = "width:100%; height:5%;"></a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href=""><img id="logo" src = "<?php echo base_url('assets/img/logo.png') ?>"></a>
+
+    <button id = "botao" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
+    <div class="navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion" style= "margin-top:100px;">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.html">
-            <i class="fa fa-fw fa-dashboard"></i>
+          <a class="nav-link" id = "BotaoDashboard">
+            <i class="fa fa-fw fas fa-tachometer-alt"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-area-chart"></i>
-            <span class="nav-link-text">Gráficos</span>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Acessos">
+         <a id = "navAcessos" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-map-marker"></i>
+            <span class="nav-link-text">Acessos</span>
           </a>
-          <ul class="sidenav-second-level collapse" id="collapseComponents">
-            <li>
-              <a href="navbar.html">Grafico 1</a>
+           <ul class="sidenav-second-level collapse" id="collapseComponents">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+              <a id = "navTabelas" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents.00" data-parent="#exampleAccordion">
+                <i class="fa fa-fw fa-table"></i>
+                <span class="nav-link-text">Tabelas</span>
+              </a>
+              <ul class="sidenav-third-level collapse" id="collapseComponents.00">
+                <li>
+                  <a id = "BotaoAcessosAlunos" href="#">Alunos</a>
+                </li>
+                    <li>
+                  <a id = "BotaoAcessosDocentes" href="#">Docentes</a>
+                </li>
+                <li>
+                  <a id = "BotaoAcessosNaoDocentes" href="#">Não Docentes</a>
+                </li>
+              </ul>
             </li>
-            <li>
-              <a href="cards.html">Grafico 2</a>
+             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+             <a id = "navGraficos" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents.01" data-parent="#exampleAccordion">
+                <i class="fa fa-fw fa-area-chart"></i>
+                <span class="nav-link-text">Gráficos</span>
+              </a>
+              <ul class="sidenav-third-level collapse" id="collapseComponents.01">
+                <li>
+                  <a id ="BotaoAcessos24" href = "#">Acessos 24h</a>
+                </li>
+                <li>
+                  <a id ="BotaoAcessos6m" href=#>Acessos 6 meses</a>
+                </li>
+                <li>
+                  <a id ="BotaoPessoasEdificio" href="#">Pessoas por Edifício</a>
+                </li>
+              </ul>
             </li>
           </ul>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-table"></i>
-            <span class="nav-link-text">Tabelas</span>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="servicos">
+         <a id = "navServicos" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fas fa-graduation-cap"></i>
+            <span class="nav-link-text">Serviços Académicos</span>
           </a>
-          <ul class="sidenav-second-level collapse" id="collapseComponents2">
-            <li>
-              <a href="navbar.html">tabela 1</a>
-            </li>
-            <li>
-              <a href="cards.html">tabela 2</a>
-            </li>
+           <ul class="sidenav-second-level collapse" id="collapseComponents2">
+              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+               <a id = "navGraficos" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2.1" data-parent="#exampleAccordion">
+                  <i class="fa fa-fw fa-area-chart"></i>
+                  <span class="nav-link-text">Gráficos</span>
+                </a>
+                <ul class="sidenav-third-level collapse" id="collapseComponents2.1">
+                  <li>
+                    <a id ="BotaoAlunosDepartamento" href = "#">Alunos por Departamento</a>
+                  </li>
+                  <li>
+                    <a id ="BotaoPessoasEdificio" href="#">Pessoas por Edifício</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+                <a id = "navTabelas" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2.2" data-parent="#exampleAccordion">
+                  <i class="fa fa-fw fa-table"></i>
+                  <span class="nav-link-text">Tabelas</span>
+                </a>
+                <ul class="sidenav-third-level collapse" id="collapseComponents2.2">
+                  <li>
+                    <a id = "BotaoTabelaAlunos" href="#">Alunos</a>
+                  </li>
+                  <li>
+                    <a id = "BotaoTabelaDocentes" href="#">Docentes</a>
+                  </li>
+                </ul>
+              </li>
           </ul>
         </li>
+
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents3" data-parent="#exampleAccordion">
+          <a id = "navFerramentas"class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents3" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-wrench"></i>
             <span class="nav-link-text">Ferramentas</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents3">
             <li>
-              <a href="navbar.html">Gerar Acessos</a>
+              <a id = "BotaoGerarAcessos" href="#"">Gerar Acessos</a>
+            </li>
+              <li>
+              <a id = "BotaoGerarAcessosDetalhados" href="#"">Gerar Acessos Detalhados</a>
             </li>
             <li>
-              <a href="cards.html">Editar Permissões</a>
+              <a id = "BotaoEditarPermissoes" href="#"">Editar Permissões</a>
             </li>
           </ul>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+        <!--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-file"></i>
             <span class="nav-link-text">Example Pages</span>
@@ -132,7 +194,7 @@
             <i class="fa fa-fw fa-link"></i>
             <span class="nav-link-text">Link</span>
           </a>
-        </li>
+        </li>-->
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
@@ -232,10 +294,11 @@
           </form>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+          <a class="nav-link" data-toggle="modal" href="<?php echo base_url('Login/logout') ?>" data-target="#exampleModal">
+            <i class="fa fa-fw fas fa-sign-out-alt"></i>Logout</a>
         </li>
       </ul>
     </div>
   </nav>
-  
+
+  <div id = "content" class="content-wrapper">

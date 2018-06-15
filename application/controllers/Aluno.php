@@ -7,22 +7,31 @@ class Aluno extends CI_Controller {
 		parent::__contruct();
 
 	}
-	public function dashboard()
+	public function index()
 	{
 		if($this->session->userdata('is_logged_in_aluno')){
+			$this->load->view('nav_aluno');
 			$this->load->view('aluno_dashboard');
+			$this->load->view('footer_aluno');
 		}
 		else{
-			header('HTTP/1.1 403 Forbidden'); 
+			redirect('Main/login');
 		}
 	}
-	public function table()
+	public function dashboard()
 	{
-		$this->load->view('admin_dashboard');
+		if (!isset($_SERVER['HTTP_REFERER']))
+		{ redirect('Aluno');}
+
+		$this->load->view('aluno_dashboard');
 	}
-	
-	public function chart()
+	public function tabela_meus_acessos()
 	{
-		$this->load->view('simulador');
+		if (!isset($_SERVER['HTTP_REFERER']))
+		{ redirect('Aluno');}
+  		$this->load->view('tabela_meus_acessos_aluno');
+
 	}
+
+
 }

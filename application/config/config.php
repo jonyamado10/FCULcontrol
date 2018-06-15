@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://fcul-acm.azurewebsites.net/';
+$config['base_url'] = 'https://ptiptr.azurewebsites.net/';
 
 /*
 |--------------------------------------------------------------------------
@@ -158,7 +158,7 @@ $config['composer_autoload'] = FALSE;
 | DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!
 |
 */
-$config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
+$config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-@\=';
 
 /*
 |--------------------------------------------------------------------------
@@ -401,7 +401,7 @@ $config['sess_regenerate_destroy'] = FALSE;
 |
 */
 $config['cookie_prefix']	= '';
-$config['cookie_domain']	= 'fcul-acm.azurewebsites.net';
+$config['cookie_domain']	= 'ptiptr.azurewebsites.net';
 $config['cookie_path']		= '/';
 $config['cookie_secure']	= TRUE;
 $config['cookie_httponly'] 	= FALSE;

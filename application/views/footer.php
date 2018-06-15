@@ -1,9 +1,11 @@
+   </div>
+
 <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
-      <div class="container">
+      <div class="container2">
         <div class="text-center">
-          <small>Copyright © Your Website 2018</small>
+          <small>Copyright © PTI/PTR - Grupo 4 2018</small>
         </div>
       </div>
     </footer>
@@ -16,15 +18,14 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Tem a certeza que pretende Sair?</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Tem a certeza que pretende sair?</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <div class="modal-body">Selecione "Logout" abaixo se está pretende terminar a sessão.</div>
           <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-            <a class="btn btn-primary" href="<?php echo base_url('Login/logout') ?>">Logout</a>
+            <a class="btn btn-primary" href="<?php echo base_url('Login/logout') ?>">Sim</a>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Não</button>
           </div>
         </div>
       </div>
@@ -43,6 +44,79 @@
     <!-- Custom scripts for this page-->
     <script src=<?php echo base_url("assets/js/sb-admin-datatables.min.js") ?>></script>
     <script src=<?php echo base_url("assets/js/sb-admin-charts.min.js") ?>></script>
+
+<script >
+$(function(){
+    // don't cache ajax or content won't be fresh
+  // $(document)
+  //   .ajaxStart(function () {
+  //     $('.container-fluid').remove();
+  //     $('#content').html("<div class='loader'></div> ");
+  //   })
+  //   .ajaxStop(function () {
+  //     $('.loader').remove();
+  //     $('.container-fluid').show();
+  //   });
+  //   $.ajaxSetup ({
+  //       cache: false
+  //   });
+
+    $("#BotaoDashboard").click(function(){
+        $("#content").load("<?php echo base_url('Admin/dashboard') ?>");
+    });
+
+    $("#BotaoAlunosDepartamento").click(function(){
+        $("#content").load("<?php echo base_url('Admin/grafico_alunos_por_departamento') ?>");
+    });
+
+    $("#BotaoPessoasEdficio").click(function(){
+        $("#content").load("<?php echo base_url('Admin/grafico_pessoas_por_edificio') ?>");
+    });
+
+    $("#BotaoTabelaAlunos").click(function(){
+        $("#content").load("<?php echo base_url('Admin/tabela_alunos') ?>");
+    });
+    $("#BotaoTabelaDocentes").click(function(){
+        $("#content").load("<?php echo base_url('Admin/tabela_docentes') ?>");
+    });   
+    $("#BotaoGerarAcessos").click(function(){
+        $("#content").load("<?php echo base_url('Admin/gerar_acessos') ?>");
+    });
+    $("#BotaoGerarAcessosDetalhados").click(function(){
+        $("#content").load("<?php echo base_url('Admin/gerar_acessos_detalhados') ?>");
+    });
+    $("#BotaoAcessosAlunos").click(function(){
+         $('.container-fluid').remove();
+         $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Admin/tabela_acessos_alunos') ?>");
+    });
+    $("#BotaoAcessosDocentes").click(function(){
+       $('.container-fluid').remove();
+         $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Admin/tabela_acessos_docentes') ?>");
+    });
+    $("#BotaoAcessosNaoDocentes").click(function(){
+        $('.container-fluid').remove();
+        $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Admin/tabela_acessos_naoDocentes') ?>");
+    });
+    $("#BotaoAcessos24").click(function(){
+        $('.container-fluid').remove();
+        $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Admin/grafico_acessos24') ?>");
+    });
+    $("#BotaoAcessos6m").click(function(){
+        $('.container-fluid').remove();
+        $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Admin/grafico_acessos6m') ?>");
+    });
+
+
+// end  
+});
+</script>
+
+
   </div>
 </body>
 
