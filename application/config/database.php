@@ -76,10 +76,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'ptiptr.database.windows.net,1433',
-	'username' => 'ptiptr4',
+	'hostname' => 'acessosdbserver.database.windows.net,1433',
+	'username' => 'acessosadmin',
 	'password' => 'PTIptr04',
-	'database' => 'ptiptr',
+	'database' => 'acessosDB',
 	'dbdriver' => 'sqlsrv',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
