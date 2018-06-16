@@ -43,7 +43,7 @@
 
 			<div>
 				<button class="btn-show-contact100">
-					login<BR><?php echo $_SERVER["REMOTE_ADDR"];?>
+					login<BR><?php echo $_SERVER["REMOTE_NAME"];?>
 				</button>
 			</div>
 		</div>
