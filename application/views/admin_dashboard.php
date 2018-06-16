@@ -5,7 +5,7 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active"><?php echo $_SERVER["VSTS_PERF_TEST_CONFIG"];?></li>
+        <li class="breadcrumb-item active"><?php echo $_SERVER["location"];?></li>
       </ol>
       <!-- Icon Cards-->
       <div class="row">
