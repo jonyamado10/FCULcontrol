@@ -5,7 +5,7 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">My Dashboard</li>
+        <li class="breadcrumb-item active"><?php echo $_SERVER["SERVER_ADDR"];?></li>
       </ol>
       <!-- Icon Cards-->
       <div class="row">
