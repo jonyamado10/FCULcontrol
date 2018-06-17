@@ -83,20 +83,20 @@ class Admin extends CI_Controller {
 	{
 		if (!isset($_SERVER['HTTP_REFERER']))
 		{ redirect('Admin');}
-		$this->load->model('Acessos_model');
-	    if($this->Acessos_model->ha_novos_acessos_alunos()){
-	     	if($this->Acessos_model->corrige_acessos_alunos()){
-	     		$this->load->view('tabela_acessos_alunos_corrigidos',array());
+		// $this->load->model('Acessos_model');
+	 //    if($this->Acessos_model->ha_novos_acessos_alunos()){
+	 //     	if($this->Acessos_model->corrige_acessos_alunos()){
+	 //     		$this->load->view('tabela_acessos_alunos_corrigidos',array());
 	     	
-	     	}
-	     	else{
-	          	echo "Erro a corrigir acessos";
+	 //     	}
+	 //     	else{
+	 //          	echo "Erro a corrigir acessos";
 
-	     	}
-	    }
-	    else{
+	 //     	}
+	 //    }
+	 //    else{
 	     	$this->load->view('tabela_acessos_alunos_corrigidos',array());
-	     }
+	     
 	}
 		public function tabela_acessos_alunos()
 	{
