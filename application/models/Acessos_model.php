@@ -368,7 +368,7 @@ class Acessos_model extends CI_Model {
         		$sql.=" AND $key LIKE '".$colsearch[$key]."%' ";
         	
         }
-		if ($col = "hora" or $col ="data") {
+		if ($col == "hora" or $col =="data") {
 				  	# code...
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
@@ -413,7 +413,7 @@ class Acessos_model extends CI_Model {
         	
         }
 				  
-		if ($col = "hora" or $col ="data") {
+		if ($col == "hora" or $col =="data") {
 				  	# code...
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
@@ -518,7 +518,7 @@ class Acessos_model extends CI_Model {
         	}
         }
 				  
-		if ($col = "hora" or $col ="data") {
+		if ($col == "hora" or $col =="data") {
 				  	# code...
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
@@ -573,7 +573,7 @@ class Acessos_model extends CI_Model {
         }
 
        
-		if ($col = "hora" or $col ="data") {
+		if ($col == "hora" or $col =="data") {
 				  	# code...
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
@@ -799,7 +799,7 @@ class Acessos_model extends CI_Model {
         	
         }
 				  
-		if ($col = "hora" or $col ="data") {
+		if ($col == "hora" or $col =="data") {
 				  	# code...
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
@@ -845,7 +845,7 @@ class Acessos_model extends CI_Model {
         	
         }
 				  
-		if ($col = "hora" or $col ="data") {
+		if ($col == "hora" or $col =="data") {
 				  	# code...
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
@@ -947,7 +947,7 @@ class Acessos_model extends CI_Model {
         	}
         }
 				  
-		if ($col = "hora" or $col ="data") {
+		if ($col == "hora" or $col =="data") {
 				  	# code...
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
@@ -1001,7 +1001,7 @@ class Acessos_model extends CI_Model {
         	}
         }
 
-		if ($col = "hora" or $col ="data") {
+		if ($col == "hora" or $col =="data") {
 				  	# code...
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
@@ -1227,7 +1227,7 @@ class Acessos_model extends CI_Model {
         	
         }
 				  
-		if ($col = "hora" or $col ="data") {
+		if ($col == "hora" or $col =="data"){
 				  	# code...
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
@@ -1272,7 +1272,7 @@ class Acessos_model extends CI_Model {
         	
         }
 				  
-		if ($col = "hora" or $col ="data") {
+		if ($col == "hora" or $col =="data"){
 				  	# code...
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
@@ -1374,7 +1374,7 @@ class Acessos_model extends CI_Model {
         	}
         }
 				  
-		if ($col = "hora" or $col ="data") {
+		if ($col == "hora" or $col =="data") {
 				  	# code...
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
@@ -1429,7 +1429,7 @@ class Acessos_model extends CI_Model {
         	}
         }
 
-		if ($col = "hora" or $col ="data") {
+		if ($col == "hora" or $col =="data") {
 				  	# code...
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
