@@ -76,7 +76,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'posfalha.database.windows.net,1433',
+	'hostname' => 'acessosdbserver.windows.net,1433',
 	'username' => 'acessosadmin',
 	'password' => 'PTIptr04',
 	'database' => 'acessosDB',
@@ -92,11 +92,10 @@ $db['default'] = array(
 	'encrypt' => FALSE,
 	'compress' => FALSE,
 	'stricton' => FALSE,
-	'teste'	   =>'Database 1',
 	'failover' => array(
 					array(
 						'dsn'	=> '',
-						'hostname' => 'posfalha.secondary.database.windows.net,1433',
+						'hostname' => 'acessosdbserver2.database.windows.net,1433',
 						'username' => 'acessosadmin',
 						'password' => 'PTIptr04',
 						'database' => 'acessosDB',
@@ -112,7 +111,6 @@ $db['default'] = array(
 						'encrypt' => FALSE,
 						'compress' => FALSE,
 						'stricton' => FALSE,
-						'teste'	   =>'Database 2',
 						'failover' => array(),
 						'save_queries' => TRUE
 					)
