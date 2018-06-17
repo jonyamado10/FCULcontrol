@@ -368,23 +368,16 @@ class Acessos_model extends CI_Model {
         		$sql.=" AND $key LIKE '".$colsearch[$key]."%' ";
         	
         }
-		if ($col = "hora") {
+		if ($col = "hora" or $col ="data") {
 				  	# code...
 			$sql.="	ORDER BY 
-				data $dir,$col $dir
-				OFFSET $start ROWS
-				FETCH NEXT $limit ROWS ONLY;";
-			}
-		else if($col="data")
-		{
-			$sql.="	ORDER BY 
-				$col $dir, hora $dir
+				data $dir,hora $dir
 				OFFSET $start ROWS
 				FETCH NEXT $limit ROWS ONLY;";
 		}
 		else{		  
 			$sql.="	ORDER BY 
-				$col $dir
+				$col $dir,data $dir,hora $dir
 				OFFSET $start ROWS
 				FETCH NEXT $limit ROWS ONLY;";
 			}
