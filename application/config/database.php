@@ -76,7 +76,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'acessosdbserver.windows.net,1433',
+	'hostname' => 'acessosdbserver.database.windows.net,1433',
 	'username' => 'acessosadmin',
 	'password' => 'PTIptr04',
 	'database' => 'acessosDB',
@@ -93,7 +93,27 @@ $db['default'] = array(
 	'compress' => FALSE,
 	'stricton' => FALSE,
 	'failover' => array(
-
+					array(
+						'dsn'	=> '',
+						'hostname' => 'acessosdbserver2.database.windows.net,1433',
+						'username' => 'acessosadmin',
+						'password' => 'PTIptr04',
+						'database' => 'acessosDB',
+						'dbdriver' => 'sqlsrv',
+						'dbprefix' => '',
+						'pconnect' => FALSE,
+						'db_debug' => (ENVIRONMENT !== 'production'),
+						'cache_on' => FALSE,
+						'cachedir' => '',
+						'char_set' => 'utf8',
+						'dbcollat' => 'utf8_general_ci',
+						'swap_pre' => '',
+						'encrypt' => FALSE,
+						'compress' => FALSE,
+						'stricton' => FALSE,
+						'failover' => array(),
+						'save_queries' => TRUE
+					)
 	),
 	'save_queries' => TRUE
 );
