@@ -19,11 +19,11 @@ class Cron extends CI_Controller {
 	    }
 	   	if($this->Acessos_model->ha_novos_acessos_docentes()){
 	     	$this->Acessos_model->corrige_acessos_docentes();
-	     	echo "OK ALUNOS";
+	     	echo "OK docentes";
 	    }
 	   	if($this->Acessos_model->ha_novos_acessos_nao_docentes()){
 	     	$this->Acessos_model->corrige_acessos_nao_docentes();
-	     	echo "OK ALUNOS";
+	     	echo "OK ndocentes";
 	    }
 
 	}

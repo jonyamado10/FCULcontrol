@@ -34,7 +34,7 @@
                                
                         ?>
             </div>
-            <h6 style = "margin:0 auto;">Gera 5000 acessos para a data escolhida</h6><br>
+            <h6 style = "margin:0 auto;">Gera 1000 acessos para a data escolhida</h6><br>
          </div>
         <div id = "lo"></div>
         <script>
