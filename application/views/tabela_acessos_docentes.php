@@ -48,12 +48,12 @@
 $('#s').change(function() {
    if($(this).is(":checked")) {
       //'checked' event code
-      if(confirm("Esta operação pode demorar alguns minutos, Quer continuar?")){
+    // if(confirm("Esta operação pode demorar alguns minutos, Quer continuar?")){
          $('.container-fluid').remove();
          $('#content').html("<div class='loader'></div> ");
           $("#content").load("<?php echo base_url('Admin/tabela_acessos_docentes_corrigidos') ?>");
 
-      }
+      //}
 
    }
 

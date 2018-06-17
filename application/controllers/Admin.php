@@ -110,7 +110,7 @@ class Admin extends CI_Controller {
 	{
 		if (!isset($_SERVER['HTTP_REFERER']))
 		{ redirect('Admin');}
-		$this->load->model('Acessos_model');
+		/*$this->load->model('Acessos_model');
 	    if($this->Acessos_model->ha_novos_acessos_docentes()){
 	     	if($this->Acessos_model->corrige_acessos_docentes()){
 	     		$this->load->view('tabela_acessos_docentes_corrigidos',array());
@@ -121,9 +121,9 @@ class Admin extends CI_Controller {
 
 	     	}
 	    }
-	    else{
+	    else{*/
 	     	$this->load->view('tabela_acessos_docentes_corrigidos',array());
-	     }
+	     // }
 	}
 		public function tabela_acessos_docentes()
 	{
@@ -137,7 +137,7 @@ class Admin extends CI_Controller {
 	{
 		if (!isset($_SERVER['HTTP_REFERER']))
 		{ redirect('Admin');}
-		$this->load->model('Acessos_model');
+/*		$this->load->model('Acessos_model');
 	    if($this->Acessos_model->ha_novos_acessos_nao_docentes()){
 	     	if($this->Acessos_model->corrige_acessos_nao_docentes()){
 	     		$this->load->view('tabela_acessos_NaoDocentes_corrigidos',array());
@@ -148,9 +148,9 @@ class Admin extends CI_Controller {
 
 	     	}
 	    }
-	    else{
+	    else{*/
 	     	$this->load->view('tabela_acessos_NaoDocentes_corrigidos',array());
-	     }
+	 //    }
 	}
 	
 	public function tabela_acessos_naoDocentes()
