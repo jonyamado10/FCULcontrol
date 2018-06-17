@@ -76,7 +76,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'acessosdbserver2.database.windows.net,1433',
+	'hostname' => 'posfalha.database.windows.net,1433',
 	'username' => 'acessosadmin',
 	'password' => 'PTIptr04',
 	'database' => 'acessosDB',
@@ -95,7 +95,7 @@ $db['default'] = array(
 	'failover' => array(
 					array(
 						'dsn'	=> '',
-						'hostname' => 'acessosdbserver.database.windows.net,1433',
+						'hostname' => 'posfalha.secondary.database.windows.net,1433',
 						'username' => 'acessosadmin',
 						'password' => 'PTIptr04',
 						'database' => 'acessosDB',
