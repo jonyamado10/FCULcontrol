@@ -92,7 +92,7 @@ $db['default'] = array(
 	'encrypt' => FALSE,
 	'compress' => FALSE,
 	'stricton' => FALSE,
-	'teste'	   =>"Database 1",
+	'teste'	   =>'Database 1',
 	'failover' => array(
 					array(
 						'dsn'	=> '',
@@ -112,7 +112,7 @@ $db['default'] = array(
 						'encrypt' => FALSE,
 						'compress' => FALSE,
 						'stricton' => FALSE,
-						'teste'	   =>"Database 1",
+						'teste'	   =>'Database 2',
 						'failover' => array(),
 						'save_queries' => TRUE
 					)
