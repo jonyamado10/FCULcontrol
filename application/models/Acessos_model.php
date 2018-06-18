@@ -537,12 +537,18 @@ class Acessos_model extends CI_Model {
 				OFFSET $start ROWS
 				FETCH NEXT $limit ROWS ONLY;";
 		}
-		else{		  
+		else if ($col != "" and $dir != ""){		  
 			$sql.="	ORDER BY 
 				$col $dir,data $dir,hora $dir
 				OFFSET $start ROWS
 				FETCH NEXT $limit ROWS ONLY;";
 			}
+		else {		  
+			$sql.="	ORDER BY 
+				data DESC, hora DESC
+				OFFSET $start ROWS
+				FETCH NEXT $limit ROWS ONLY;";
+		}
 		$query = $this->db->query($sql);
 		if($query->num_rows()>0)
         {
@@ -592,12 +598,18 @@ class Acessos_model extends CI_Model {
 				OFFSET $start ROWS
 				FETCH NEXT $limit ROWS ONLY;";
 		}
-		else{		  
+		else if ($col != "" and $dir != ""){		  
 			$sql.="	ORDER BY 
 				$col $dir,data $dir,hora $dir
 				OFFSET $start ROWS
 				FETCH NEXT $limit ROWS ONLY;";
 			}
+		else {		  
+			$sql.="	ORDER BY 
+				data DESC, hora DESC
+				OFFSET $start ROWS
+				FETCH NEXT $limit ROWS ONLY;";
+		}
        	$query=$this->db->query($sql);
 
         if($query->num_rows()>0)
