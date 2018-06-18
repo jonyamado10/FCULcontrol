@@ -187,6 +187,11 @@
       </ul>
    
       <ul class="navbar-nav ml-auto">
+         <li class="nav-item" style=" margin:0 auto;">
+          <a class="nav-link" style="color:white; cursor: default;">
+            <i class="fa fa-fw fa-user-secret"></i><?php echo "Olá ".$this->session->userdata('nome')?>
+          </a>
+        </li>
       <?php if(!empty($sensores)){
       ?>
         <li class="nav-item dropdown">
@@ -249,11 +254,7 @@
           </li>
           <?php }?>
         </li>
-        <li class="nav-item" style=" margin:0 auto;">
-          <a class="nav-link" style="color:white; cursor: default;">
-            <i class="fa fa-fw fa-user-tie"></i><?php echo "Olá ".$this->session->userdata('nome')?>
-          </a>
-        </li>
+       
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" href="<?php echo base_url('Login/logout') ?>" data-target="#exampleModal">
             <i class="fa fa-fw fas fa-sign-out-alt"></i>Logout</a>
