@@ -2126,17 +2126,34 @@ class Acessos_model extends CI_Model {
 		}
 		public function sensores_avariados(){
 			$tresMesesAntes = date("Y-m-d",strtotime("-1 months"));
-			$sql = "SELECT concat(p.edificio, '.',p.piso,'.',p.num_porta) as porta, sentido from sensores
-				join portas as p on p.id = sensores.id_porta
+			$sql = "SELECT id from sensores
 				WHERE  not EXISTS (SELECT *
                   					FROM   acessos
-                					WHERE  data > '2017-06-12' and sensores.id=acessos.id_sensor);";
+                					WHERE  data > '2018-06-12' and sensores.id=acessos.id_sensor);";
 			$query = $this->db->query($sql);
 			if($query->num_rows() == 0){
 				return false;
 			}
 			else{
-				return $query->result();
+				$data= array();
+				foreach ($query->result() as $sensor ) {
+					$id_sensor->$sensor->id;
+					$sql2 = "SELECT top 1 concat(p.edificio, '.',p.piso,'.',p.num_porta) as porta, sentido,data,hora 
+						from acessos
+						join sensores as s on s.id=acessos.id_sensor
+						join portas as p on p.id= s.id_porta
+						 where id_sensor = $id_sensor
+									order by data Desc, hora desc;"
+					$query2 = $this->db->query($sql2);
+					if($query2->num_rows() == 0){
+						 return false;
+					}
+					else{
+						array_push($data, $query2->result()) ;
+					}
+				}
+				return $data;
+				
 			}
 		}
 }
