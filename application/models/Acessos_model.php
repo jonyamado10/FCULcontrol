@@ -2145,11 +2145,11 @@ class Acessos_model extends CI_Model {
 						 where id_sensor = $id_sensor
 									order by data Desc, hora desc;";
 					$query2 = $this->db->query($sql2);
-					if($query2->num_rows() == 0){
+					if($query2->num_rows() != 1){
 						 return false;
 					}
 					else{
-						array_push($data, $query2->result()) ;
+						array_push($data, $query2->result()[0]) ;
 					}
 				}
 				return $data;
