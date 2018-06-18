@@ -33,5 +33,4 @@ class Aluno extends CI_Controller {
 
 	}
 
-
 }

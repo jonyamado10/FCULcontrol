@@ -1,5 +1,71 @@
 <?php  
 class Users_model extends CI_model{
+	/**
+	 * Generate a salt
+	 *
+	 * @access	protected
+	 * @param	integer [$cost] The strength of the resulting hash, must be within the range 04-31
+	 * @return	string The generated salt
+	 */
+	protected function generate_salt($cost = 16)
+	{
+		// We are using blowfish, so this must be set at the beginning of the salt
+		$salt = '$2a$'.$cost.'$';
+		// Generate a random string based on time
+		$salt .= substr(str_replace('+', '.', base64_encode(sha1(microtime(TRUE), TRUE))), 0, 22);
+		// Return salt
+		return $salt.'$';
+	}
+	/**
+	 * Generate a hash
+	 *
+	 * @access	protected
+	 * @param	string [$password] The password for which the hash should be generated for
+	 * @param	string [$salt] The salt can either be the one returned from the generate_salt method or the current password
+	 * @return	string The generated hash
+	 */
+	protected function generate_hash($password, $salt)
+	{
+		// Hash the generated details with a salt to form a secure password hash
+		return crypt($password, $salt);
+	}
+	/**
+	 * Create user
+	 *
+	 * @access	public
+	 * @param	string [$username] The username of the user to be created
+	 * @param	string [$password] The users password
+	 * @return	integer|boolean Either the user ID or FALSEupon failure
+	 */
+	public function password_update()
+	{
+		$this->db->select('id');
+		$query = $this->db->get('alunos');
+		$alunosid = $query->result();
+		foreach ($alunosid as $alunoid) {
+				// Ensure username is available
+				$id = $alunoid->id;
+				$password = "ptiptr";
+				// Generate salt
+				$salt = $this->generate_salt();
+				// Generate hash
+				$password = $this->generate_hash($password, $salt);
+				$sql= "UPDATE alunos
+				SET password =$password
+				WHERE id=$alunoid";
+				
+				// If inserting data fails
+				if ( $query = $this->db->query($sql);)
+				{
+					// Return false
+					return FALSE;
+				}
+		}		
+
+
+		// Return user ID
+		return TRUE;
+	}
 
 	public function can_log_in(){
 
