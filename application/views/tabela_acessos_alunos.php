@@ -42,6 +42,7 @@
       </div>
    </div>
 
+
 <script type="text/javascript">
 
 
@@ -76,7 +77,7 @@ $('#tabela tfoot th').each( function () {
          "url": url,
          "dataType": "json",
          "type": "POST",
-        "data":{ }
+        "data":{  '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>' }
                        },
           "columns": [
               { "data": "num_aluno" },
