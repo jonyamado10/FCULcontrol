@@ -43,7 +43,10 @@ class Users_model extends CI_model{
 		
 		$query = $this->db->get('alunos');
 		$alunosid = $query->result();
-		print_r($alunosid);
+		
+		foreach ($alunosid as $row ) {
+			print_r($row->id);
+		}
 	}
 
 	public function can_log_in(){
