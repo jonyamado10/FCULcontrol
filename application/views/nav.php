@@ -204,7 +204,7 @@
               <i class="fa fa-fw fa-circle"></i>
             </span>
           </a>
-          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+          <div class="dropdown-menu pull-left" aria-labelledby="alertsDropdown">
             <h6 class="dropdown-header">Novos Alertas:</h6>
             
             <?php foreach ($sensores as $sensor) {?>
@@ -218,7 +218,7 @@
                 <div class="dropdown-message small">O sensor de <?php echo $sensor->sentido." da porta ".$sensor->porta;?> não <br>regista nenhum acesso desde -------</div>
               </a>
              <?php } ?> 
-           <a class="dropdown-item small" href="#">View all alerts</a>
+           <a class="dropdown-item small" href="#">Ver todos os alertas</a>
 
             </div>
 
