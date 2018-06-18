@@ -272,3 +272,4 @@
   </nav>
 
   <div id = "content" class="content-wrapper">
+<?php print_r($sensores) ?>
