@@ -2129,7 +2129,7 @@ class Acessos_model extends CI_Model {
 			$sql = "SELECT id from sensores
 				WHERE  not EXISTS (SELECT *
                   					FROM   acessos
-                					WHERE  data > '2017-06-12' and sensores.id=acessos.id_sensor);";
+                					WHERE  data > '$umMesAntes' and sensores.id=acessos.id_sensor);";
 			$query = $this->db->query($sql);
 			if($query->num_rows() == 0){
 				return false;
