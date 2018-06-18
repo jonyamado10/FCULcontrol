@@ -61,41 +61,21 @@ class Users_model extends CI_model{
 	public function can_log_in(){
 
 		$this->db->where('email',$this->input->post('email'));
-		$password = $this->input->post('password');
-		$custo = '08';
-		$salt = 'Cf1f11ePArKlBJomM0F6aJ';
-		// Gera um hash baseado em bcrypt
-		$hash = crypt($password, '$2a$' . $custo . '$' . $salt . '$');
-		$this->db->where('password',$hash);
 		$query = $this->db->get('alunos');
 		$this->db->where('email',$this->input->post('email'));
 		$this->db->where('password',$hash);
 		$query2 = $this->db->get('funcionarios');
-
-		if($query->num_rows()==1){
+		$hash_aluno = $query->result()->password;
+		$hash_funcionario = $query2->result()->password;
+		if(password_verify($password ,$hash_aluno)){
 		
 				return true;
 		}
-		else if ($query2->num_rows()==1) {
+		else if (password_verify($password ,$hash_funcionario)) {
 			return true;
 			# code...
 		}
 		else{
-			return false;
-		}
-	}
-	public function can_log_in_admin(){
-
-		$this->db->where('username',$this->input->post('username'));
-		$this->db->where('password',md5($this->input->post('password')));
-		$query = $this->db->get('admin');
-
-		if($query->num_rows()==1){
-				return true;
-
-		}
-		else{
-
 			return false;
 		}
 	}
