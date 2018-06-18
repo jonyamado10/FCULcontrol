@@ -70,6 +70,8 @@ class Login extends CI_Controller{
 	}
 	public function pw_update()
 	{
+				$this->load->model('Users_model');
+
 		if($this->Users_model->password_update()){
 			echo "ok";
 		}
