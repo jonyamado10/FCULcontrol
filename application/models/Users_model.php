@@ -7,7 +7,7 @@ class Users_model extends CI_model{
 	 * @param	integer [$cost] The strength of the resulting hash, must be within the range 04-31
 	 * @return	string The generated salt
 	 */
-	protected function generate_salt($cost = 08)
+	protected function generate_salt($cost = 8)
 	{
 		// We are using blowfish, so this must be set at the beginning of the salt
 		$salt = '$2a$'.$cost.'$';
