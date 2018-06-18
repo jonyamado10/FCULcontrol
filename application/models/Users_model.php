@@ -49,8 +49,11 @@ class Users_model extends CI_model{
 			$password = "ptiptr";
 			
 			$salt = $this->generate_salt();
-		
-			$hash = password_hash($password,PASSWORD_BCRYPT);
+		$options = [
+    'cost' => 8,
+    'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
+];
+			$hash = password_hash($password,PASSWORD_BCRYPT,$options);
 			echo $hash;
 		}
 	}
