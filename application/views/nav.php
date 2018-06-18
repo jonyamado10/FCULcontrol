@@ -202,7 +202,11 @@
           <div class="dropdown-menu" aria-labelledby="alertsDropdown">
             <h6 class="dropdown-header">Novos Alertas:</h6>
             
-            <?php foreach ($sensores as $sensor) {?>
+            <?php 
+            $i=0;
+            foreach ($sensores as $sensor) {
+              if($i>4){break;}
+              ?>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">
                 <span class="text-danger">
@@ -212,7 +216,9 @@
                 <span class="small float-right">11:21 AM</span>
                 <div class="dropdown-message small">O sensor de <?php echo $sensor->sentido." da porta ".$sensor->porta;?> não <br>regista nenhum acesso desde -------</div>
               </a>
-             <?php } ?> 
+             <?php 
+              $i++;
+            } ?> 
            <a class="dropdown-item small" href="#">Ver todos os Alertas</a>
 
             </div>
