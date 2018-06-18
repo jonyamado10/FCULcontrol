@@ -185,14 +185,15 @@
           </a>
         </li>
       </ul>
-      <?php     if(!empty($sensores)){
-      ?>
+   
       <ul class="navbar-nav ml-auto">
+      <?phpif(!empty($sensores)){
+      ?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-bell"></i>
             <span class="d-lg-none">Alertas
-              <span class="badge badge-pill badge-warning"><?php echo sizeof($sensores); ?> Novo</span>
+              <span class="badge badge-pill badge-warning"><?php echo sizeof($sensores); ?> Novos</span>
             </span>
             <span class="indicator text-warning d-none d-lg-block">
               <i class="fa fa-fw fa-circle"></i>
@@ -209,11 +210,24 @@
                     <i class="fa fa-long-arrow-down fa-fw"></i>Possiveis Falhas</strong>
                 </span>
                 <span class="small float-right text-muted">11:21 AM</span>
-                <div class="dropdown-message small">O sensor de <?php echo $sensor->sentido;?> não responde desde</div>
+                <div class="dropdown-message small">O sensor de <?php echo $sensor->sentido." da porta ".$sensor->porta;?> não responde desde</div>
               </a>
+            </div>
+          </li>
             <?php }
           }
           else{?>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-bell"></i>
+            <span class="d-lg-none"> Sem Alertas
+            </span>
+            <span class="indicator text-warning d-none d-lg-block">
+              <i class="fa fa-fw fa-circle"></i>
+            </span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header">Novos Alertas:</h6>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">
               <span class="text-success">
@@ -227,6 +241,7 @@
             <?php }?>
             <a class="dropdown-item small" href="#">View all alerts</a>
           </div>
+          </li>
         </li>
         <li class="nav-item" style=" margin:0 auto;">
           <a class="nav-link" style="color:white; cursor: default;">
