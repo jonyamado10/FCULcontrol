@@ -41,7 +41,7 @@ class Users_model extends CI_model{
 	{
 		
 		
-		$query = $this->db->get('alunos');
+		$query = $this->db->get('funcionarios');
 		$alunosid = $query->result();
 		
 		foreach ($alunosid as $row ) {
@@ -52,7 +52,7 @@ class Users_model extends CI_model{
 			    'cost' => 4
 			];
 			$hash = password_hash($password,PASSWORD_BCRYPT,$options);
-			$sql = "UPDATE alunos set password = '$hash' where id=$row->id";
+			$sql = "UPDATE funcionarios set password = '$hash' where id=$row->id";
 			$query = $this->db->query($sql);
 		}
 		return "ok";
