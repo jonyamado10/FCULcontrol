@@ -214,7 +214,7 @@
                     <i class="fa fa-long-arrow-alt-down fa-fw"></i>Possiveis Falhas</strong>
                 </span>
                 <span class="medium float-right text-danger"><?php echo $sensor->porta; ?></span>
-                <div class="dropdown-message small">O sensor de <?php echo $sensor->sentido." da porta ".$sensor->porta;?> não <br>regista nenhum acesso desde -------</div>
+                <div class="dropdown-message small">O sensor de <?php echo $sensor->sentido." da porta ".$sensor->porta;?> não <br>regista nenhum acesso desde <?php echo $sensor->data; ?></div>
               </a>
              <?php 
               $i++;
