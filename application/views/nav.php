@@ -207,7 +207,7 @@
               <a class="dropdown-item" href="#">
                 <span class="text-danger">
                   <strong>
-                    <i class="fa fa-long-arrow-down fa-fw"></i>Possiveis Falhas</strong>
+                    <i class="fa fa-long-arrow-alt-down fa-fw"></i>Possiveis Falhas</strong>
                 </span>
                 <span class="small float-right">11:21 AM</span>
                 <div class="dropdown-message small">O sensor de <?php echo $sensor->sentido." da porta ".$sensor->porta;?> não responde desde</div>
