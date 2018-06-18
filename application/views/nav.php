@@ -212,12 +212,14 @@
                 <span class="small float-right">11:21 AM</span>
                 <div class="dropdown-message small">O sensor de <?php echo $sensor->sentido." da porta ".$sensor->porta;?> não responde desde</div>
               </a>
+             <?php } ?> 
+           <a class="dropdown-item small" href="#">View all alerts</a>
+
             </div>
-                    <a class="dropdown-item small" href="#">View all alerts</a>
 
           </li>
 
-            <?php }
+            <?php 
           }
           else{?>
           <li class="nav-item dropdown">
