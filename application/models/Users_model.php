@@ -50,8 +50,7 @@ class Users_model extends CI_model{
 			
 			$salt = $this->generate_salt();
 		$options = [
-    'cost' => 8,
-    'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
+    'cost' => 4
 ];
 			$hash = password_hash($password,PASSWORD_BCRYPT,$options);
 			echo $hash;
