@@ -200,7 +200,7 @@
             </span>
           </a>
           <div class="dropdown-menu" aria-labelledby="alertsDropdown" >
-            <h6 class="dropdown-header">Novos Alertas:</h6>
+            <h6 class="dropdown-header">Estado Sensores:</h6>
             
             <?php 
             $i=0;
@@ -238,7 +238,7 @@
             </span>
           </a>
           <div class="dropdown-menu" aria-labelledby="alertsDropdown">
-            <h6 class="dropdown-header">Sem Alertas:</h6>
+            <h6 class="dropdown-header">Estado Sensores:</h6>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">
               <span class="text-success">
