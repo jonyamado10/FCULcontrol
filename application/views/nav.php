@@ -238,10 +238,10 @@
               <div class="dropdown-message small">Tudo parece estar em ordem.</div>
             </a>
             <div class="dropdown-divider"></div>
-            <?php }?>
-            <a class="dropdown-item small" href="#">View all alerts</a>
+            
           </div>
           </li>
+          <?php }?>
         </li>
         <li class="nav-item" style=" margin:0 auto;">
           <a class="nav-link" style="color:white; cursor: default;">
