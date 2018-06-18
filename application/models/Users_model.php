@@ -59,7 +59,7 @@ class Users_model extends CI_model{
 	}
 
 	public function can_log_in(){
-
+		$password = $this->input->post('password');
 		$this->db->where('email',$this->input->post('email'));
 		$query = $this->db->get('alunos');
 		$this->db->where('email',$this->input->post('email'));
