@@ -61,7 +61,7 @@ class Users_model extends CI_model{
 				echo "<br";
 				
 		}		
-		return TRUE;
+		
 	}
 
 	public function can_log_in(){
