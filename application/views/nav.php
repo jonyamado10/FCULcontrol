@@ -187,11 +187,6 @@
       </ul>
    
       <ul class="navbar-nav ml-auto">
-         <li class="nav-item" style=" margin:0 auto;">
-          <a class="nav-link" style="color:white; cursor: default;">
-            <i class="fa fa-fw fa-user-secret"></i><?php echo "Olá ".$this->session->userdata('nome')?>
-          </a>
-        </li>
       <?php if(!empty($sensores)){
       ?>
         <li class="nav-item dropdown">
@@ -204,7 +199,7 @@
               <i class="fa fa-fw fa-circle"></i>
             </span>
           </a>
-          <div class="dropdown-menu pull-left" aria-labelledby="alertsDropdown">
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
             <h6 class="dropdown-header">Novos Alertas:</h6>
             
             <?php foreach ($sensores as $sensor) {?>
@@ -218,7 +213,7 @@
                 <div class="dropdown-message small">O sensor de <?php echo $sensor->sentido." da porta ".$sensor->porta;?> não <br>regista nenhum acesso desde -------</div>
               </a>
              <?php } ?> 
-           <a class="dropdown-item small" href="#">Ver todos os alertas</a>
+           <a class="dropdown-item small" href="#">Ver todos os Alertas</a>
 
             </div>
 
@@ -248,13 +243,16 @@
               <div class="dropdown-message small">Tudo parece estar em ordem.</div>
             </a>
             <div class="dropdown-divider"></div>
-              <a class="dropdown-item small" href="#">View all alerts</a>
 
           </div>
           </li>
           <?php }?>
         </li>
-       
+        <li class="nav-item" style=" margin:0 auto;">
+          <a class="nav-link" style="color:white; cursor: default;">
+            <i class="fa fa-fw fa-user-secret"></i><?php echo "Olá ".$this->session->userdata('nome')?>
+          </a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" href="<?php echo base_url('Login/logout') ?>" data-target="#exampleModal">
             <i class="fa fa-fw fas fa-sign-out-alt"></i>Logout</a>
