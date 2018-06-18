@@ -199,7 +199,7 @@
               <i class="fa fa-fw fa-circle"></i>
             </span>
           </a>
-          <div class="dropdown-menu" aria-labelledby="alertsDropdown" style="margin-left: :200px;">
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown" >
             <h6 class="dropdown-header">Novos Alertas:</h6>
             
             <?php 
@@ -214,7 +214,7 @@
                     <i class="fa fa-long-arrow-alt-down fa-fw"></i>Possiveis Falhas</strong>
                 </span>
                 <span class="small float-right text-warning"><?php $sensor->porta; ?></span>
-                <div class="dropdown-message medium">O sensor de <?php echo $sensor->sentido." da porta ".$sensor->porta;?> não <br>regista nenhum acesso desde -------</div>
+                <div class="dropdown-message small">O sensor de <?php echo $sensor->sentido." da porta ".$sensor->porta;?> não <br>regista nenhum acesso desde -------</div>
               </a>
              <?php 
               $i++;
