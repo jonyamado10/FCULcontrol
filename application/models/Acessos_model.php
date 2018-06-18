@@ -2143,7 +2143,7 @@ class Acessos_model extends CI_Model {
 						join sensores as s on s.id=acessos.id_sensor
 						join portas as p on p.id= s.id_porta
 						 where id_sensor = $id_sensor
-									order by data Desc, hora desc;"
+									order by data Desc, hora desc;";
 					$query2 = $this->db->query($sql2);
 					if($query2->num_rows() == 0){
 						 return false;
