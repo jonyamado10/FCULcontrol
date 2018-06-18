@@ -48,6 +48,8 @@ class Users_model extends CI_model{
 			print_r($row->id);
 			$password = "ptiptr";
 			echo $password;
+			$salt = $this->generate_salt();
+			echo $salt;
 		}
 	}
 
