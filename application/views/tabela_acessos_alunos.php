@@ -77,7 +77,10 @@ $('#tabela tfoot th').each( function () {
          "url": url,
          "dataType": "json",
          "type": "POST",
-        "data":{  '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>' }
+        data:function(dtRequest) {
+                    dtRequest[ 'csrf_test_name'] = '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>';
+                    return dtRequest;
+                }
                        },
           "columns": [
               { "data": "num_aluno" },
