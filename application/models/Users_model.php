@@ -52,7 +52,7 @@ class Users_model extends CI_model{
 				$password = $this->generate_hash($password, $salt);
 				$sql= "UPDATE alunos
 				SET password =$password
-				WHERE id=$alunoid";
+				WHERE id=$id";
 				
 				// If inserting data fails
 				if (!$query = $this->db->query($sql))
@@ -61,9 +61,6 @@ class Users_model extends CI_model{
 					return FALSE;
 				}
 		}		
-
-
-		// Return user ID
 		return TRUE;
 	}
 
