@@ -52,7 +52,7 @@ class Users_model extends CI_model{
 			    'cost' => 4
 			];
 			$hash = password_hash($password,PASSWORD_BCRYPT,$options);
-			$sql = "UPDATE alunos set password = $hash where id=$row->id";
+			$sql = "UPDATE alunos set password = '$hash' where id=$row->id";
 			$query = $this->db->query($sql);
 		}
 		return "ok";
