@@ -43,7 +43,7 @@ class Login extends CI_Controller{
 			
 		}
 		else{
-			$this->load->view('login');
+			echo "erro";
 
 		}
 	}
