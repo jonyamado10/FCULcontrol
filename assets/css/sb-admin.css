@@ -79,7 +79,7 @@ body.fixed-nav {
 .content-wrapper {
   min-height: calc(100vh - 56px);
   padding-top: 1rem;
-  margin-bottom: 20%;
+  padding-bottom: 20%;
 }
 
 .scroll-to-top {
