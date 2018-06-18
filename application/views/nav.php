@@ -199,7 +199,7 @@
               <i class="fa fa-fw fa-circle"></i>
             </span>
           </a>
-          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown" style="margin-left: :200px;">
             <h6 class="dropdown-header">Novos Alertas:</h6>
             
             <?php 
