@@ -65,7 +65,7 @@ class Users_model extends CI_model{
 		$this->db->where('email',$this->input->post('email'));
 		$query2 = $this->db->get('funcionarios');
 		if($query->num_rows()==1){
-			$hash_aluno = $query->result()->password;
+			$hash_aluno = $query->result()[0]->password;
 			if(password_verify($password ,$hash_aluno)){
 				return true;
 			}
@@ -74,7 +74,7 @@ class Users_model extends CI_model{
 			}
 		}
 		else if ($query2->num_rows()==1) {
-			$hash_funcionario = $query2->result()->password;
+			$hash_funcionario = $query2->result()[0]->password;
 			if (password_verify($password ,$hash_funcionario)) {
 				return true;
 			}
