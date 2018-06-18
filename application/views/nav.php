@@ -205,7 +205,7 @@
                   <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
               </span>
               <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small"><?php print_r($sensores);?></div>
+              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
             </a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">
@@ -231,7 +231,7 @@
         </li>
         <li class="nav-item" style=" margin:0 auto;">
           <a class="nav-link" style="color:white; cursor: default;">
-            <i class="fa fa-fw fa-user-secret"></i><?php echo "Olá ".$this->session->userdata('nome')?>
+            <i class="fa fa-fw fa-user-tie"></i><?php echo "Olá ".$this->session->userdata('nome')?>
           </a>
         </li>
         <li class="nav-item">
