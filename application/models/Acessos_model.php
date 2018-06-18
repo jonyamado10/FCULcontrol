@@ -843,7 +843,6 @@ class Acessos_model extends CI_Model {
         }
 				  
 		if ($col == "hora" or $col =="data") {
-				  	# code...
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
 				OFFSET $start ROWS
@@ -851,10 +850,10 @@ class Acessos_model extends CI_Model {
 		}
 		else{		  
 			$sql.="	ORDER BY 
-				$col $dir,data $dir,hora $dir
+				$col $dir,data DESC,hora DESC
 				OFFSET $start ROWS
 				FETCH NEXT $limit ROWS ONLY;";
-			}
+		}
 
         $query = $this->db->query($sql);
         
@@ -945,7 +944,6 @@ class Acessos_model extends CI_Model {
         }
 				  
 		if ($col == "hora" or $col =="data") {
-				  	# code...
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
 				OFFSET $start ROWS
@@ -953,10 +951,10 @@ class Acessos_model extends CI_Model {
 		}
 		else{		  
 			$sql.="	ORDER BY 
-				$col $dir,data $dir,hora $dir
+				$col $dir,data DESC,hora DESC
 				OFFSET $start ROWS
 				FETCH NEXT $limit ROWS ONLY;";
-			}
+		}
 		$query = $this->db->query($sql);
 		if($query->num_rows()>0)
         {
@@ -999,7 +997,6 @@ class Acessos_model extends CI_Model {
         }
 
 		if ($col == "hora" or $col =="data") {
-				  	# code...
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
 				OFFSET $start ROWS
@@ -1007,10 +1004,10 @@ class Acessos_model extends CI_Model {
 		}
 		else{		  
 			$sql.="	ORDER BY 
-				$col $dir,data $dir,hora $dir
+				$col $dir,data DESC,hora DESC
 				OFFSET $start ROWS
 				FETCH NEXT $limit ROWS ONLY;";
-			}
+		}
        	$query=$this->db->query($sql);
 
         if($query->num_rows()>0)
@@ -1224,8 +1221,7 @@ class Acessos_model extends CI_Model {
         	
         }
 				  
-		if ($col == "hora" or $col =="data"){
-				  	# code...
+		if ($col == "hora" or $col =="data") {
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
 				OFFSET $start ROWS
@@ -1233,10 +1229,10 @@ class Acessos_model extends CI_Model {
 		}
 		else{		  
 			$sql.="	ORDER BY 
-				$col $dir,data $dir,hora $dir
+				$col $dir,data DESC,hora DESC
 				OFFSET $start ROWS
 				FETCH NEXT $limit ROWS ONLY;";
-			}
+		}
 
         $query = $this->db->query($sql);
         
@@ -1269,8 +1265,7 @@ class Acessos_model extends CI_Model {
         	
         }
 				  
-		if ($col == "hora" or $col =="data"){
-				  	# code...
+		if ($col == "hora" or $col =="data") {
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
 				OFFSET $start ROWS
@@ -1278,10 +1273,10 @@ class Acessos_model extends CI_Model {
 		}
 		else{		  
 			$sql.="	ORDER BY 
-				$col $dir,data $dir,hora $dir
+				$col $dir,data DESC,hora DESC
 				OFFSET $start ROWS
 				FETCH NEXT $limit ROWS ONLY;";
-			}
+		}
 
         $query = $this->db->query($sql);
         
@@ -1370,9 +1365,8 @@ class Acessos_model extends CI_Model {
         		$sql.=" AND $key LIKE '".$colsearch[$key]."%' ";
         	}
         }
-				  
+
 		if ($col == "hora" or $col =="data") {
-				  	# code...
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
 				OFFSET $start ROWS
@@ -1380,10 +1374,10 @@ class Acessos_model extends CI_Model {
 		}
 		else{		  
 			$sql.="	ORDER BY 
-				$col $dir,data $dir,hora $dir
+				$col $dir,data DESC,hora DESC
 				OFFSET $start ROWS
 				FETCH NEXT $limit ROWS ONLY;";
-			}
+		}
         $query = $this->db->query($sql);
         if($query->num_rows()>0)
         {
@@ -1427,7 +1421,6 @@ class Acessos_model extends CI_Model {
         }
 
 		if ($col == "hora" or $col =="data") {
-				  	# code...
 			$sql.="	ORDER BY 
 				data $dir,hora $dir
 				OFFSET $start ROWS
@@ -1435,10 +1428,10 @@ class Acessos_model extends CI_Model {
 		}
 		else{		  
 			$sql.="	ORDER BY 
-				$col $dir,data $dir,hora $dir
+				$col $dir,data DESC,hora DESC
 				OFFSET $start ROWS
 				FETCH NEXT $limit ROWS ONLY;";
-			}
+		}
         $query=$this->db->query($sql);
 
         if($query->num_rows()>0)
@@ -1610,10 +1603,18 @@ class Acessos_model extends CI_Model {
         	}
         }
 				  
-		$sql.="	ORDER BY 
-				$col $dir
+		if ($col == "hora" or $col =="data") {
+			$sql.="	ORDER BY 
+				data $dir,hora $dir
 				OFFSET $start ROWS
 				FETCH NEXT $limit ROWS ONLY;";
+		}
+		else{		  
+			$sql.="	ORDER BY 
+				$col $dir,data DESC,hora DESC
+				OFFSET $start ROWS
+				FETCH NEXT $limit ROWS ONLY;";
+		}
 		$query = $this->db->query($sql);
 		if($query->num_rows()>0)
         {
@@ -1657,10 +1658,18 @@ class Acessos_model extends CI_Model {
         }
 
        
-		$sql .="ORDER BY 
-				$col $dir
+		if ($col == "hora" or $col =="data") {
+			$sql.="	ORDER BY 
+				data $dir,hora $dir
 				OFFSET $start ROWS
 				FETCH NEXT $limit ROWS ONLY;";
+		}
+		else{		  
+			$sql.="	ORDER BY 
+				$col $dir,data DESC,hora DESC
+				OFFSET $start ROWS
+				FETCH NEXT $limit ROWS ONLY;";
+		}
        	$query=$this->db->query($sql);
 
         if($query->num_rows()>0)
@@ -1780,10 +1789,18 @@ class Acessos_model extends CI_Model {
         	}
         }
 				  
-		$sql.="	ORDER BY 
-				$col $dir
+		if ($col == "hora" or $col =="data") {
+			$sql.="	ORDER BY 
+				data $dir,hora $dir
 				OFFSET $start ROWS
 				FETCH NEXT $limit ROWS ONLY;";
+		}
+		else{		  
+			$sql.="	ORDER BY 
+				$col $dir,data DESC,hora DESC
+				OFFSET $start ROWS
+				FETCH NEXT $limit ROWS ONLY;";
+		}
 		$query = $this->db->query($sql);
 		if($query->num_rows()>0)
         {
@@ -1828,10 +1845,18 @@ class Acessos_model extends CI_Model {
         }
 
        
-		$sql .="ORDER BY 
-				$col $dir
+		if ($col == "hora" or $col =="data") {
+			$sql.="	ORDER BY 
+				data $dir,hora $dir
 				OFFSET $start ROWS
 				FETCH NEXT $limit ROWS ONLY;";
+		}
+		else{		  
+			$sql.="	ORDER BY 
+				$col $dir,data DESC,hora DESC
+				OFFSET $start ROWS
+				FETCH NEXT $limit ROWS ONLY;";
+		}
        	$query=$this->db->query($sql);
 
         if($query->num_rows()>0)

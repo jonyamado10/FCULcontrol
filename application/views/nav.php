@@ -77,9 +77,6 @@
                 <li>
                   <a id ="BotaoAcessos6m" href=#>Acessos 6 meses</a>
                 </li>
-                <li>
-                  <a id ="BotaoPessoasEdificio" href="#">Pessoas por Edifício</a>
-                </li>
               </ul>
             </li>
           </ul>
@@ -90,34 +87,19 @@
             <span class="nav-link-text">Serviços Académicos</span>
           </a>
            <ul class="sidenav-second-level collapse" id="collapseComponents2">
-              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-               <a id = "navGraficos" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2.1" data-parent="#exampleAccordion">
-                  <i class="fa fa-fw fa-area-chart"></i>
-                  <span class="nav-link-text">Gráficos</span>
-                </a>
-                <ul class="sidenav-third-level collapse" id="collapseComponents2.1">
-                  <li>
-                    <a id ="BotaoAlunosDepartamento" href = "#">Alunos por Departamento</a>
-                  </li>
-                  <li>
-                    <a id ="BotaoPessoasEdificio" href="#">Pessoas por Edifício</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a id = "navTabelas" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2.2" data-parent="#exampleAccordion">
-                  <i class="fa fa-fw fa-table"></i>
-                  <span class="nav-link-text">Tabelas</span>
-                </a>
-                <ul class="sidenav-third-level collapse" id="collapseComponents2.2">
+
                   <li>
                     <a id = "BotaoTabelaAlunos" href="#">Alunos</a>
                   </li>
                   <li>
                     <a id = "BotaoTabelaDocentes" href="#">Docentes</a>
                   </li>
-                </ul>
-              </li>
+                  <li>
+                    <a id ="BotaoAlunosDepartamento" href = "#">Alunos por Departamento</a>
+                  </li>
+                  <li>
+                    <a id ="BotaoPessoasEdificio" href="#">Pessoas por Edifício</a>
+                  </li>
           </ul>
         </li>
 
