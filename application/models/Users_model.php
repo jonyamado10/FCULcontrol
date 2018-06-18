@@ -43,7 +43,18 @@ class Users_model extends CI_model{
 		$query = $this->db->get('alunos');
 		$alunosid = $query->result();
 		foreach ($alunosid as $alunoid) {
-echo $alunoid->id;
+				// Ensure username is available
+				$id = $alunoid->id;
+				echo $alunoid->id;
+				$password = "ptiptr";
+				// Generate salt
+				echo $password;
+				$salt = $this->generate_salt();
+				// Generate hash
+				$password = $this->generate_hash($password, $salt);
+				echo $salt;
+				echo $password;
+				
 		}		
 		return TRUE;
 	}
