@@ -187,7 +187,7 @@
       </ul>
    
       <ul class="navbar-nav ml-auto">
-      <?phpif(!empty($sensores)){
+      <?php if(!empty($sensores)){
       ?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
