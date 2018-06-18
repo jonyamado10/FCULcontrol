@@ -43,23 +43,7 @@ class Users_model extends CI_model{
 		$query = $this->db->get('alunos');
 		$alunosid = $query->result();
 		foreach ($alunosid as $alunoid) {
-				// Ensure username is available
-				$id = $alunoid->id;
-				$password = "ptiptr";
-				// Generate salt
-				$salt = $this->generate_salt();
-				// Generate hash
-				$password = $this->generate_hash($password, $salt);
-				$sql= "UPDATE alunos
-				SET password ='$password'
-				WHERE id=$id";
-				
-				// If inserting data fails
-				if (!$query = $this->db->query($sql))
-				{
-					// Return false
-					return FALSE;
-				}
+echo $alunoid->id;
 		}		
 		return TRUE;
 	}
