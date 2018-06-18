@@ -43,18 +43,7 @@ class Users_model extends CI_model{
 		
 		$query = $this->db->get('alunos');
 		$alunosid = $query->result();
-		foreach ($alunosid as $alunoid) {
-				
-				
-				echo "<br";
-				$password = "ptiptr";
-				// Generate salt
-				echo $password;
-				echo "<br";
-				
-				
-		}		
-		
+		print_r($alunosid);
 	}
 
 	public function can_log_in(){
