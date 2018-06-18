@@ -44,9 +44,8 @@ class Users_model extends CI_model{
 		$query = $this->db->get('alunos');
 		$alunosid = $query->result();
 		foreach ($alunosid as $alunoid) {
-				// Ensure username is available
-				$id = $alunoid->id;
-				echo $alunoid->id;
+				
+				
 				echo "<br";
 				$password = "ptiptr";
 				// Generate salt
