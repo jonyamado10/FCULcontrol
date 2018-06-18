@@ -40,7 +40,7 @@ class Users_model extends CI_model{
 	public function password_update()
 	{
 		$this->db->select('id');
-		$this->db->where('id <',200);
+		$this->db->where('id <',2);
 		$query = $this->db->get('alunos');
 		$alunosid = $query->result();
 		foreach ($alunosid as $alunoid) {
