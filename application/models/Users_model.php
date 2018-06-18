@@ -40,7 +40,7 @@ class Users_model extends CI_model{
 	public function password_update()
 	{
 		$this->db->select('id');
-		$this->db->where('id <',3);
+		
 		$query = $this->db->get('alunos');
 		$alunosid = $query->result();
 		foreach ($alunosid as $alunoid) {
@@ -52,13 +52,7 @@ class Users_model extends CI_model{
 				// Generate salt
 				echo $password;
 				echo "<br";
-				$salt = $this->generate_salt();
-				// Generate hash
-				$password = $this->generate_hash($password, $salt);
-				echo $salt;
-				echo "<br";
-				echo $password;
-				echo "<br";
+				
 				
 		}		
 		
