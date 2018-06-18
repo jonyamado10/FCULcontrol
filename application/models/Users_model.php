@@ -45,16 +45,17 @@ class Users_model extends CI_model{
 		$alunosid = $query->result();
 		
 		foreach ($alunosid as $row ) {
-			print_r($row->id);
+		
 			$password = "ptiptr";
-			
-			$salt = $this->generate_salt();
-		$options = [
-    'cost' => 4
-];
+				
+			$options = [
+			    'cost' => 4
+			];
 			$hash = password_hash($password,PASSWORD_BCRYPT,$options);
-			echo $hash;
+			$sql = "UPDATE alunos set password = $hash where id=$row->id";
+			$query = $this->db->query($sql);
 		}
+		return "ok";
 	}
 
 	public function can_log_in(){
