@@ -2125,7 +2125,7 @@ class Acessos_model extends CI_Model {
 			}
 		}
 		public function sensores_avariados(){
-			$tresMesesAntes = date("Y-m-d",strtotime("-3 months");
+			$tresMesesAntes = date("Y-m-d",strtotime("-3 months"));
 			$sql = "SELECT concat(p.edificio, '.',p.piso,'.',p.num_porta) as porta, sentido from sensores
 				join portas as p on p.id = sensores.id_porta
 				WHERE  not EXISTS (SELECT *
