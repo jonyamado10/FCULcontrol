@@ -2130,7 +2130,7 @@ class Acessos_model extends CI_Model {
 				join portas as p on p.id = sensores.id_porta
 				WHERE  not EXISTS (SELECT *
                   					FROM   acessos
-                					WHERE  data > '$tresMesesAntes' and sensores.id=acessos.id_sensor);";
+                					WHERE  data > '2018-06-12' and sensores.id=acessos.id_sensor);";
 			$query = $this->db->query($sql);
 			if($query->num_rows() == 0){
 				return false;
