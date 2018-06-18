@@ -37,7 +37,7 @@
             <h6 style = "margin:0 auto;">Gera 1000 acessos para a data escolhida</h6><br>
          </div>
         <div id = "lo"></div>
-        <script>
+  <script>
   $('#BotaoGerar').click(function(){
       $('#lo').html("<div class='loader' style = 'width:120px; height:120px; margin:0 auto'> </div>Aguarde ");
       var datainput = $("input#data").val();
