@@ -233,19 +233,20 @@
             <i class="fa fa-fw fa-bell"></i>
             <span class="d-lg-none"> Sem Alertas
             </span>
-            <span class="indicator text-warning d-none d-lg-block">
-              <i class="fa fa-fw fa-circle"></i>
-            </span>
           </a>
           <div class="dropdown-menu" aria-labelledby="alertsDropdown">
-            <h6 class="dropdown-header">Novos Alertas:</h6>
+            <h6 class="dropdown-header">Sem Alertas:</h6>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">
               <span class="text-success">
                 <strong>
-                  <i class="fa fa-long-arrow-up fa-fw"></i>Estado Positivo</strong>
+                  <i class="fa fa-long-arrow-alt-down fa-fw"></i>Estado Positivo</strong>
               </span>
-              <span class="small float-right text-muted">11:21 AM</span>
+              <span class="small float-right text-muted">
+                <?php date_default_timezone_set("Europe/Lisbon");
+                  echo date("G:i");
+                  ?>      
+              </span>
               <div class="dropdown-message small">Tudo parece estar em ordem.</div>
             </a>
             <div class="dropdown-divider"></div>
