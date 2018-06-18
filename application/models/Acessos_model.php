@@ -2125,12 +2125,12 @@ class Acessos_model extends CI_Model {
 			}
 		}
 		public function sensores_avariados(){
-			$3mesesatras = date("Y-m-d",strtotime("-3 months");
+			$tresMesesAntes = date("Y-m-d",strtotime("-3 months");
 			$sql = "SELECT concat(p.edificio, '.',p.piso,'.',p.num_porta) as porta, sentido from sensores
 				join portas as p on p.id = sensores.id_porta
 				WHERE  not EXISTS (SELECT *
                   					FROM   acessos
-                					WHERE  data > '$3mesesatras' and sensores.id=acessos.id_sensor);";
+                					WHERE  data > '$tresMesesAntes' and sensores.id=acessos.id_sensor);";
 			$query = $this->db->query($sql);
 			if($query->num_rows() == 0){
 				return false;
