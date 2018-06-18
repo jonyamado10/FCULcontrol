@@ -187,8 +187,8 @@ class Admin extends CI_Controller {
 	public function teste()
 	{
 	
-	$this->load->model('Acessos_model');
-	$this->Acessos_model->acessos6m();
+$this->load->model('Acessos_model');
+			$data['sensores'] = $this->Acessos_model->sensores_avariados();	
 
           
 	}
