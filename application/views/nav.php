@@ -205,7 +205,7 @@
                   <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
               </span>
               <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+              <div class="dropdown-message small"><?php print_r($sensores);?></div>
             </a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">

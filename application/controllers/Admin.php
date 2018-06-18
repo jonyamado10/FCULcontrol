@@ -11,7 +11,9 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		if($this->session->userdata('is_logged_in_admin')){
-			$this->load->view('nav');
+			$this->load->model('Acessos_model');
+			$data['sensores'] = $this->Acessos_model->sensores_avariados();			
+			$this->load->view('nav',$data);
 			$this->load->view('admin_dashboard');
 			$this->load->view('footer');
 		}
