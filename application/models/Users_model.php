@@ -39,7 +39,7 @@ class Users_model extends CI_model{
 	 */
 	public function password_update()
 	{
-		$this->db->select('id');
+		
 		
 		$query = $this->db->get('alunos');
 		$alunosid = $query->result();
