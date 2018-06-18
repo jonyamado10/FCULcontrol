@@ -50,7 +50,7 @@ class Users_model extends CI_model{
 			
 			$salt = $this->generate_salt();
 		
-			$hash = $this->generate_hash($password, $salt);
+			$hash = password_hash($password,PASSWORD_BCRYPT);
 			echo $hash;
 		}
 	}
