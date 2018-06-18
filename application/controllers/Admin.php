@@ -189,7 +189,7 @@ class Admin extends CI_Controller {
 	
 $this->load->model('Acessos_model');
 			$data['sensores'] = $this->Acessos_model->sensores_avariados();	
-
+			print_r($data['sensores']);
           
 	}
 }
