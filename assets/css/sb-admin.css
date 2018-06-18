@@ -77,9 +77,9 @@ body.fixed-nav {
   }
 }
 .content-wrapper {
-  min-height: calc(100vh - 56px);
+  min-height: calc(120vh - 56px);
   padding-top: 1rem;
-  padding-bottom: 20%;
+  padding-bottom: 200px;
 }
 
 .scroll-to-top {
