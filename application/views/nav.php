@@ -214,6 +214,8 @@
               </a>
             </div>
           </li>
+        <a class="dropdown-item small" href="#">View all alerts</a>
+
             <?php }
           }
           else{?>
@@ -238,10 +240,11 @@
               <div class="dropdown-message small">Tudo parece estar em ordem.</div>
             </a>
             <div class="dropdown-divider"></div>
+              <a class="dropdown-item small" href="#">View all alerts</a>
+
           </div>
           </li>
           <?php }?>
-            <a class="dropdown-item small" href="#">View all alerts</a>
         </li>
         <li class="nav-item" style=" margin:0 auto;">
           <a class="nav-link" style="color:white; cursor: default;">
