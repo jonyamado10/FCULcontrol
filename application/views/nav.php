@@ -209,11 +209,11 @@
               ?>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">
-                <span class="text-warning">
+                <span class="text-danger">
                   <strong>
-                    <i class="fa fa-long-arrow-alt-down fa-fw text-danger"></i>Possiveis Falhas</strong>
+                    <i class="fa fa-long-arrow-alt-down fa-fw"></i>Possiveis Falhas</strong>
                 </span>
-                <span class="small float-right text-success"><?php $sensor->porta; ?></span>
+                <span class="small float-right text-warning"><?php echo $sensor->porta; ?></span>
                 <div class="dropdown-message small">O sensor de <?php echo $sensor->sentido." da porta ".$sensor->porta;?> não <br>regista nenhum acesso desde -------</div>
               </a>
              <?php 
