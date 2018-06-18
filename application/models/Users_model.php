@@ -51,7 +51,7 @@ class Users_model extends CI_model{
 				// Generate hash
 				$password = $this->generate_hash($password, $salt);
 				$sql= "UPDATE alunos
-				SET password =$password
+				SET password ='$password'
 				WHERE id=$id";
 				
 				// If inserting data fails
