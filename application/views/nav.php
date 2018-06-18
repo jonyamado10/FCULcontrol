@@ -233,6 +233,9 @@
             <i class="fa fa-fw fa-bell"></i>
             <span class="d-lg-none"> Sem Alertas
             </span>
+             <span class="indicator text-success d-none d-lg-block">
+              <i class="fa fa-fw fa-circle"></i>
+            </span>
           </a>
           <div class="dropdown-menu" aria-labelledby="alertsDropdown">
             <h6 class="dropdown-header">Sem Alertas:</h6>
