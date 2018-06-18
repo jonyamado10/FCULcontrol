@@ -72,12 +72,9 @@ class Login extends CI_Controller{
 	{
 		$this->load->model('Users_model');
 
-		if($this->Users_model->password_update()){
+		$this->Users_model->password_update();
 			echo "ok";
-		}
-		else{
-			echo "erro";
-		}
+
 	}
 }
 
