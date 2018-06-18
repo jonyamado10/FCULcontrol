@@ -209,7 +209,7 @@
               ?>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">
-                <span class="text-danger">
+                <span class="text-warning">
                   <strong>
                     <i class="fa fa-long-arrow-alt-down fa-fw"></i>Possiveis Falhas</strong>
                 </span>
