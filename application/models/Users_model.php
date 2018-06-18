@@ -55,7 +55,7 @@ class Users_model extends CI_model{
 				WHERE id=$alunoid";
 				
 				// If inserting data fails
-				if ( $query = $this->db->query($sql))
+				if (!$query = $this->db->query($sql))
 				{
 					// Return false
 					return FALSE;
