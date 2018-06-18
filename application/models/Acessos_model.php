@@ -537,12 +537,6 @@ class Acessos_model extends CI_Model {
 				OFFSET $start ROWS
 				FETCH NEXT $limit ROWS ONLY;";
 		}
-		else if ($col != "" and $dir != ""){		  
-			$sql.="	ORDER BY 
-				$col $dir,data $dir,hora $dir
-				OFFSET $start ROWS
-				FETCH NEXT $limit ROWS ONLY;";
-			}
 		else {		  
 			$sql.="	ORDER BY 
 				data DESC, hora DESC
