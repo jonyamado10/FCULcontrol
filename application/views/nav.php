@@ -209,7 +209,7 @@
                   <strong>
                     <i class="fa fa-long-arrow-down fa-fw"></i>Possiveis Falhas</strong>
                 </span>
-                <span class="small float-right text-muted">11:21 AM</span>
+                <span class="small float-right">11:21 AM</span>
                 <div class="dropdown-message small">O sensor de <?php echo $sensor->sentido." da porta ".$sensor->porta;?> não responde desde</div>
               </a>
             </div>
