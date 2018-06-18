@@ -2137,7 +2137,7 @@ class Acessos_model extends CI_Model {
 			else{
 				$data= array();
 				foreach ($query->result() as $sensor ) {
-					$id_sensor->$sensor->id;
+					$id_sensor = $sensor->id;
 					$sql2 = "SELECT top 1 concat(p.edificio, '.',p.piso,'.',p.num_porta) as porta, sentido,data,hora 
 						from acessos
 						join sensores as s on s.id=acessos.id_sensor
