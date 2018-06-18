@@ -213,8 +213,9 @@
                 <div class="dropdown-message small">O sensor de <?php echo $sensor->sentido." da porta ".$sensor->porta;?> não responde desde</div>
               </a>
             </div>
+                    <a class="dropdown-item small" href="#">View all alerts</a>
+
           </li>
-        <a class="dropdown-item small" href="#">View all alerts</a>
 
             <?php }
           }
