@@ -63,7 +63,6 @@ class Users_model extends CI_model{
 		$this->db->where('email',$this->input->post('email'));
 		$query = $this->db->get('alunos');
 		$this->db->where('email',$this->input->post('email'));
-		$this->db->where('password',$hash);
 		$query2 = $this->db->get('funcionarios');
 		if($query->num_rows()==1){
 			$hash_aluno = $query->result()->password;
