@@ -191,7 +191,7 @@ $this->load->model('Acessos_model');
 			$data['sensores'] = $this->Acessos_model->sensores_avariados();	
 			
 			if(empty($data['sensores'])){
-				echo "vazio"
+				echo "vazio";
 			}
           	else{
           		print_r($data['sensores']);
