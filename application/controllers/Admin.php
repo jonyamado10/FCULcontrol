@@ -13,6 +13,7 @@ class Admin extends CI_Controller {
 		if($this->session->userdata('is_logged_in_admin')){
 			$this->load->model('Acessos_model');
 			$data['sensores'] = $this->Acessos_model->sensores_avariados();
+			$data1['num_sensores'] = sizeof($data['sensores']);
 			$data1['num_acessos_hj'] = $this->Acessos_model->get_num_acessos_hj();
 			$data1['num_acessos_corrigidos_hj'] = $this->Acessos_model->get_num_acessos_hj();			
 			$this->load->view('nav',$data);
@@ -28,6 +29,7 @@ class Admin extends CI_Controller {
 		if (!isset($_SERVER['HTTP_REFERER']))
 		{ redirect('Admin');}
 		$this->load->model('Acessos_model');
+		$data['num_sensores'] = sizeof($this->Acessos_model->sensores_avariados());
 		$data['num_acessos_hj'] = $this->Acessos_model->get_num_acessos_hj();
 		$data['num_acessos_corrigidos_hj'] = $this->Acessos_model->get_num_acessos_hj();	
 		$this->load->view('admin_dashboard',$data);

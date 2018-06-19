@@ -49,7 +49,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-list"></i>
               </div>
-              <div class="mr-5">11 Novos Alertas!</div>
+              <div class="mr-5"><?php echo $num_sensores ?> Novos Alertas!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">Ver Detalhes</span>
