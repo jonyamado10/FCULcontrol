@@ -12,9 +12,11 @@ class Admin extends CI_Controller {
 	{
 		if($this->session->userdata('is_logged_in_admin')){
 			$this->load->model('Acessos_model');
-			$data['sensores'] = $this->Acessos_model->sensores_avariados();			
+			$data['sensores'] = $this->Acessos_model->sensores_avariados();
+			$data1['num_acessos_hj'] = $this->Acessos_model->get_num_acessos_hj();
+			$data1['num_acessos_corrigidos_hj'] = $this->Acessos_model->get_num_acessos_hj();			
 			$this->load->view('nav',$data);
-			$this->load->view('admin_dashboard');
+			$this->load->view('admin_dashboard',$data1);
 			$this->load->view('footer');
 		}
 		else{
@@ -25,8 +27,10 @@ class Admin extends CI_Controller {
 	{
 		if (!isset($_SERVER['HTTP_REFERER']))
 		{ redirect('Admin');}
-
-		$this->load->view('admin_dashboard');
+		$this->load->model('Acessos_model');
+		$data['num_acessos_hj'] = $this->Acessos_model->get_num_acessos_hj();
+		$data['num_acessos_corrigidos_hj'] = $this->Acessos_model->get_num_acessos_hj();	
+		$this->load->view('admin_dashboard',$data);
 	}
 	public function tabela_alunos()
 	{

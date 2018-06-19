@@ -2156,5 +2156,37 @@ class Acessos_model extends CI_Model {
 				
 			}
 		}
+	function get_num_acessos_hj(){
+		$data = date("Y-m-d",strtotime("today"));
+		$sql = "SELECT COUNT(*) AS num from acessos
+				where date = '$data'";
+		$query = $this->db->query($sql);
+		$result = $query->row();
+      	if(isset($result)) return $result->num;
+        return 0;
+	}
+	function get_num_acessos_corrigidos_hj(){
+		$total = 0;
+		$data = date("Y-m-d",strtotime("today"));
+		$sql = "SELECT COUNT(*) AS num from acessos_alunos_corrigidos
+				where date = '$data'";
+		$query = $this->db->query($sql);
+		$result = $query->row();
+		if(isset($result)) $total+=$result->num;
+        $data = date("Y-m-d",strtotime("today"));
+		$sql = "SELECT COUNT(*) AS num from acessos_docentes_corrigidos
+				where date = '$data'";
+		$query = $this->db->query($sql);
+		$result = $query->row();
+		if(isset($result)) $total+=$result->num;
+		$data = date("Y-m-d",strtotime("today"));
+		$sql = "SELECT COUNT(*) AS num from acessos_nao_docentes_corrigidos
+				where date = '$data'";
+		$query = $this->db->query($sql);
+		$result = $query->row();
+		if(isset($result)) $total+=$result->num;
+      	
+      	return $total;
+	}
 }
 ?>
