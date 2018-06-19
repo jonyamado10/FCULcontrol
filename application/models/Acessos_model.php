@@ -2204,7 +2204,7 @@ class Acessos_model extends CI_Model {
 			$hora = "0".$hora;
 		}
 		$sql = "SELECT num_aluno, count(*) as num from acessos_alunos_corrigidos
-		where ((data = '$ontem' and hora >= '$hora') or (data = 'hoje' and hora <= '$hora')) and id_acesso < 0
+		where ((data = '$ontem' and hora >= '$hora') or (data = '$hoje' and hora <= '$hora')) and id_acesso < 0
 		group by num_aluno";
 		$query = $this->db->query($sql);
 		return $query->result();
