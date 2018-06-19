@@ -191,7 +191,7 @@
             <span class="d-lg-none">Alertas
               <span class="badge badge-pill badge-warning"><?php echo sizeof($sensores); ?> Novos</span>
             </span>
-            <span class="indicator text-warning d-none d-lg-block">
+            <span class="indicator text-danger d-none d-lg-block">
               <i class="fa fa-fw fa-circle"></i>
             </span>
           </a>
