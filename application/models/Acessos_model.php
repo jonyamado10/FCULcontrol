@@ -2174,22 +2174,22 @@ class Acessos_model extends CI_Model {
 	}
 	function get_num_acessos_corrigidos_hj(){
 		$total = 0;
-		date_default_timezone_set("Europe/Lisbon"); 
-		$data = date("Y-m-d",strtotime("today"));
+		date_default_timezone_set("Europe/Lisbon");
+		$hoje = date("Y-m-d",strtotime("today"));
+		$ontem = date("Y-m-d",strtotime("yesterday"));
+		$hora = date("G:i"); 
 		$sql = "SELECT COUNT(*) AS num from acessos_alunos_corrigidos
-				where data = '$data'";
+				where (data = '$ontem' and hora >= '$hora') or (data = '$hoje' and hora <= '$hora') ";
 		$query = $this->db->query($sql);
 		$result = $query->row();
 		if(isset($result)) $total+=$result->num;
-        $data = date("Y-m-d",strtotime("today"));
 		$sql = "SELECT COUNT(*) AS num from acessos_docentes_corrigidos
-				where data = '$data'";
+				where (data = '$ontem' and hora >= '$hora') or (data = '$hoje' and hora <= '$hora')";
 		$query = $this->db->query($sql);
 		$result = $query->row();
 		if(isset($result)) $total+=$result->num;
-		$data = date("Y-m-d",strtotime("today"));
 		$sql = "SELECT COUNT(*) AS num from acessos_nao_docentes_corrigidos
-				where data = '$data'";
+				where (data = '$ontem' and hora >= '$hora') or (data = '$hoje' and hora <= '$hora') ";
 		$query = $this->db->query($sql);
 		$result = $query->row();
 		if(isset($result)) $total+=$result->num;
