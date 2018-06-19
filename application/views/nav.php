@@ -25,6 +25,13 @@
 
 
 </head>
+<script type="text/javascript">
+     $("#BotaoVerTodosAlertas").click(function(){
+        $('.container-fluid').remove();
+        $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Admin/tabela_alertas') ?>");
+    });
+</script>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
@@ -217,7 +224,7 @@
              <?php 
               $i++;
             } ?> 
-           <a class="dropdown-item small" href="#">Ver todos os Alertas</a>
+           <a class="dropdown-item small" id=="BotaoVerTodosAlertas" href="#">Ver todos os Alertas</a>
 
             </div>
 
