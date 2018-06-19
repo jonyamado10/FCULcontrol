@@ -53,12 +53,14 @@
             <div class="wrap-input100 validate-input" > 
  
             <select name="num_acessos" id="num_acessos" class="input100" style = "height: 60px;")">
-              <option value=""<?php echo  set_select('num_acessos', 'none', TRUE); ?>>Nº Acessos a Gerar</option>
+              <option value=""<?php echo  set_select('num_acessos', 'none', TRUE); ?>>Nยบ Acessos a Gerar</option>
                 <option value="500">500</option>
                 <option value="1000">1000</option>
                 <option value="1500">1500</option>
                 <option value="2000">2000</option>
-
+                <option value="3000">3000</option>
+                <option value="4000">4000</option>
+                <option value="5000">5000</option>
 
           </select>
                 <span class="focus-input100"></span>
@@ -91,7 +93,7 @@
         $.ajax({
                type: "POST",
                url: url,
-              data:{  data: dataString,'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>' },
+               data: dataString, // serializes the form's elements.
                success: function(data)
                {
                    alert(data); // show response from the php script.
