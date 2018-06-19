@@ -16,7 +16,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-comments"></i>
               </div>
-              <div class="mr-5"><?php echo $num_acessos_hj ?> Acessos Hoje!</div>
+              <div class="mr-5"><?php echo $num_acessos_hj ?> Acessos nas últimas 24 horas!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">Ver Detalhes</span>
@@ -33,7 +33,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-shopping-cart"></i>
               </div>
-              <div class="mr-5"><?php echo $num_acessos_corrigidos_hj - $num_acessos_hj?> Acessos Corrigidos Hoje!</div>
+              <div class="mr-5"><?php echo $num_acessos_corrigidos_hj - $num_acessos_hj?> Acessos Corrigidos nas últimas 24 horas!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">Ver Detalhes</span>
@@ -65,7 +65,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-support"></i>
               </div>
-              <div class="mr-5"><?php echo $num_acessos_corrigidos_hj - $num_acessos_hj?> Alunos que não passaram cartão Hoje!</div>
+              <div class="mr-5"><?php echo $num_acessos_corrigidos_hj - $num_acessos_hj?> Alunos que não passaram cartão nas últimas 24 horas!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">Ver Detalhes</span>
