@@ -2156,17 +2156,17 @@ class Acessos_model extends CI_Model {
 				
 			}
 		}
-	public function get_num_acessos_hj(){
+	function get_num_acessos_hj(){
 		$data = date("Y-m-d");
-
+		
 		$sql = "SELECT COUNT(*) AS num from acessos
 				where data = '$data'";
 		$query = $this->db->query($sql);
 		$result = $query->row();
-      	if(isset($result)) return $data;
-        return $data;
+      	if(isset($result)) return $result->num;
+        return 0;
 	}
-	public function get_num_acessos_corrigidos_hj(){
+	function get_num_acessos_corrigidos_hj(){
 		$total = 0;
 		$data = date("Y-m-d",strtotime("today"));
 		$sql = "SELECT COUNT(*) AS num from acessos_alunos_corrigidos
