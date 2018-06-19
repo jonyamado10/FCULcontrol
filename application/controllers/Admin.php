@@ -184,6 +184,14 @@ class Admin extends CI_Controller {
 	    $this->load->view('grafico_acessos6m',$data);
 	     
 	}
+	public function tabela_alertas()
+	{
+		if (!isset($_SERVER['HTTP_REFERER']))
+		{ redirect('Admin');}
+
+	    $this->load->view('tabela_alertas',array());
+	     
+	}
 	public function teste()
 	{
 	

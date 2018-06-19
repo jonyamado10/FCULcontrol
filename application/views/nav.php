@@ -97,9 +97,7 @@
                   <li>
                     <a id ="BotaoAlunosDepartamento" href = "#">Alunos por Departamento</a>
                   </li>
-                  <li>
-                    <a id ="BotaoPessoasEdificio" href="#">Pessoas por Edifício</a>
-                  </li>
+                  
           </ul>
         </li>
 

@@ -111,7 +111,11 @@ $(function(){
         $("#content").load("<?php echo base_url('Admin/grafico_acessos6m') ?>");
     });
 
-
+   $("#BotaoVerTodosAlertas").click(function(){
+        $('.container-fluid').remove();
+        $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Admin/tabela_alertas') ?>");
+    });
 // end  
 });
 </script>

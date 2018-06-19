@@ -1402,5 +1402,37 @@ public function acessos_naoDocentes_corrigidos()
             );
           echo json_encode($output);
           exit();
-     }        
+     }
+     public function alertas()
+     {
+          $this->load->model('Acessos_model');
+          // Datatables Variables
+          $draw = intval($this->input->get("draw"));
+          $start = intval($this->input->get("start"));
+          $length = intval($this->input->get("length"));
+
+          $sensores = $this->Acessos_model->sensores_avariados();
+
+          $data = array();
+
+          foreach($sensores as $r) {
+
+               $data[] = array(
+                    $r->porta,
+                    $r->sentido,
+                    $r->data,
+                    $r->hora
+               );
+          }
+          $total_sensores = sizeof($sensores);
+          $output = array(
+               "draw" => $draw,
+                 "recordsTotal" => $total_sensores,
+                 "recordsFiltered" => $total_sensores,
+                 "data" => $data
+            );
+          echo json_encode($output);
+          exit();
+     }
+        
 }
