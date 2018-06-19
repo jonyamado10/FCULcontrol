@@ -2163,7 +2163,7 @@ class Acessos_model extends CI_Model {
 				where data = '$data'";
 		$query = $this->db->query($sql);
 		$result = $query->row();
-      	if(isset($result)) return $result->num;
+      	if(isset($result)) return $data;
         return $data;
 	}
 	function get_num_acessos_corrigidos_hj(){
