@@ -19,7 +19,10 @@
   font-family: Montserrat-Regular;
   src: url('../fonts/montserrat/Montserrat-Regular.ttf'); 
 }
-
+@font-face {
+  font-family: Material-Design-Iconic-Font;
+  src: url('../fonts/iconic/fonts/Material-Design-Iconic-Font.ttf'); 
+}
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
