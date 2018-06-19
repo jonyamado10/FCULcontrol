@@ -85,13 +85,13 @@
         var hora_inicial = $("input#hora_inicial").val();
         var hora_final = $("input#hora_final").val();
         var num_acessos = $("select#num_acessos").val();
-        var dataString = 'data='+ data + '&hora_inicial=' + hora_inicial + '&hora_final=' + hora_final + '&num_acessos=' + num_acessos;
+        var dataString = 'data='+ data + '&hora_inicial=' + hora_inicial + '&hora_final=' + hora_final + '&num_acessos=' + num_acessos + '&<?php echo $this->security->get_csrf_token_name(); ?>=' + <?php echo $this->security->get_csrf_hash(); ?>;
          var url = "<?php echo base_url('Acessos/acessos_detalhados_validation') ?>"; // the script where you handle the form input.
 
         $.ajax({
                type: "POST",
                url: url,
-                "data":{  data: dataString,'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>' },
+                data: dataString ,
                success: function(data)
                {
                    alert(data); // show response from the php script.
