@@ -2156,7 +2156,7 @@ class Acessos_model extends CI_Model {
 				
 			}
 		}
-	function get_num_acessos_hj(){
+	public function get_num_acessos_hj(){
 		$data = date("Y-m-d");
 
 		$sql = "SELECT COUNT(*) AS num from acessos
@@ -2166,7 +2166,7 @@ class Acessos_model extends CI_Model {
       	if(isset($result)) return $data;
         return $data;
 	}
-	function get_num_acessos_corrigidos_hj(){
+	public function get_num_acessos_corrigidos_hj(){
 		$total = 0;
 		$data = date("Y-m-d",strtotime("today"));
 		$sql = "SELECT COUNT(*) AS num from acessos_alunos_corrigidos
