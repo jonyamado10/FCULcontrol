@@ -2163,7 +2163,7 @@ class Acessos_model extends CI_Model {
 		$ontem = date("Y-m-d",strtotime("yesterday"));
 		$hora = date("G:i");
 		if(sizeof($hora)<=4){
-			$hora =0.$hora;
+			$hora = "0".$hora;
 		}
 		$sql = "SELECT COUNT(*) AS num from acessos
 				where (data = '$ontem' and hora >= '$hora') or (data = '$hoje' and hora <= '$hora') ";
