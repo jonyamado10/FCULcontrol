@@ -2159,7 +2159,7 @@ class Acessos_model extends CI_Model {
 		}
 	function get_num_acessos_hj(){
 		date_default_timezone_set("Europe/Lisbon"); 
-		$data = date("yesterday");
+		$data = date("Y-m-d",strtotime("yesterday"));
 		$hora = date("G:i");
 		$sql = "SELECT COUNT(*) AS num from acessos
 				where data >= '$data' and hora >= $hora";
