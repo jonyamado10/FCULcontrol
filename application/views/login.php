@@ -25,7 +25,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/vendor/select2/select2.min.css") ?>">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/vendor/daterangepicker/daterangepicker.css") ?>>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/vendor/daterangepicker/daterangepicker.css") ?>">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/util.css") ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/main.css") ?>">
