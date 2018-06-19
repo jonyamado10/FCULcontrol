@@ -2125,6 +2125,7 @@ class Acessos_model extends CI_Model {
 			}
 		}
 		public function sensores_avariados(){
+			date_default_timezone_set("Europe/Lisbon"); 
 			$umMesAntes = date("Y-m-d",strtotime("-1 months"));
 			$sql = "SELECT id from sensores
 				WHERE  not EXISTS (SELECT *
@@ -2157,8 +2158,9 @@ class Acessos_model extends CI_Model {
 			}
 		}
 	function get_num_acessos_hj(){
+		date_default_timezone_set("Europe/Lisbon"); 
 		$data = date("Y-m-d");
-		
+
 		$sql = "SELECT COUNT(*) AS num from acessos
 				where data = '$data'";
 		$query = $this->db->query($sql);
@@ -2168,6 +2170,7 @@ class Acessos_model extends CI_Model {
 	}
 	function get_num_acessos_corrigidos_hj(){
 		$total = 0;
+		date_default_timezone_set("Europe/Lisbon"); 
 		$data = date("Y-m-d",strtotime("today"));
 		$sql = "SELECT COUNT(*) AS num from acessos_alunos_corrigidos
 				where data = '$data'";
