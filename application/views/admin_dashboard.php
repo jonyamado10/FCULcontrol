@@ -14,7 +14,7 @@
           <div class="card text-white bg-primary o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fa fa-fw fa-comments"></i>
+                <i class="fa fa-fw fa-map-marker"></i>
               </div>
               <div class="mr-5"><?php echo $num_acessos_hj ?> Acessos nas últimas 24 horas!</div>
             </div>
@@ -31,7 +31,7 @@
           <div class="card text-white bg-success o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fa fa-fw fa-shopping-cart"></i>
+                <i class="fa fa-fw fa-trophy-alt"></i>
               </div>
               <div class="mr-5"><?php echo $num_acessos_corrigidos_hj - $num_acessos_hj?> Acessos Corrigidos nas últimas 24 horas!</div>
             </div>
@@ -47,9 +47,9 @@
           <div class="card text-white bg-warning o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fa fa-fw fa-list"></i>
+                <i class="fa fa-fw fa-exclamation"></i>
               </div>
-              <div class="mr-5"><?php echo $num_sensores ?> Novos Alertas!</div>
+                <div class="mr-5"><?php echo $num_acessos_corrigidos_hj - $num_acessos_hj?> Alunos que não passaram cartão nas últimas 24 horas!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">Ver Detalhes</span>
@@ -63,9 +63,9 @@
           <div class="card text-white bg-danger o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fa fa-fw fa-support"></i>
+                <i class="fa fa-fw fa-exclamation-triangle"></i>
               </div>
-              <div class="mr-5"><?php echo $num_acessos_corrigidos_hj - $num_acessos_hj?> Alunos que não passaram cartão nas últimas 24 horas!</div>
+                <div class="mr-5"><?php echo $num_sensores ?> Novos Alertas!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">Ver Detalhes</span>
