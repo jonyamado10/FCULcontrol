@@ -183,7 +183,7 @@ body.fixed-nav {
   width: auto;
   content: '\f105';
   border: none;
-  font-family: 'FontAwesome';
+  font-family: cursive;
 }
 
 #mainNav .navbar-collapse .navbar-nav > .nav-item.dropdown > .nav-link .indicator {
