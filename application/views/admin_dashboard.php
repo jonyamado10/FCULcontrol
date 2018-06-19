@@ -31,7 +31,7 @@
           <div class="card text-white bg-success o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fa fa-fw fa-trophy-alt"></i>
+                <i class="fa fa-fw fas fa-trophy"></i>
               </div>
               <div class="mr-5"><?php echo $num_acessos_corrigidos_hj - $num_acessos_hj?> Acessos Corrigidos nas últimas 24 horas!</div>
             </div>
