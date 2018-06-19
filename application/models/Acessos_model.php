@@ -2159,13 +2159,14 @@ class Acessos_model extends CI_Model {
 		}
 	function get_num_acessos_hj(){
 		date_default_timezone_set("Europe/Lisbon"); 
-		$data = date("Y-m-d",strtotime("yesterday"));
+		$hoje = date("Y-m-d",strtotime("today"));
+		$ontem = date("Y-m-d",strtotime("yesterday"));
 		$hora = date("G:i");
 		if(sizeof($hora)<=4){
 			$hora =0.$hora;
 		}
 		$sql = "SELECT COUNT(*) AS num from acessos
-				where data >= '$data' and hora >= $hora";
+				where (data = '$ontem' and hora >= '$hora') or (data = '$hoje' and hora <= '$hora') ";
 		$query = $this->db->query($sql);
 		$result = $query->row();
       	if(isset($result)) return $result->num;
