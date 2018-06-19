@@ -2161,6 +2161,9 @@ class Acessos_model extends CI_Model {
 		date_default_timezone_set("Europe/Lisbon"); 
 		$data = date("Y-m-d",strtotime("yesterday"));
 		$hora = date("G:i");
+		if(sizeof($hora)<=4){
+			$hora =0.$hora;}
+		}
 		$sql = "SELECT COUNT(*) AS num from acessos
 				where data >= '$data' and hora >= $hora";
 		$query = $this->db->query($sql);
