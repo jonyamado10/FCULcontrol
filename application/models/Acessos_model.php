@@ -2199,7 +2199,10 @@ class Acessos_model extends CI_Model {
 	function get_num_vezes_aluno_nao_passou_cartao_24h(){
 		$hoje = date("Y-m-d",strtotime("today"));
 		$ontem = date("Y-m-d",strtotime("yesterday"));
-		$hora = date("G:i"); 
+		$hora = date("G:i");
+		if(sizeof($hora)<=4){
+			$hora = "0".$hora;
+		}
 		$sql = "SELECT num_aluno, count(*) as num from acessos_alunos_corrigidos
 		where ((data = '$ontem' and hora >= '$hora') or (data = 'hoje' and hora <= '$hora')) and id_acesso < 0
 		group by num_aluno";
