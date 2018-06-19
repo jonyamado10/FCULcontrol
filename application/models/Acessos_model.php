@@ -2157,7 +2157,7 @@ class Acessos_model extends CI_Model {
 			}
 		}
 	function get_num_acessos_hj(){
-		$data = date("Y-m-d",strtotime("today"));
+		$data = date("Y-m-d");
 		$sql = "SELECT COUNT(*) AS num from acessos
 				where data = '$data'";
 		$query = $this->db->query($sql);
