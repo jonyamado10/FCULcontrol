@@ -15,7 +15,8 @@ class Admin extends CI_Controller {
 			$data['sensores'] = $this->Acessos_model->sensores_avariados();
 			$data1['num_sensores'] = sizeof($data['sensores']);
 			$data1['num_acessos_hj'] = $this->Acessos_model->get_num_acessos_hj();
-			$data1['num_acessos_corrigidos_hj'] = $this->Acessos_model->get_num_acessos_corrigidos_hj();			
+			$data1['num_acessos_corrigidos_hj'] = $this->Acessos_model->get_num_acessos_corrigidos_hj();
+			$data1['num_alunos_nao_passou_cartao'] = sizeof($this->Acessos_model->get_num_vezes_aluno_nao_passou_cartao_24h());			
 			$this->load->view('nav',$data);
 			$this->load->view('admin_dashboard',$data1);
 			$this->load->view('footer');
@@ -31,7 +32,8 @@ class Admin extends CI_Controller {
 		$this->load->model('Acessos_model');
 		$data['num_sensores'] = sizeof($this->Acessos_model->sensores_avariados());
 		$data['num_acessos_hj'] = $this->Acessos_model->get_num_acessos_hj();
-		$data['num_acessos_corrigidos_hj'] = $this->Acessos_model->get_num_acessos_corrigidos_hj();	
+		$data['num_acessos_corrigidos_hj'] = $this->Acessos_model->get_num_acessos_corrigidos_hj();
+		$data['num_alunos_nao_passou_cartao'] = sizeof($this->Acessos_model->get_num_vezes_aluno_nao_passou_cartao_24h());
 		$this->load->view('admin_dashboard',$data);
 	}
 	public function tabela_alunos()

@@ -2196,5 +2196,16 @@ class Acessos_model extends CI_Model {
       	
       	return $total;
 	}
+	function get_num_vezes_aluno_nao_passou_cartao_24h(){
+		$hoje = date("Y-m-d",strtotime("today"));
+		$ontem = date("Y-m-d",strtotime("yesterday"));
+		$hora = date("G:i"); 
+		$sql = "SELECT num_aluno, count(*) as num from acessos_alunos_corrigidos
+		where ((data = '$ontem' and hora >= '$hora') or (data = 'hoje' and hora <= '$hora')) and id_acesso < 0
+		group by num_aluno";
+		$query = $this->db->query($sql);
+		return $query->result();
+	}
+
 }
 ?>
