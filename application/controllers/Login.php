@@ -66,16 +66,16 @@ class Login extends CI_Controller{
 	public function logout(){
 
 		$this->session->sess_destroy();
-		redirect('Main/login');
+		redirect('Main');
 	}
-	public function pw_update()
+/*	public function pw_update()
 	{
 		$this->load->model('Users_model');
 
 		$this->Users_model->password_update();
 			echo "ok";
 
-	}
+	}*/
 }
 
 
