@@ -44,6 +44,7 @@
     <!-- Custom scripts for this page-->
     <script src=<?php echo base_url("assets/js/sb-admin-datatables.min.js") ?>></script>
     <script src=<?php echo base_url("assets/js/sb-admin-charts.min.js") ?>></script>
+    <script src=<?php echo base_url("assets/clockpicker/js/bootstrap-clockpicker.min.js") ?>></script>
 
 <script >
 $(function(){
