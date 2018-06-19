@@ -2159,7 +2159,7 @@ class Acessos_model extends CI_Model {
 	function get_num_acessos_hj(){
 		$data = date("Y-m-d",strtotime("today"));
 		$sql = "SELECT COUNT(*) AS num from acessos
-				where date = '$data'";
+				where data = '$data'";
 		$query = $this->db->query($sql);
 		$result = $query->row();
       	if(isset($result)) return $result->num;
@@ -2169,19 +2169,19 @@ class Acessos_model extends CI_Model {
 		$total = 0;
 		$data = date("Y-m-d",strtotime("today"));
 		$sql = "SELECT COUNT(*) AS num from acessos_alunos_corrigidos
-				where date = '$data'";
+				where data = '$data'";
 		$query = $this->db->query($sql);
 		$result = $query->row();
 		if(isset($result)) $total+=$result->num;
         $data = date("Y-m-d",strtotime("today"));
 		$sql = "SELECT COUNT(*) AS num from acessos_docentes_corrigidos
-				where date = '$data'";
+				where data = '$data'";
 		$query = $this->db->query($sql);
 		$result = $query->row();
 		if(isset($result)) $total+=$result->num;
 		$data = date("Y-m-d",strtotime("today"));
 		$sql = "SELECT COUNT(*) AS num from acessos_nao_docentes_corrigidos
-				where date = '$data'";
+				where data = '$data'";
 		$query = $this->db->query($sql);
 		$result = $query->row();
 		if(isset($result)) $total+=$result->num;
