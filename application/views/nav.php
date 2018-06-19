@@ -114,9 +114,6 @@
               <li>
               <a id = "BotaoGerarAcessosDetalhados" href="#"">Gerar Acessos Detalhados</a>
             </li>
-            <li>
-              <a id = "BotaoEditarPermissoes" href="#"">Editar Permissões</a>
-            </li>
           </ul>
         </li>
         <!--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
