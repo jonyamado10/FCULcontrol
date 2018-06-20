@@ -118,9 +118,7 @@ $(function(){
         $("#content").load("<?php echo base_url('Admin/tabela_alertas') ?>");
     });
 // end  
-
 });
-
 </script>
 
 
