@@ -637,5 +637,87 @@ class Users_model extends CI_model{
 		where dl.designacao = '$designacao'";
 		return $this->db->query($sql);
     }
+    
+    function get_num_total_presencas_disciplina_licenciatura($id_disciplina){
+    	$sql = "SELECT dl.designacao, count(*) AS n_presencas
+				FROM 
+				acessos_alunos_corrigidos as aac
+				  join alunos on alunos.num_aluno = aac.num_aluno
+				  join portas as p on concat(p.edificio, '.',p.piso,'.',p.num_porta) = aac.porta
+				  join salas as sal on sal.id_porta = p.id
+				  join aulas_disciplinas_licenciaturas as adl on sal.id = adl.id_sala
+				  join disciplinas_licenciatura as dl on dl.id = adl.id_disciplina_licenciatura
+				  join alunos_inscritos_licenciatura as ail on ail.id_disciplina = dl.id
+				  where aac.data = adl.data and (aac.hora > adl.hora_inicial and aac.hora < adl.hora_final) and sentido = 'Entrada' and ail.id_aluno = alunos.id and dl.id = $id_disciplina
+				  group by dl.designacao;";
+	  $query = $this->db->query($sql);
+	   if ($query->num_rows()==1) {
+	    return $query;
+	   }
+	   else{return 0;}
+    }
+    function get_num_total_presencas_disciplina_mestrado($id_disciplina){
+    	$sql = "SELECT dl.designacao, count(*) AS n_presencas
+				FROM 
+				acessos_alunos_corrigidos as aac
+				  join alunos on alunos.num_aluno = aac.num_aluno
+				  join portas as p on concat(p.edificio, '.',p.piso,'.',p.num_porta) = aac.porta
+				  join salas as sal on sal.id_porta = p.id
+				  join aulas_disciplinas_mestrados as adl on sal.id = adl.id_sala
+				  join disciplinas_mestrado as dl on dl.id = adl.id_disciplina_mestrado
+				  join alunos_inscritos_mestrado as ail on ail.id_disciplina = dl.id
+				  where aac.data = adl.data and (aac.hora > adl.hora_inicial and aac.hora < adl.hora_final) and sentido = 'Entrada' and ail.id_aluno = alunos.id and dl.id = $id_disciplina
+				  group by dl.designacao;";
+		$query = $this->db->query($sql);
+	   if ($query->num_rows()==1) {
+	    return $query;
+	   }
+	   else{return 0;}
+	 
+    }
+    function get_num_total_presencas_disciplina_posgraduacao($id_disciplina){
+    	$sql = "SELECT dl.designacao, count(*) AS n_presencas
+				FROM 
+				acessos_alunos_corrigidos as aac
+				  join alunos on alunos.num_aluno = aac.num_aluno
+				  join portas as p on concat(p.edificio, '.',p.piso,'.',p.num_porta) = aac.porta
+				  join salas as sal on sal.id_porta = p.id
+				  join aulas_disciplinas_pos_graduacoes as adl on sal.id = adl.id_sala
+				  join disciplinas_pos_graduacoes as dl on dl.id = adl.id_disciplina_pos_graduacao
+				  join alunos_inscritos_pos_graduacoes as ail on ail.id_disciplina = dl.id
+				  where aac.data = adl.data and (aac.hora > adl.hora_inicial and aac.hora < adl.hora_final) and sentido = 'Entrada' and ail.id_aluno = alunos.id and dl.id = $id_disciplina
+				  group by dl.designacao;";
+	 $query = $this->db->query($sql);
+	   if ($query->num_rows()==1) {
+	    return $query;
+	   }
+	   else{return 0;}
+    }
+    function get_percentagem_por_disciplina_user_docente(){
+    	$id =  $this->session->userdata('id');
+    	$this->db->select('id');
+		$this->db->from('docentes');
+		$this->db->where('id_funcionario',$id);
+		$query = $this->db->get();
+		$id_docente = $query->result_array()[0]['id'];
+		$sql = "SELECT id_disciplina_licenciatura as id, dl.designacao,t.designacao as turma from lecciona_disciplinas_licenciatura as ldl
+				join disciplinas_licenciatura as dl on dl.id = ldl.id_disciplina_licenciatura
+				join turmas_licenciatura as t on t.id =dl.id_turma 
+				where id_docente = $id_docente";
+	  $disciplinas = $this->db->query($sql);
+	  $data = array();
+	  foreach ($disciplinas as $disciplina) {
+	  		$data[]= $data[] = array(
+	  				"designacao" => $disciplina->designacao,
+	  				"turma" => $disciplina->turma,
+                    "total_presencas" = >
+                    $this->get_num_total_presencas_disciplina_licenciatura($disciplina->id),
+                    "total_presencas_possiveis" =>$this->get_num_aulas_disciplina_licenciatura($disciplina->id) * $this->get_alunos_inscritos_disciplinas_licenciatura($disciplina->id)
+	  				)
+	  }
+	  return $data;
+
+
+    }
 }
 ?>
