@@ -652,7 +652,7 @@ class Users_model extends CI_model{
 				  group by dl.designacao;";
 	  $query = $this->db->query($sql);
 	   if ($query->num_rows()==1) {
-	    return $query;
+	    return $query->result();
 	   }
 	   else{return 0;}
     }
@@ -670,7 +670,7 @@ class Users_model extends CI_model{
 				  group by dl.designacao;";
 		$query = $this->db->query($sql);
 	   if ($query->num_rows()==1) {
-	    return $query;
+	    return $query->result();
 	   }
 	   else{return 0;}
 	 
@@ -689,7 +689,7 @@ class Users_model extends CI_model{
 				  group by dl.designacao;";
 	 $query = $this->db->query($sql);
 	   if ($query->num_rows()==1) {
-	    return $query;
+	    return $query->result();
 	   }
 	   else{return 0;}
     }
