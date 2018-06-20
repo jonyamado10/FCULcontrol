@@ -20,8 +20,9 @@ class Admin extends CI_Controller {
 			$data1['num_acessos_corrigidos_hj'] = $this->Acessos_model->get_num_acessos_corrigidos_hj();
 			$data1['num_alunos_nao_passou_cartao'] = sizeof($this->Acessos_model->get_num_vezes_aluno_nao_passou_cartao_24h());			
 			$this->load->view('nav',$data);
-			$this->load->view('admin_dashboard',$data1);
 			$this->load->view('footer');
+			$this->load->view('admin_dashboard',$data1);
+
 		}
 		else{
 			redirect('Main/login');
