@@ -947,7 +947,7 @@ public function acessos_naoDocentes_corrigidos()
 
                    );
               }
-
+          usort($data, "cmp");
           $total_disciplinas = sizeof($data) ;
           $output = array(
                "draw" => $draw,
@@ -959,7 +959,13 @@ public function acessos_naoDocentes_corrigidos()
           exit();
      }
  
-
+function cmp($a, $b)
+{
+    if ($a[2] == $b[2]) {
+        return 0;
+    }
+    return ($a[2] < $b[2]) ? -1 : 1;
+}
  public function tabela_aulas_disciplina_licenciatura($id_disciplina)
      {
           $this->load->model('Users_model');
