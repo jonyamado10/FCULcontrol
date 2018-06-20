@@ -91,7 +91,10 @@
                    alert(data); // show response from the php script.
                    $("#content").load("<?php echo base_url('Admin/gerar_acessos_detalhados') ?>");
                    
-               }
+               }, 
+               error: function(XMLHttpRequest, textStatus, errorThrown) {
+                 alert("Base de dados Não autoriza escritas");
+              }
              });
 
         return false; // avoid to execute the actual submit of the form.
