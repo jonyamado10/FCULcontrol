@@ -47,7 +47,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-shopping-cart"></i>
               </div>
-              <div class="mr-5">123 New Orders!</div>
+              <div class="mr-5">%alunos nas aulas!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">View Details</span>
@@ -63,7 +63,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-support"></i>
               </div>
-              <div class="mr-5">13 New Tickets!</div>
+              <div class="mr-5">13 vezes que nao passou o cartão na ultima semana!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">View Details</span>
