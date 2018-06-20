@@ -105,15 +105,13 @@
 
     </div>
   <script type="text/javascript">
-    function loadlink(){
-    $("#container-fluid").load("<?php echo base_url('Admin/dashboard') ?>",function () {
-         $(this).unwrap();
-    });
-}
+function updateDiv() {
 
-loadlink(); // This will run on page load
-setInterval(function(){
-    loadlink() // this will run after every 5 seconds
-}, 5000);
+           $("#container-fluid").load('<?php echo base_url("Admin/Dashboard/").$gameid?>');
+
+            }  
+             $(document).ready(function() {
+setTimeout( updateDiv, 1000);
+             }); 
   </script>
    
