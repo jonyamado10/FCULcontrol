@@ -138,7 +138,7 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item" style=" margin:0 auto;">
           <a class="nav-link" style="color:white; cursor: default;">
-            <i class="fa fa-fw fa-user-secret"></i><?php echo "Olá ".$this->session->userdata('nome')?>
+            <i class="fa fa-fw fa-user-ninja"></i><?php echo "Olá ".$this->session->userdata('nome')?>
           </a>
         </li>
         <li class="nav-item">
