@@ -156,14 +156,14 @@ var myLineChart = new Chart(ctx, {
           display: false
         },
         ticks: {
-          maxTicksLimit: 5
+          maxTicksLimit: 10
         }
       }],
       yAxes: [{
         ticks: {
           min: 0,
           max:  Math.max(...<?php echo json_encode(array_values($top10));?>) +2,
-          maxTicksLimit: 5
+          maxTicksLimit: 10
         },
         gridLines: {
           display: true
