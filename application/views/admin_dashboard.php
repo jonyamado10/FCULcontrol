@@ -154,11 +154,12 @@ var myLineChart = new Chart(ctx, {
   options: {
     scales: {
       xAxes: [{
-        time: {
-          unit: 'Aluno'
-        },
+      ,
         gridLines: {
           display: false
+        },
+        ticks: {
+          maxTicksLimit: 9
         }
       }],
       yAxes: [{
