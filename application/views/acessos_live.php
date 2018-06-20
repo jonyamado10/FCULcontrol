@@ -11,7 +11,7 @@ order by hora asc
 $result = $this->db->query($sql);
 $rows = array();
 $table = array();
-
+print_r($result);
 $table['cols'] = array(
  array(
   'label' => 'Date Time', 
