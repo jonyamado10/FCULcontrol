@@ -1,7 +1,9 @@
 <?php
 //index.php
 
-print_r($acessos24);
+$rows = array();
+$table = array();
+
 $table['cols'] = array(
  array(
   'label' => 'Date Time', 
@@ -16,12 +18,12 @@ $table['cols'] = array(
 foreach ($acessos24 as $row) 
 {
  $sub_array = array();
- $datetime = explode(".", $row->hora);
+ $datetime = explode(".", $row]);
  $sub_array[] =  array(
       "v" => 'Date(' . $datetime[0] . '000)'
      );
  $sub_array[] =  array(
-      "v" => $row->num
+      "v" => $acessos24[$row]
      );
  $rows[] =  array(
      "c" => $sub_array
