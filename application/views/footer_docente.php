@@ -103,6 +103,11 @@ $(function(){
          $('#content').html("<div class='loader'></div> ");
         $("#content").load("<?php echo base_url('Docente/minhasAulas') ?>");
     });
+    $( "#acessos24" ).click(function() {
+        $('.container-fluid').remove();
+         $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Docente/grafico_acessos24') ?>");
+    });
 // end  
 });
 </script>
