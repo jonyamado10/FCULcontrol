@@ -908,8 +908,8 @@ public function acessos_naoDocentes_corrigidos()
           $length = intval($this->input->get("length"));
 
           $aulas_licenciatura = $this->Users_model->get_aulas_licenciatura_docente();
-
-          
+          $aulas_mestrado = $this->Users_model->get_aulas_mestrado_docente();
+          $aulas_pos_graduacoes = $this->Users_model->get_aulas_pos_graduacoes_docente();
 
           $data = array();
 
@@ -924,8 +924,31 @@ public function acessos_naoDocentes_corrigidos()
 
                );
           }
+          foreach($aulas_mestrado->result() as $r) {
 
-          $total_disciplinas = sizeof($aulas_licenciatura);
+                   $data[] = array(
+                        $r->disciplina,
+                        $r->turma,
+                        $r->data,
+                        $r->horario,
+                        $r->sala
+
+                   );
+              }
+
+          foreach($aulas_pos_graduacoes->result() as $r) {
+
+                   $data[] = array(
+                        $r->disciplina,
+                        $r->turma,
+                        $r->data,
+                        $r->horario,
+                        $r->sala
+
+                   );
+              }
+
+          $total_disciplinas = sizeof($data) ;
           $output = array(
                "draw" => $draw,
                  "recordsTotal" => $total_disciplinas,

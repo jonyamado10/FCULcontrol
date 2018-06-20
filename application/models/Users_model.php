@@ -301,11 +301,52 @@ class Users_model extends CI_model{
 			join salas as sal on aul.id_sala = sal.id
 			join portas as p on sal.id_porta = p.id
 			where ldl.id_docente = $id_docente
-			order by data asc, hora_inicial asc";
+			order by data desc, hora_inicial desc";
 
 		return $this->db->query($sql);
 
     }
+     function get_aulas_mestrado_docente() {
+    	$id =  $this->session->userdata('id');
+    	$this->db->select('id');
+		$this->db->from('docentes');
+		$this->db->where('id_funcionario',$id);
+		$query = $this->db->get();
+		$id_docente = $query->result_array()[0]['id'];
+ 	
+		$sql = "SELECT dl.id, dl.designacao as disciplina, tu.designacao as turma, data, concat(hora_inicial , '-',hora_final) as horario, concat(p.edificio, '.',p.piso,'.',p.num_porta) as sala from aulas_disciplinas_mestrados as aul
+			JOIN disciplinas_mestrado as dl on dl.id = aul.id_disciplina_mestrado
+			join turmas_mestrado as tu on dl.id_turma = tu.id
+			join lecciona_disciplinas_mestrado as ldl on ldl.id_disciplina_mestrado = dl.id
+			join salas as sal on aul.id_sala = sal.id
+			join portas as p on sal.id_porta = p.id
+			where ldl.id_docente = $id_docente
+			order by data desc, hora_inicial desc";
+
+		return $this->db->query($sql);
+
+    }
+      function get_aulas_pos_graduacoes_docente() {
+    	$id =  $this->session->userdata('id');
+    	$this->db->select('id');
+		$this->db->from('docentes');
+		$this->db->where('id_funcionario',$id);
+		$query = $this->db->get();
+		$id_docente = $query->result_array()[0]['id'];
+ 	
+		$sql = "SELECT dl.id, dl.designacao as disciplina, tu.designacao as turma, data, concat(hora_inicial , '-',hora_final) as horario, concat(p.edificio, '.',p.piso,'.',p.num_porta) as sala from aulas_disciplinas_pos_graduacoes as aul
+			JOIN disciplinas_pos_graduacoes as dl on dl.id = aul.id_disciplina_pos_graduacao
+			join turmas_pos_graduacoes as tu on dl.id_turma = tu.id
+			join lecciona_disciplinas_pos_graduacao as ldl on ldl.id_disciplina_pos_graduacao = dl.id
+			join salas as sal on aul.id_sala = sal.id
+			join portas as p on sal.id_porta = p.id
+			where ldl.id_docente = 301
+			order by data desc, hora_inicial desc";
+
+		return $this->db->query($sql);
+
+    }
+
     function get_num_alunos_inscritos_disciplina_licenciatura($id_disciplina){
      	$this->db->select(' count(*) as num');
 		$this->db->from('alunos_inscritos_licenciatura');

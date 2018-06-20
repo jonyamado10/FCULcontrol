@@ -9,7 +9,7 @@
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Os minhas Aulas</div>
+          <i class="fa fa-table"></i> As minhas Aulas</div>
         <div class="card-body">
           <div class="table-responsive">
      
@@ -42,7 +42,7 @@
             type : 'GET'
         },
               "language": {
-            "emptyTable": "Não tem disciplinas."
+            "emptyTable": "Não tem aulas."
         }
     });
 
