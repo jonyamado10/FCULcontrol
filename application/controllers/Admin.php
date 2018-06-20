@@ -204,14 +204,7 @@ class Admin extends CI_Controller {
 	    $this->load->view('tabela_alertas',array());
 	     
 	}
-	public function graf_acessos_live()
-	{
-		if (!isset($_SERVER['HTTP_REFERER']))
-		{ redirect('Admin');}
 
-	    $this->load->view('acessos_live',array());
-	     
-	}
 	public function teste()
 	{
 	
