@@ -2017,7 +2017,7 @@ class Acessos_model extends CI_Model {
 				list($d, $h) = explode(' ', $data);
 				$search_s = $h.'%';
 				$sql = "SELECT count (*) as num
-				FROM   acessos_alunos_corrigidos
+				FROM   acessos
 				WHERE  data = '$d' and hora LIKE '$search_s';" ;
 				$query = $this->db->query($sql);
 				$result = $query->row();
@@ -2041,7 +2041,7 @@ class Acessos_model extends CI_Model {
 				list($ano, $mes) = explode('-', $data);
 				$search_s = $data.'%';
 				$sql = "SELECT count (*) as num
-				FROM   acessos_alunos_corrigidos
+				FROM   acessos
 				WHERE  data LIKE '$search_s';" ;
 				$query = $this->db->query($sql);
 				$result = $query->row();
