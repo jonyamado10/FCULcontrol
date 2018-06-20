@@ -952,7 +952,7 @@ public function acessos_naoDocentes_corrigidos()
 
                    );
               }
-usort($data, build_sorter(2));         
+usort($data, $this->build_sorter(2));         
  $total_disciplinas = sizeof($data) ;
           $output = array(
                "draw" => $draw,
