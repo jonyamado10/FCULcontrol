@@ -54,7 +54,12 @@
                    alert(data); // show response from the php script.
                    $("#content").load("<?php echo base_url('Admin/gerar_acessos') ?>");
                    
-               }
+               },
+               error: function(XMLHttpRequest, textStatus, errorThrown) {
+                 alert("Base de dados não autoriza escritas");
+                 $("#content").load("<?php echo base_url('Admin/gerar_acessos') ?>");
+              }
+
              });
 
         return false; // avoid to execute the actual submit of the form.

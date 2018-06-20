@@ -93,7 +93,8 @@
                    
                }, 
                error: function(XMLHttpRequest, textStatus, errorThrown) {
-                 alert("Base de dados Não autoriza escritas");
+                 alert("Base de dados não autoriza escritas");
+                 $("#content").load("<?php echo base_url('Admin/gerar_acessos_detalhados') ?>");
               }
              });
 
