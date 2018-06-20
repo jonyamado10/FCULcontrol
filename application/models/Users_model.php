@@ -653,7 +653,7 @@ class Users_model extends CI_model{
 				  group by dl.designacao;";
 	  $query = $this->db->query($sql);
 	   if ($query->num_rows()==1) {
-	    return $query->result()[0];
+	    return $query->result()[0]->n_presencas;
 	   }
 	   else{return 0;}
     }
@@ -671,7 +671,7 @@ class Users_model extends CI_model{
 				  group by dl.designacao;";
 		$query = $this->db->query($sql);
 	   if ($query->num_rows()==1) {
-	    return $query->result()[0];
+	    return $query->result()[0]->n_presencas;
 	   }
 	   else{return 0;}
 	 
@@ -690,7 +690,7 @@ class Users_model extends CI_model{
 				  group by dl.designacao;";
 	 $query = $this->db->query($sql);
 	   if ($query->num_rows()==1) {
-	    return $query->result()[0];
+	    return $query->result()[0]->n_presencas;
 	   }
 	   else{return 0;}
     }
@@ -712,7 +712,7 @@ class Users_model extends CI_model{
 	  				"designacao" => $disciplina->designacao,
 	  				"turma" => $disciplina->turma,
                     "total_presencas" =>
-                    $this->get_num_total_presencas_disciplina_licenciatura($disciplina->id)->n_presencas,
+                    $this->get_num_total_presencas_disciplina_licenciatura($disciplina->id),
                     "total_presencas_possiveis" =>$this->get_num_aulas_disciplina_licenciatura($disciplina->id) * $this->get_num_alunos_inscritos_disciplina_licenciatura($disciplina->id)
 	  				);
 	  }
@@ -726,7 +726,7 @@ class Users_model extends CI_model{
 	  				"designacao" => $disciplina->designacao,
 	  				"turma" => $disciplina->turma,
                     "total_presencas" =>
-                    $this->get_num_total_presencas_disciplina_mestrado($disciplina->id)->n_presencas,
+                    $this->get_num_total_presencas_disciplina_mestrado($disciplina->id),
                     "total_presencas_possiveis" =>$this->get_num_aulas_disciplina_mestrado($disciplina->id) * $this->get_num_alunos_inscritos_disciplina_mestrado($disciplina->id)
 	  				);
 	  }
@@ -740,7 +740,7 @@ class Users_model extends CI_model{
 	  				"designacao" => $disciplina->designacao,
 	  				"turma" => $disciplina->turma,
                     "total_presencas" =>
-                    $this->get_num_total_presencas_disciplina_posgraduacao($disciplina->id)->n_presencas,
+                    $this->get_num_total_presencas_disciplina_posgraduacao($disciplina->id),
                     "total_presencas_possiveis" =>$this->get_num_aulas_disciplina_pos_graduacao($disciplina->id) * $this->get_num_alunos_inscritos_disciplina_pos_graduacao($disciplina->id)
 	  				);
 	  }
