@@ -1,17 +1,7 @@
 <?php
 //index.php
-$sql = "
-SELECT count(*) as num, hora 
-FROM acessos 
-WHERE data = '2018-06-20'
-group by hora
-order by hora asc
 
-";
-$result = $this->db->query($sql);
-$rows = array();
-$table = array();
-print_r($result);
+print_r($acessos24);
 $table['cols'] = array(
  array(
   'label' => 'Date Time', 
