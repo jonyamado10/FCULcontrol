@@ -4,8 +4,9 @@ $sql = "
 SELECT count(*) as num, hora 
 FROM acessos 
 WHERE data = '2018-06-20'
-order by hora asc
 group by hora
+order by hora asc
+
 ";
 $result = $this->db->query($sql);
 $rows = array();
