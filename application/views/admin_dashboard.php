@@ -104,7 +104,7 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-8 my-auto">
-                  <canvas id="grafico6m" width="100" height="50"></canvas>
+                  <canvas id="grafico6m" width="100" height="100"></canvas>
                 </div>
                 <div class="col-sm-4 text-center my-auto">
                   <div class="h4 mb-0 text-primary">
