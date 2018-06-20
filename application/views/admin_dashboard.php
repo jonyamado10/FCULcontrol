@@ -108,7 +108,7 @@
                 </div>
                 <div class="col-sm-4 text-center my-auto">
                   <div class="h4 mb-0 text-primary">
-                
+                  <?php echo $rebelde; ?>
 
                   </div>
                   <div class="small text-muted">Deste Mês</div>
@@ -156,7 +156,7 @@ var myLineChart = new Chart(ctx, {
           display: false
         },
         ticks: {
-          maxTicksLimit: 9
+          maxTicksLimit: 2
         }
       }],
       yAxes: [{

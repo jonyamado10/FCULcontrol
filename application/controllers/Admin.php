@@ -14,6 +14,7 @@ class Admin extends CI_Controller {
 			$this->load->model('Acessos_model');
 			$sensores = $this->Acessos_model->sensores_avariados();
 			$data['sensores'] = $sensores;
+			$data1['rebelde'] = $this->Acessos_model->get_top1_aluno_mes();
 			$data1['top10'] = $this->Acessos_model->get_top10_alunos();
 			$data1['num_sensores'] = $sensores;
 			$data1['num_acessos_hj'] = $this->Acessos_model->get_num_acessos_hj();
@@ -33,6 +34,7 @@ class Admin extends CI_Controller {
 		if (!isset($_SERVER['HTTP_REFERER']))
 		{ redirect('Admin');}
 		$this->load->model('Acessos_model');
+		$data['rebelde'] = $this->Acessos_model->get_top1_aluno_mes();
 		$data['top10'] = $this->Acessos_model->get_top10_alunos();
 		$data['num_sensores'] = $this->Acessos_model->sensores_avariados();
 		$data['num_acessos_hj'] = $this->Acessos_model->get_num_acessos_hj();
