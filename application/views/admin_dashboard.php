@@ -107,7 +107,7 @@
   <script type="text/javascript">
 function updateDiv() {
 
-           $("#container-fluid").load('<?php echo base_url("Admin/Dashboard/").$gameid?>');
+           $("#container-fluid").load('<?php echo base_url("Admin/Dashboard")?>');
 
             }  
              $(document).ready(function() {
