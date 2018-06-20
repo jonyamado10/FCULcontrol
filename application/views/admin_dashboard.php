@@ -65,7 +65,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-exclamation-triangle"></i>
               </div>
-                <div class="mr-5"><?php print_r($num_sensores) ?> Novos Alertas!</div>
+                <div class="mr-5"><?php echo sizeof($num_sensores) ?> Novos Alertas!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">Ver Detalhes</span>
