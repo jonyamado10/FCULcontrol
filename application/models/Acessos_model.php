@@ -2295,6 +2295,28 @@ class Acessos_model extends CI_Model {
 			}
 			return array_reverse($acessos);
 			    		 
-    	}	
+    	}
+    function get_num_acessos_semana_user_docente(){
+    	$id =  $this->session->userdata('id');
+    	$this->db->select('id');
+		$this->db->from('docentes');
+		$this->db->where('id_funcionario',$id);
+		$query = $this->db->get();
+		$id_docente = $query->result_array()[0]['id'];
+		date_default_timezone_set("Europe/Lisbon"); 
+		$hoje = date("Y-m-d",strtotime("-1 week"));
+		$ontem = date("Y-m-d",strtotime("yesterday"));
+		$hora = date("G:i");
+		if(sizeof($hora)<=4){
+			$hora = "0".$hora;
+		}
+		$sql = "SELECT COUNT(*) AS num from acessos_docentes as ad
+						join acessos as a on a.id = ad.id_acesso
+				where ((data = '$ontem' and hora >= '$hora') or (data = '$hoje' and hora <= '$hora')) and id =$id_docente";
+		$query = $this->db->query($sql);
+		$result = $query->row();
+      	if(isset($result)) return $result->num;
+        return 0;
+	}	
 }
 ?>
