@@ -10,7 +10,7 @@
     <div class="card mb-3">
               
             <div class="card-header">
-              <i class="fa fa-bar-chart"></i> Bar Chart Example</div>
+              <i class="fa fa-bar-chart"></i> Acessos Ultimos 6 Meses</div>
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-8 my-auto">
