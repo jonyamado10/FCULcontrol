@@ -900,9 +900,7 @@ public function acessos_naoDocentes_corrigidos()
           exit();
      }
   function build_sorter($key) {
-      return function ($a, $b) use ($key) {
-          return strnatcmp($a[$key], $b[$key]);
-      };
+       return strcmp($a["fruit"], $b["fruit"]);
   }
  public function tabela_aulas()
      {
@@ -952,7 +950,7 @@ public function acessos_naoDocentes_corrigidos()
 
                    );
               }
-usort($data, $this->build_sorter(2));         
+usort($data, $this->build_sorter());         
  $total_disciplinas = sizeof($data) ;
           $output = array(
                "draw" => $draw,
