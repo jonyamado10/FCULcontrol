@@ -120,7 +120,6 @@ $(function(){
 // end  
 
 });
-    $(document).ready(function(){
     function updateDiv() {
 
     $("acessosLive").load('<?php echo base_url("Admin/grafico_acessos24"); ?>');
@@ -129,7 +128,7 @@ $(function(){
              $(document).ready(function() {
                 var time = setTimeout( updateDiv, 3000);
              }); 
-});
+
 </script>
 
 
