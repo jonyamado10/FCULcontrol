@@ -59,9 +59,9 @@
             </a>
           </div>
         </div>
-<?php print_r($num_sensores); if(empty($num_sensores)){ ?> 
+<?php  if(empty($num_sensores)){ ?> 
         <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-danger o-hidden h-100">
+          <div class="card text-white bg-sucess o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-exclamation-triangle"></i>
@@ -79,7 +79,7 @@
         <?php }
         else{?>
         <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-success o-hidden h-100">
+          <div class="card text-white bg-danger o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-exclamation-triangle"></i>
