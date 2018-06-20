@@ -79,10 +79,6 @@ $(function(){
         $("#content").load("<?php echo base_url('Docente/grafico_acessos24') ?>");
     });
 
-    $("#BotaoRequisitarSala").click(function(){
-        $("#content").load("<?php echo base_url('Docente/RequisitarSala') ?>");
-    });
-
     $("#BotaoTabelaDisciplinas").click(function(){
       $('.container-fluid').remove();
          $('#content').html("<div class='loader'></div> ");
