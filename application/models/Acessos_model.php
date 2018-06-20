@@ -2179,17 +2179,17 @@ class Acessos_model extends CI_Model {
 		$ontem = date("Y-m-d",strtotime("yesterday"));
 		$hora = date("G:i"); 
 		$sql = "SELECT COUNT(*) AS num from acessos_alunos_corrigidos
-				where ((data = '$ontem' and hora >= '$hora') or (data = '$hoje' and hora <= '$hora')) and id_acesso < 0"
+				where ((data = '$ontem' and hora >= '$hora') or (data = '$hoje' and hora <= '$hora')) and id_acesso < 0";
 		$query = $this->db->query($sql);
 		$result = $query->row();
 		if(isset($result)) $total+=$result->num;
 		$sql = "SELECT COUNT(*) AS num from acessos_docentes_corrigidos
-				where ((data = '$ontem' and hora >= '$hora') or (data = '$hoje' and hora <= '$hora')) and id_acesso < 0"
+				where ((data = '$ontem' and hora >= '$hora') or (data = '$hoje' and hora <= '$hora')) and id_acesso < 0";
 		$query = $this->db->query($sql);
 		$result = $query->row();
 		if(isset($result)) $total+=$result->num;
 		$sql = "SELECT COUNT(*) AS num from acessos_nao_docentes_corrigidos
-				where ((data = '$ontem' and hora >= '$hora') or (data = '$hoje' and hora <= '$hora')) and id_acesso < 0"		
+				where ((data = '$ontem' and hora >= '$hora') or (data = '$hoje' and hora <= '$hora')) and id_acesso < 0";		
 		$query = $this->db->query($sql);
 		$result = $query->row();
 		if(isset($result)) $total+=$result->num;
