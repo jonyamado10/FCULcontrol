@@ -150,7 +150,7 @@ var myLineChart = new Chart(ctx, {
     scales: {
       xAxes: [{
         time: {
-          unit: 'month'
+          unit: 'Aluno'
         },
         gridLines: {
           display: false
@@ -162,7 +162,7 @@ var myLineChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max:  Math.max(...<?php echo json_encode(array_values($top10));?>) +100,
+          max:  Math.max(...<?php echo json_encode(array_values($top10));?>) +2,
           maxTicksLimit: 5
         },
         gridLines: {
