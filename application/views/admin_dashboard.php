@@ -68,7 +68,7 @@
               </div>
                 <div class="mr-5">Sem Alertas!</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" id="BotaoVerTodosAlertas" href="#">
               <span class="float-left">Ver Detalhes</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
