@@ -706,7 +706,7 @@ class Users_model extends CI_model{
 				where id_docente = $id_docente";
 	  $disciplinas = $this->db->query($sql);
 	  $data = array();
-	  foreach ($disciplinas as $disciplina) {
+	  foreach ($disciplinas->result(); as $disciplina) {
 	  		$data[]= $data[] = array(
 	  				"designacao" => $disciplina->designacao,
 	  				"turma" => $disciplina->turma,
