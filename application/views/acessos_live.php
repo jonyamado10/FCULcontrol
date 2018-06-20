@@ -23,7 +23,7 @@ $table['cols'] = array(
  )
 );
 
-foreach ($result as $row => $value) 
+foreach ($result as $row) 
 {
  $sub_array = array();
  $datetime = explode(".", $row->hora);
