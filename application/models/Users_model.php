@@ -721,7 +721,6 @@ class Users_model extends CI_model{
 				join turmas_mestrado as t on t.id =dl.id_turma 
 				where id_docente = $id_docente";
 	  $disciplinas_mestrado = $this->db->query($sql);
-	  $data = array();
 	  foreach ($disciplinas_mestrado->result() as $disciplina) {
 	  		$data[]= $data[] = array(
 	  				"designacao" => $disciplina->designacao,
@@ -736,7 +735,6 @@ class Users_model extends CI_model{
 				join turmas_pos_graduacoes t on t.id =dl.id_turma 
 				where id_docente = $id_docente";
 	  $disciplinas_pg = $this->db->query($sql);
-	  $data = array();
 	  foreach ($disciplinas_pg->result() as $disciplina) {
 	  		$data[]= $data[] = array(
 	  				"designacao" => $disciplina->designacao,
