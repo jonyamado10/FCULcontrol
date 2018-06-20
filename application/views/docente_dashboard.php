@@ -70,12 +70,12 @@
           <div class="card text-white bg-warning o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
-                <i class="fa fa-fw fa-support"></i>
+                <i class="fa fa-fw fa-exclamation-triangle"></i>
               </div>
               <div class="mr-5">13 vezes que nao passou o cartão na ultima semana!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
+              <span class="float-left">Ver Acessos</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
               </span>
