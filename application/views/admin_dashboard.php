@@ -103,7 +103,7 @@
               <i class="fa fa-bar-chart"></i> TOP 10 alunos que não passam cartão.</div>
             <div class="card-body">
             
-                  <canvas id="grafico6m" width="100" height="100"></canvas>
+                  <canvas id="grafico6m" width="100" height="60"></canvas>
                 
   
             </div>
@@ -144,7 +144,7 @@ var myLineChart = new Chart(ctx, {
           display: false
         },
         ticks: {
-          maxTicksLimit: 10
+          maxTicksLimit: 1
         }
       }],
       yAxes: [{
