@@ -106,13 +106,11 @@
     </div>
 
   <script type="text/javascript">
-function updateDiv() {
 
-           $("#container-fluid").load('<?php echo base_url("Admin/Dashboard"); ?>');
 
-            }  
-             $(document).ready(function() {
-                var time = setTimeout( updateDiv, 3000);
-             }); 
+           $("acessosLive").load('<?php echo base_url("Admin/graf_acessos_live"); ?>');
+
+            
+        
   </script>
    
