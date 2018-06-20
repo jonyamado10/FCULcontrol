@@ -1,9 +1,3 @@
-  <link href="<?php echo base_url('assets/clockpicker/css/bootstrap-clockpicker.min.css') ?>" rel="stylesheet">
-
-    <script src=<?php echo base_url("assets/clockpicker/js/bootstrap-clockpicker.min.js") ?>></script>
-
-
-
 <div class="container-fluid">
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
