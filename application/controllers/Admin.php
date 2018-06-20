@@ -25,6 +25,7 @@ class Admin extends CI_Controller {
 			redirect('Main/login');
 		}
 	}
+	
 	public function dashboard()
 	{
 		if (!isset($_SERVER['HTTP_REFERER']))
