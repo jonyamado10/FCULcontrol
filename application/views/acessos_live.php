@@ -3,7 +3,10 @@
 <head>
 <script type = "text/javascript" >
 window.onload = function () {
-	var dataPoints = [{y : 10}, {y : 13}, {y : 18}, {y : 20}, {y : 17}];
+	<?php 
+  $js_array = json_encode($acessos24);
+  echo "var dataPoints = ". $js_array . ";\n";
+  ?>
 	var chart = new CanvasJS.Chart("chartContainer", {
 			title : {
 				text : "Dynamic Data"

@@ -98,7 +98,7 @@
       </div>
       <!-- Area Chart Example-->
       <div class="card mb-3 acessosLive" >
-           <?php $this->load->view('acessos_live',array()); ?>
+           <?php $this->load->view('acessos_live',array($acessos24)); ?>
 
       </div>
       
