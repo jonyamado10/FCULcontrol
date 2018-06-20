@@ -18,7 +18,7 @@ $table['cols'] = array(
 foreach ($acessos24 as $row) 
 {
  $sub_array = array();
- $datetime = explode(".", $row]);
+ $datetime = explode(".", $row);
  $sub_array[] =  array(
       "v" => 'Date(' . $datetime[0] . '000)'
      );
