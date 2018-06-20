@@ -108,18 +108,13 @@
                 </div>
                 <div class="col-sm-4 text-center my-auto">
                   <div class="h4 mb-0 text-primary">
-                  <?php
-                      
-                      echo 20. " Acessos";
-                  ?>
+                
 
                   </div>
                   <div class="small text-muted">Nos Ultimos 6 meses</div>
                   <hr>
                   <div class="h4 mb-0 text-success">
-                    <?php
-                      echo 30 ." Acessos";
-                  ?></div>
+                  </div>
                   <div class="small text-muted">Por Mês</div>
                 </div>
               </div>
