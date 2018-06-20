@@ -2197,6 +2197,7 @@ class Acessos_model extends CI_Model {
       	return $total;
 	}
 	function get_num_vezes_aluno_nao_passou_cartao_24h(){
+		date_default_timezone_set("Europe/Lisbon");
 		$hoje = date("Y-m-d",strtotime("today"));
 		$ontem = date("Y-m-d",strtotime("yesterday"));
 		$hora = date("G:i");
@@ -2223,14 +2224,27 @@ class Acessos_model extends CI_Model {
 		return $result;
 	}
 	function get_top1_aluno_mes(){
+		date_default_timezone_set("Europe/Lisbon");
+		$data = date("Y-m-d",strtotime("-1 month"));
 		$sql = "SELECT top 1 concat(a.num_aluno,':',al.nome, ' ',al.apelido)as aluno, count(a.num_aluno) as num from acessos_alunos_corrigidos as a
 		join alunos as al on a.num_aluno = al.num_aluno
-		where id_acesso < 0 and data > '2018-05-20'
+		where id_acesso < 0 and data > '$data'
 		group by a.num_aluno,apelido,al.nome
 		order by num desc";
 		$query = $this->db->query($sql);
 		return $query->result()[0]->aluno;
 
+	}
+	function get_top1_aluno_semana(){
+		date_default_timezone_set("Europe/Lisbon");
+		$data = date("Y-m-d",strtotime("-1 week"));
+		$sql = "SELECT top 1 concat(a.num_aluno,':',al.nome, ' ',al.apelido)as aluno, count(a.num_aluno) as num from acessos_alunos_corrigidos as a
+		join alunos as al on a.num_aluno = al.num_aluno
+		where id_acesso < 0 and data > '$data'
+		group by a.num_aluno,apelido,al.nome
+		order by num desc";
+		$query = $this->db->query($sql);
+		return $query->result()[0]->aluno;
 	}	
 }
 ?>

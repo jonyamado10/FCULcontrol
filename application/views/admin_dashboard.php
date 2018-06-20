@@ -113,11 +113,11 @@
                   echo $ar[0]."<br>".$ar[1]; ?>
 
                   </div>
-                  <div class="small text-muted">Deste Mês</div>
+                  <div class="small text-muted">Pior do Mês</div>
                   <hr>
                   <div class="h4 mb-0 text-success">
                   </div>
-                  <div class="small text-muted">Por Aluno</div>
+                  <div class="small text-muted">Da Semana</div>
                 </div>
               </div>
             </div>
