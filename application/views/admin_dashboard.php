@@ -110,3 +110,16 @@
 
     </div>
    
+<script type="text/javascript">
+     $("#BotaoVerAlunosCorrigidos").click(function(){
+        $('.container-fluid').remove();
+        $('#content').html("<div class='loader'></div> ");
+         $("#content").load("<?php echo base_url('Admin/tabela_acessos_alunos_corrigidos') ?>");
+    });
+   $("#BotaoVerTodosAlertas").click(function(){
+        $('.container-fluid').remove();
+        $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Admin/tabela_alertas') ?>");
+    });
+  
+</script>
