@@ -161,7 +161,7 @@ var myLineChart = new Chart(ctx, {
           display: false
         },
         ticks: {
-          maxTicksLimit: 7
+          maxTicksLimit: 8
         }
       }],
       yAxes: [{
