@@ -18,7 +18,7 @@
               </div>
               <div class="mr-5"><?php echo $num_acessos_hj ?> Acessos nas últimas 24 horas!</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" id="#BotaoAcessosAlunos" href="#">
               <span class="float-left">Ver Detalhes</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -51,7 +51,7 @@
               </div>
                 <div class="mr-5"><?php echo $num_alunos_nao_passou_cartao?> Alunos que não passaram cartão nas últimas 24 horas!</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" id="#BotaoVerAlunosCorrigidos" href="#">
+            <a class="card-footer text-white clearfix small z-1" id="BotaoVerAlunosCorrigidos" href="#">
               <span class="float-left">Ver Detalhes</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -86,7 +86,7 @@
               </div>
                 <div class="mr-5"><?php echo sizeof($num_sensores); ?> Sensores Possivelmente Danificados!</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" id="BotaoVerTodosAlertas" href="#">
               <span class="float-left">Ver Detalhes</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -109,18 +109,3 @@
       <!-- Example DataTables Card-->
 
     </div>
-       <script src=<?php echo base_url("assets/vendor/jquery/jquery.min.js") ?>></script>
-
-<script type="text/javascript">
-     $("#BotaoVerAlunosCorrigidos").click(function(){
-        $('.container-fluid').remove();
-        $('#content').html("<div class='loader'></div> ");
-         $("#content").load("<?php echo base_url('Admin/tabela_acessos_alunos_corrigidos') ?>");
-    });
-   $("#BotaoVerTodosAlertas").click(function(){
-        $('.container-fluid').remove();
-        $('#content').html("<div class='loader'></div> ");
-        $("#content").load("<?php echo base_url('Admin/tabela_alertas') ?>");
-    });
-  
-</script>
