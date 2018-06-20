@@ -899,11 +899,11 @@ public function acessos_naoDocentes_corrigidos()
           echo json_encode($output);
           exit();
      }
-     function cmp($a, $b)
-{
-    return strcmp($a[2], $b[2]);
-
-}
+  function build_sorter($key) {
+      return function ($a, $b) use ($key) {
+          return strnatcmp($a[$key], $b[$key]);
+      };
+  }
  public function tabela_aulas()
      {
           $this->load->model('Users_model');
@@ -952,8 +952,8 @@ public function acessos_naoDocentes_corrigidos()
 
                    );
               }
-          usort($data, "cmp");
-          $total_disciplinas = sizeof($data) ;
+usort($data, build_sorter(2));         
+ $total_disciplinas = sizeof($data) ;
           $output = array(
                "draw" => $draw,
                  "recordsTotal" => $total_disciplinas,
