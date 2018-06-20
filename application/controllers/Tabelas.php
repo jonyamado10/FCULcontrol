@@ -961,10 +961,8 @@ public function acessos_naoDocentes_corrigidos()
  
 function cmp($a, $b)
 {
-    if ($a[2] == $b[2]) {
-        return 0;
-    }
-    return ($a[2] < $b[2]) ? -1 : 1;
+    return strcmp($a[2], $b[2]);
+
 }
  public function tabela_aulas_disciplina_licenciatura($id_disciplina)
      {
