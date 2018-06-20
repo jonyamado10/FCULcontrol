@@ -48,7 +48,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-thumbs-up"></i>
               </div>
-              <div class="mr-5"><?php $percentagem ?> % Média de assiduidade nas suas aulas!</div>
+              <div class="mr-5"><?php echo $percentagem ?> % Média de assiduidade nas suas aulas!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">Ver Detalhes</span>
