@@ -2312,7 +2312,7 @@ class Acessos_model extends CI_Model {
 		}
 		$sql = "SELECT COUNT(*) AS num from acessos_docentes as ad
 						join acessos as a on a.id = ad.id_acesso
-				where ((data = '$ontem' and hora >= '$hora') or (data = '$hoje' and hora <= '$hora')) and id =$id_docente";
+				where ((data = '$ontem' and hora >= '$hora') or (data = '$hoje' and hora <= '$hora')) and id_docente =$id_docente";
 		$query = $this->db->query($sql);
 		$result = $query->row();
       	if(isset($result)) return $result->num;
