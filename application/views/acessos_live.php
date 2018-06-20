@@ -26,7 +26,7 @@ $table['cols'] = array(
 foreach ($result as $row => $value) 
 {
  $sub_array = array();
- $datetime = explode(".", $row->hora]);
+ $datetime = explode(".", $row->hora);
  $sub_array[] =  array(
       "v" => 'Date(' . $datetime[0] . '000)'
      );
