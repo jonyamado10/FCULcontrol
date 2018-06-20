@@ -14,6 +14,7 @@ class Docente extends CI_Controller {
 			$this->load->model("Acessos_model");
 			$data["n_acessos"]=$this->Acessos_model->get_num_acessos_semana_user_docente();
 			$data["percentagem"]=$this->Users_model->get_avg_percentagem_por_disciplina_user_docente();
+			$data["n_aulas"]=$this->Users_model->get_num_aulas_hoje();
 			$this->load->view('nav_docente');
 			$this->load->view('docente_dashboard',$data);
 			$this->load->view('footer_docente');
@@ -30,6 +31,8 @@ class Docente extends CI_Controller {
 		$this->load->model("Acessos_model");
 		$data["n_acessos"]=$this->Acessos_model->get_num_acessos_semana_user_docente();
 		$data["percentagem"]=$this->Users_model->get_avg_percentagem_por_disciplina_user_docente();
+		$data["n_aulas"]=$this->Users_model->get_num_aulas_hoje();
+
 		$this->load->view('docente_dashboard',$data);
 	}
 	public function tabela_meus_acessos()

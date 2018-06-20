@@ -755,5 +755,37 @@ class Users_model extends CI_model{
     	}
     	return round($soma/sizeof($disciplinas),3);
     }
+    function get_num_aulas_hoje(){
+    	$dataHj = date("Y-m-d",strtotime("today"));
+    	$id =  $this->session->userdata('id');
+    	$this->db->select('id');
+		$this->db->from('docentes');
+		$this->db->where('id_funcionario',$id);
+		$query = $this->db->get();
+		$id_docente = $query->result_array()[0]['id'];
+		$soma = 0;
+    	$sql ="SELECT count(*) as num from aulas_disciplinas_licenciaturas as adl
+					join lecciona_disciplinas_licenciatura as ldl on ldl.id_disciplina_licenciatura = adl.id_disciplina_licenciatura
+					where data='$dataHj' and ldl.id_docente=$id_docente;"
+	   $result = $query->row();
+      if(isset($result)) $soma += $result->num;
+      $soma += 0;
+
+      $sql ="SELECT count(*) as num from aulas_disciplinas_mestrados as adl
+					join lecciona_disciplinas_mestrado as ldl on ldl.id_disciplina_mestrado = adl.id_disciplina_mestrado
+					where data='$dataHj' and ldl.id_docente=$id_docente;"
+	   $result = $query->row();
+      if(isset($result)) $soma += $result->num;
+      $soma += 0;
+
+      $sql ="SELECT count(*) as num from aulas_disciplinas_pos_graduacoes as adl
+					join lecciona_disciplinas_pos_graduacao as ldl on ldl.id_disciplina_pos_graduacao= adl.id_disciplina_pos_graduacao
+					where data='$dataHj' and ldl.id_docente=$id_docente;"
+	   $result = $query->row();
+      if(isset($result)) $soma += $result->num;
+      $soma += 0;
+
+      return $soma;
+    }
 }
 ?>

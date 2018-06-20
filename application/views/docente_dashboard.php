@@ -30,7 +30,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-list"></i>
               </div>
-              <div class="mr-5">11 Aulas Hoje!</div>
+              <div class="mr-5"><? echo $n_acessos ?> Aulas Hoje!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#" id ="aulasHoje">
               <span class="float-left">Ver Aulas</span>
