@@ -2221,5 +2221,6 @@ class Acessos_model extends CI_Model {
 			$result[$row->aluno] = $row->num;
 		}
 		return $result;
-}	
+	}	
+}
 ?>
