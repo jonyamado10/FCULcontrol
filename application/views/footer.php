@@ -118,6 +118,9 @@ $(function(){
         $("#content").load("<?php echo base_url('Admin/tabela_alertas') ?>");
     });
 // end  
+    $(document).ready(function(){
+    $("acessosLive").load('<?php echo base_url("Admin/graf_acessos_live"); ?>');
+});
 });
 </script>
 
