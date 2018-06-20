@@ -1,7 +1,7 @@
 <?php
 //index.php
 $sql = "
-SELECT count(*), hora 
+SELECT count(*) as num, hora 
 FROM acessos 
 WHERE data = '2018-06-20'
 order by hora asc
@@ -24,12 +24,12 @@ $table['cols'] = array(
 foreach ($result as $row => $value) 
 {
  $sub_array = array();
- $datetime = explode(".", $row["datetime"]);
+ $datetime = explode(".", $row["hora"]);
  $sub_array[] =  array(
       "v" => 'Date(' . $datetime[0] . '000)'
      );
  $sub_array[] =  array(
-      "v" => $row["sensors_temperature_data"]
+      "v" => $row["num"]
      );
  $rows[] =  array(
      "c" => $sub_array
