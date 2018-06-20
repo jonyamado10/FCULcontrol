@@ -178,10 +178,11 @@ class Acessos_model extends CI_Model {
 
 
 		}
-		$query = $this->db->insert_batch('acessos', $acessos);
-		$last_id = $this->db->insert_id();
+		
+		
 
-		if($query){
+		if($this->db->insert_batch('acessos', $acessos)){
+			$last_id = $this->db->insert_id();
 			$ids_alunos = $this->get_ids_alunos();
 			$ids_docentes = $this->get_ids_docentes();
 			$ids_nao_docentes = $this->get_ids_nao_docentes();
@@ -229,7 +230,6 @@ class Acessos_model extends CI_Model {
 			
 		}
 		else{
-			$this->db->trans_rollback();
 			return false;
 		}
 

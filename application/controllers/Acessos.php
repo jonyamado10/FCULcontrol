@@ -47,7 +47,7 @@ class Acessos extends CI_Controller{
 		   	return false;
 		   }
 
-			}
+		}
 		else{
 
  			echo "Todos os Campos tem que ser preenchidos, Tente novamente!";
