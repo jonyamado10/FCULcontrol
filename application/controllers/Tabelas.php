@@ -981,7 +981,7 @@ function cmp($a, $b)
           $i=1;
           foreach($aulas_disciplina->result() as $r) {
                 if($i<10)
-                { $aula = "0".$i;} else{$aula = $i}
+                { $aula = "0".$i;} else{$aula = $i;}
                $data[] = array(
                     $r->disciplina,
                     $r->turma,
@@ -1024,7 +1024,7 @@ function cmp($a, $b)
           $i=1;
           foreach($aulas_disciplina->result() as $r) {
                 if($i<10)
-                { $aula = "0".$i;} else{$aula = $i}
+                { $aula = "0".$i;} else{$aula = $i;}
                $data[] = array(
                     $r->disciplina,
                     $r->turma,
@@ -1068,7 +1068,7 @@ function cmp($a, $b)
           $i=1;
           foreach($aulas_disciplina->result() as $r) {
               if($i<10)
-                { $aula = "0".$i;} else{$aula = $i}
+                { $aula = "0".$i;} else{$aula = $i;}
                $data[] = array(
                     $r->disciplina,
                     $r->turma,
