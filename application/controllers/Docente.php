@@ -10,8 +10,10 @@ class Docente extends CI_Controller {
 	public function index()
 	{
 		if($this->session->userdata('is_logged_in_docente')){
+			$this->load->model("Users_model");
+			$data["percentagem"]=$this->Users_model->get_avg_percentagem_por_disciplina_user_docente();
 			$this->load->view('nav_docente');
-			$this->load->view('docente_dashboard');
+			$this->load->view('docente_dashboard',$data);
 			$this->load->view('footer_docente');
 		}
 		else{
@@ -22,8 +24,9 @@ class Docente extends CI_Controller {
 	{
 		if (!isset($_SERVER['HTTP_REFERER']))
 		{ redirect('Docente');}
-
-		$this->load->view('docente_dashboard');
+		$this->load->model("Users_model");
+		$data["percentagem"]=$this->Users_model->get_avg_percentagem_por_disciplina_user_docente();
+		$this->load->view('docente_dashboard',$data);
 	}
 	public function tabela_meus_acessos()
 	{

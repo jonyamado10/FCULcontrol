@@ -751,7 +751,6 @@ class Users_model extends CI_model{
     	$disciplinas = $this->get_percentagem_por_disciplina_user_docente();
     	$soma=0;
     	foreach ($disciplinas as $disciplina) {
-    		print_r($disciplina);
     			$soma += round($disciplina["total_presencas"]/$disciplina["total_presencas_possiveis"] * 100,3);
     	}
     	return round($soma/sizeof($disciplinas),3);
