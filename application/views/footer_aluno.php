@@ -74,7 +74,7 @@ $(function(){
     $("#BotaoMeusAcessos24h").click(function(){
       $('.container-fluid').remove();
          $('#content').html("<div class='loader'></div> ");
-        $("#content").load("<?php echo base_url('Aluno/grafico_meus_acessos_24h') ?>");
+        $("#content").load("<?php echo base_url('Aluno/grafico_acessos24') ?>");
     });
 
     $("#BotaoRequisitarSala").click(function(){

@@ -32,5 +32,14 @@ class Aluno extends CI_Controller {
   		$this->load->view('tabela_meus_acessos_aluno');
 
 	}
+	public function grafico_acessos24()
+	{
+		if (!isset($_SERVER['HTTP_REFERER']))
+		{ redirect('Admin');}
+		$this->load->model('Acessos_model');
+		
+	    $data['acessos24'] = $this->Acessos_model->user_aluno_acessos24();
+	    $this->load->view('aluno_grafico_acessos24',$data);     
+	}
 
 }

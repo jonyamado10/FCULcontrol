@@ -20,7 +20,7 @@
   <link href="<?php echo base_url('assets/css/sb-admin.css') ?>" rel="stylesheet">
   <!-- Page level plugin CSS-->
   <link href="<?php echo base_url('assets/vendor/datatables/dataTables.bootstrap4.css') ?>" rel="stylesheet">
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 
 </head>
 
@@ -138,7 +138,7 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item" style=" margin:0 auto;">
           <a class="nav-link" style="color:white; cursor: default;">
-            <i class="fa fa-fw fa-user-tie"></i><?php echo "Olá ".$this->session->userdata('nome')?>
+            <i class="fa fa-fw fas fa-user-tie"></i><?php echo "Olá ".$this->session->userdata('nome')?>
           </a>
         </li>
         <li class="nav-item">

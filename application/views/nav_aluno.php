@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous"><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,7 +20,7 @@
   <link href="<?php echo base_url('assets/css/sb-admin.css') ?>" rel="stylesheet">
   <!-- Page level plugin CSS-->
   <link href="<?php echo base_url('assets/vendor/datatables/dataTables.bootstrap4.css') ?>" rel="stylesheet">
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 
 </head>
 
