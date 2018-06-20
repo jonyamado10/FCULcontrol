@@ -12,8 +12,8 @@ class Admin extends CI_Controller {
 	{
 		if($this->session->userdata('is_logged_in_admin')){
 			$this->load->model('Acessos_model');
-			$data['sensores'] = $this->Acessos_model->sensores_avariados();
-			print_r($data['sensores']);
+			$data1['sensores'] = $this->Acessos_model->sensores_avariados();
+
 			$data1['num_sensores'] = sizeof($data['sensores']);
 			$data1['num_acessos_hj'] = $this->Acessos_model->get_num_acessos_hj();
 			$data1['num_acessos_corrigidos_hj'] = $this->Acessos_model->get_num_acessos_corrigidos_hj();
