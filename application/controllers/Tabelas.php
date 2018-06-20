@@ -980,14 +980,15 @@ function cmp($a, $b)
           $data = array();
           $i=1;
           foreach($aulas_disciplina->result() as $r) {
-
+                if($i<10)
+                { $aula = "0".$i;} else{$aula = $i}
                $data[] = array(
                     $r->disciplina,
                     $r->turma,
                     $r->data,
                     $r->horario,
                     $r->sala,
-                    "Aula ".$i,
+                    "Aula ".$aula,
                     "<a id = 'BotaoVePresencasAL".$r->id_aula. "'href= '#' value=".$r->id_aula.">Ver Presenças</a><script>$('#BotaoVePresencasAL".$r->id_aula."').click(function(){
         $('#content').load("."'".base_url('Docente/presencasAulaLicenciatura/').$r->id_aula."/".$id_disciplina."'".")
     });</script>"
@@ -1022,14 +1023,15 @@ function cmp($a, $b)
           $data = array();
           $i=1;
           foreach($aulas_disciplina->result() as $r) {
-
+                if($i<10)
+                { $aula = "0".$i;} else{$aula = $i}
                $data[] = array(
                     $r->disciplina,
                     $r->turma,
                     $r->data,
                     $r->horario,
                     $r->sala,
-                    "Aula ".$i,
+                    "Aula ".$aula,
                     "<a id = 'BotaoVePresencasAM".$r->id_aula. "'href= '#' value=".$r->id_aula.">Ver Presenças</a><script>$('#BotaoVePresencasAM".$r->id_aula."').click(function(){
         $('#content').load("."'".base_url('Docente/presencasAulaMestrado/').$r->id_aula."/".$id_disciplina."'".")
     });</script>"
@@ -1065,15 +1067,17 @@ function cmp($a, $b)
           $data = array();
           $i=1;
           foreach($aulas_disciplina->result() as $r) {
-
+              if($i<10)
+                { $aula = "0".$i;} else{$aula = $i}
                $data[] = array(
                     $r->disciplina,
                     $r->turma,
                     $r->data,
                     $r->horario,
                     $r->sala,
-                    "Aula ".$i,
+                    "Aula ".$aula,
                     "<a id = 'BotaoVePresencasPg".$r->id_aula. "'href= '#' value=".$r->id_aula.">Ver Presenças</a><script>$('#BotaoVePresencasPg".$r->id_aula."').click(function(){
+              }
         $('#content').load("."'".base_url('Docente/presencasAulaPosGraduacao/').$r->id_aula."/".$id_disciplina."'".")
     });</script>"
 
