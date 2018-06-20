@@ -64,7 +64,7 @@
     $("#BotaoDashboard").click(function(){
         $('.container-fluid').remove();
         $('#content').html("<div class='loader'></div> ");
-        $("#content").load("<?php echo base_url('Docente/dashboard') ?>");
+        $("#content").load("<?php echo base_url('Admin/dashboard') ?>");
     });
 
     $("#BotaoAlunosDepartamento").click(function(){
@@ -86,7 +86,7 @@
         $("#content").load("<?php echo base_url('Admin/tabela_docentes') ?>");
     });   
     $("#BotaoGerarAcessos").click(function(){
-      
+
         $("#content").load("<?php echo base_url('Admin/gerar_acessos') ?>");
     });
     $("#BotaoGerarAcessosDetalhados").click(function(){
