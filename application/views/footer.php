@@ -86,10 +86,13 @@
         $("#content").load("<?php echo base_url('Admin/tabela_docentes') ?>");
     });   
     $("#BotaoGerarAcessos").click(function(){
-
+$('.container-fluid').remove();
+        $('#content').html("<div class='loader'></div> ");
         $("#content").load("<?php echo base_url('Admin/gerar_acessos') ?>");
     });
     $("#BotaoGerarAcessosDetalhados").click(function(){
+      $('.container-fluid').remove();
+        $('#content').html("<div class='loader'></div> ");
         $("#content").load("<?php echo base_url('Admin/gerar_acessos_detalhados') ?>");
     });
     $("#BotaoAcessosAlunos").click(function(){

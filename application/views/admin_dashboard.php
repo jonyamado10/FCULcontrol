@@ -1,5 +1,4 @@
-    <script src=<?php echo base_url("assets/vendor/jquery/jquery.min.js") ?>></script>
-    <script src=<?php echo base_url("assets/vendor/chart.js/Chart.min.js") ?>></script>
+
 
     <div class="container-fluid">
       <!-- Breadcrumbs-->
