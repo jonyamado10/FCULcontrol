@@ -110,7 +110,7 @@
                   <div class="h4 mb-0 text-primary">
                   <?php 
                   $ar = explode(":",$rebelde);
-                  echo $ar[0]."<br>".$ar[0]; ?>
+                  echo $ar[0]."<br>".$ar[1]; ?>
 
                   </div>
                   <div class="small text-muted">Deste Mês</div>
@@ -158,7 +158,7 @@ var myLineChart = new Chart(ctx, {
           display: false
         },
         ticks: {
-          maxTicksLimit: 3
+          maxTicksLimit: 4
         }
       }],
       yAxes: [{
