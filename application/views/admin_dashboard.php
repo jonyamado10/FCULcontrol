@@ -33,7 +33,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fas fa-trophy"></i>
               </div>
-              <div class="mr-5"><?php echo $num_acessos_corrigidos_hj - $num_acessos_hj?> Acessos Corrigidos nas últimas 24 horas!</div>
+              <div class="mr-5"><?php echo $num_acessos_corrigidos_hj;?> Acessos Corrigidos nas últimas 24 horas!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">Ver Detalhes</span>
