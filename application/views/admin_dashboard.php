@@ -161,7 +161,7 @@ var myLineChart = new Chart(ctx, {
           display: false
         },
         ticks: {
-          maxTicksLimit: 6
+          maxTicksLimit: 5
         }
       }],
       yAxes: [{
@@ -183,5 +183,24 @@ var myLineChart = new Chart(ctx, {
 
  
 
-
+   $("#BotaoVerAlunosCorrigidos").click(function(){
+        $('.container-fluid').remove();
+        $('#content').html("<div class='loader'></div> ");
+         $("#content").load("<?php echo base_url('Admin/tabela_acessos_alunos_corrigidos') ?>");
+    });
+   $("#BotaoVerTodosAlertas").click(function(){
+        $('.container-fluid').remove();
+        $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Admin/tabela_alertas') ?>");
+    });
+    $("#BotaoVerAcessosAlunos").click(function(){
+         $('.container-fluid').remove();
+         $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Admin/tabela_acessos_alunos') ?>");
+    });
+      $("#BotaoVerAcessos24").click(function(){
+        $('.container-fluid').remove();
+        $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Admin/grafico_acessos24') ?>");
+    });
 </script>
