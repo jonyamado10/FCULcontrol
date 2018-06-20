@@ -1,47 +1,81 @@
-<!DOCTYPE HTML>
+<?php
+//index.php
+$sql = "
+SELECT count(*), hora 
+FROM acessos 
+WHERE data = '2018-06-20'
+order by hora asc
+";
+$result = $this->db->query($sql);
+$rows = array();
+$table = array();
+
+$table['cols'] = array(
+ array(
+  'label' => 'Date Time', 
+  'type' => 'datetime'
+ ),
+ array(
+  'label' => 'Nº Acessos', 
+  'type' => 'number'
+ )
+);
+
+foreach ($result as $row => $value) 
+{
+ $sub_array = array();
+ $datetime = explode(".", $row["datetime"]);
+ $sub_array[] =  array(
+      "v" => 'Date(' . $datetime[0] . '000)'
+     );
+ $sub_array[] =  array(
+      "v" => $row["sensors_temperature_data"]
+     );
+ $rows[] =  array(
+     "c" => $sub_array
+    );
+}
+$table['rows'] = $rows;
+$jsonTable = json_encode($table);
+
+?>
+
+
 <html>
-<head>
-<script type = "text/javascript" >
-window.onload = function () {
-	<?php 
-  $js_array = json_encode($acessos24);
-  echo "var dataPoints = ". $js_array . ";\n";
-  ?>
-	var chart = new CanvasJS.Chart("chartContainer", {
-			title : {
-				text : "Dynamic Data"
-			},
-			data : [{
-					type : "spline",
-					dataPoints : dataPoints
-				}
-			]
-		});
+ <head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript">
+   google.charts.load('current', {'packages':['corechart']});
+   google.charts.setOnLoadCallback(drawChart);
+   function drawChart()
+   {
+    var data = new google.visualization.DataTable(<?php echo $jsonTable; ?>);
 
-	chart.render();
-	
-	var yVal = 15, updateCount = 0;
-	var updateChart = function () {
+    var options = {
+     title:'Sensors Data',
+     legend:{position:'bottom'},
+     chartArea:{width:'95%', height:'65%'}
+    };
 
-		yVal = yVal + Math.round(5 + Math.random() * (-5 - 5));
-      	updateCount++;
-		
-		dataPoints.push({
-			y : yVal
-		});
-      	
-        chart.options.title.text = "Update " + updateCount;
-		chart.render();    
-		
-	};
+    var chart = new google.visualization.LineChart(document.getElementById('line_chart'));
 
-	// update chart every second
-	setInterval(function(){updateChart()}, 1000);
-}	
-</script>
-<script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js" >  </script>
-</head>
-<body>
-<div id = "chartContainer" style = "height: 300px; width: 100%;" />
-</body>
+    chart.draw(data, options);
+   }
+  </script>
+  <style>
+  .page-wrapper
+  {
+   width:1000px;
+   margin:0 auto;
+  }
+  </style>
+ </head>  
+ <body>
+  <div class="page-wrapper">
+   <br />
+   <h2 align="center">Display Google Line Chart with JSON PHP & Mysql</h2>
+   <div id="line_chart" style="width: 100%; height: 500px"></div>
+  </div>
+ </body>
 </html>
