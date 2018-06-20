@@ -899,6 +899,11 @@ public function acessos_naoDocentes_corrigidos()
           echo json_encode($output);
           exit();
      }
+     function cmp($a, $b)
+{
+    return strcmp($a[2], $b[2]);
+
+}
  public function tabela_aulas()
      {
           $this->load->model('Users_model');
@@ -959,11 +964,7 @@ public function acessos_naoDocentes_corrigidos()
           exit();
      }
  
-function cmp($a, $b)
-{
-    return strcmp($a[2], $b[2]);
 
-}
  public function tabela_aulas_disciplina_licenciatura($id_disciplina)
      {
           $this->load->model('Users_model');
