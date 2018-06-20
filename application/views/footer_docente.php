@@ -106,14 +106,15 @@ $(function(){
 // end  
 });
     $(document).ready(function(){
-function updateDiv() {
+    function updateDiv() {
 
-           $("#container-fluid").load('<?php echo base_url("Admin/Dashboard"); ?>');
+    $("acessosLive").load('<?php echo base_url("Admin/graf_acessos_live"); ?>');
 
             }  
              $(document).ready(function() {
                 var time = setTimeout( updateDiv, 3000);
-             }); });
+             }); 
+});
 </script>
 
 
