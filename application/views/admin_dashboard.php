@@ -116,6 +116,9 @@
                   <div class="small text-muted">Pior do Mês</div>
                   <hr>
                   <div class="h4 mb-0 text-success">
+                    <?php 
+                  $ar = explode(":",$rebeldeWK);
+                  echo $ar[0]."<br>".$ar[1]; ?>
                   </div>
                   <div class="small text-muted">Da Semana</div>
                 </div>
