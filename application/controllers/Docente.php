@@ -169,7 +169,7 @@ class Docente extends CI_Controller {
 	}
 	public function teste(){
 		$this->load->model('Users_model');
-		print_r($this->Users_model->get_percentagem_por_disciplina_user_docente());
+		print_r($this->Users_model->get_avg_percentagem_por_disciplina_user_docente());
 		
 	}
 }
