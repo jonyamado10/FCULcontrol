@@ -113,7 +113,7 @@ function updateDiv() {
 
             }  
              $(document).ready(function() {
-                var time = setTimeout( updateDiv, 1000);
+                var time = setTimeout( updateDiv, 3000);
              }); 
   </script>
    
