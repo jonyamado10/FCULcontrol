@@ -952,7 +952,7 @@ function cmp($a, $b)
 
                    );
               }
-usort($data, $this->"cmp");         
+         
  $total_disciplinas = sizeof($data) ;
           $output = array(
                "draw" => $draw,
