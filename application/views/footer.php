@@ -121,7 +121,7 @@ $(function(){
 
 });
     $(document).ready(function(){
-    $("#acessosLive").load('<?php echo base_url("Admin/graf_acessos_live"); ?>');
+    $(".acessosLive").load('<?php echo base_url("Admin/graf_acessos_live"); ?>');
 });
 </script>
 
