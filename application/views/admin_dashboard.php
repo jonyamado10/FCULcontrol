@@ -104,7 +104,7 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-8 my-auto">
-                  <canvas id="graficotop10" width="100" height="60"></canvas>
+                  <canvas id="graficotop10" width="110" height="60"></canvas>
                 </div>
                 <div class="col-sm-4 text-center my-auto">
                   <div class="h4 mb-0 text-primary">
@@ -161,7 +161,7 @@ var myLineChart = new Chart(ctx, {
           display: false
         },
         ticks: {
-          maxTicksLimit: 8
+          maxTicksLimit: 9
         }
       }],
       yAxes: [{
