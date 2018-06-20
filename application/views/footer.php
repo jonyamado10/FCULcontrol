@@ -46,7 +46,7 @@
     <script src=<?php echo base_url("assets/clockpicker/js/bootstrap-clockpicker.min.js") ?>></script>
 
 <script >
-$(function(){
+
     // don't cache ajax or content won't be fresh
   // $(document)
   //   .ajaxStart(function () {
@@ -122,7 +122,7 @@ $(function(){
     });
 // end 
 
-});
+
 </script>
 
 
