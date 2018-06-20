@@ -2245,6 +2245,30 @@ class Acessos_model extends CI_Model {
 		order by num desc";
 		$query = $this->db->query($sql);
 		return $query->result()[0]->aluno;
-	}	
+	}
+	public function user_docente_acessos24(){
+			$id = $this->session->userdata("id");
+			date_default_timezone_set("Europe/Lisbon");
+			$datas = array(date("Y-m-d H",strtotime("+1 hour")));
+			for ($i=0; $i < 23; $i++) { 
+				$d=strtotime("-".$i." hour");
+				array_push($datas, date("Y-m-d H", $d));
+			}
+			$acessos = array();
+			foreach ($datas as $data ) {
+				list($d, $h) = explode(' ', $data);
+				$search_s = $h.'%';
+				$sql = "SELECT count (*) as num
+				FROM   acessos_docentes_corrigidos
+				WHERE  data = '$d' and hora LIKE '$search_s' and id_docente= $id;" ;
+				$query = $this->db->query($sql);
+				$result = $query->row();
+     			if(isset($result)){ $acessos[$h.':00'] = $result->num;}
+     			 else{$acessos[$h] = 0;  }
+
+			}
+			return array_reverse($acessos);
+			    		 
+    	}	
 }
 ?>

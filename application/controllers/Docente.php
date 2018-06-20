@@ -157,4 +157,14 @@ class Docente extends CI_Controller {
   		$this->load->view('docente_total_alunos_inscritos_disciplina_pos_graduacao',$data);
 
 	}
+	public function grafico_acessos24()
+	{
+		if (!isset($_SERVER['HTTP_REFERER']))
+		{ redirect('Admin');}
+		$this->load->model('Acessos_model');
+		
+	    $data['acessos24'] = $this->Acessos_model->acessos24();
+	    $this->load->view('docente_grafico_acessos24',$data);
+	     
+	}
 }
