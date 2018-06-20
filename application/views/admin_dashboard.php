@@ -59,7 +59,7 @@
             </a>
           </div>
         </div>
-<?php if(empty($num_sensores)){echo 0; ?> 
+<?php print_r($num_sensores); if(empty($num_sensores)){ ?> 
         <div class="col-xl-3 col-sm-6 mb-3">
           <div class="card text-white bg-danger o-hidden h-100">
             <div class="card-body">
