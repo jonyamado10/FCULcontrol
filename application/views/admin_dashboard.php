@@ -106,7 +106,7 @@
     </div>
   <script type="text/javascript">
     function loadlink(){
-    $("#acessosLive").load("<?php echo base_url('Admin/grafico_acessos24') ?>",function () {
+    $("#container-fluid").load("<?php echo base_url('Admin/dashboard') ?>",function () {
          $(this).unwrap();
     });
 }
