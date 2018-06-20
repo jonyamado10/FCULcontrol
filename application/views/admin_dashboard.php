@@ -18,7 +18,7 @@
               </div>
               <div class="mr-5"><?php echo $num_acessos_hj ?> Acessos nas últimas 24 horas!</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" id="#BotaoAcessosAlunos" href="#">
+            <a class="card-footer text-white clearfix small z-1" id="BotaoAcessos24" href="#">
               <span class="float-left">Ver Detalhes</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -35,7 +35,7 @@
               </div>
               <div class="mr-5"><?php echo $num_acessos_corrigidos_hj;?> Acessos Corrigidos nas últimas 24 horas!</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" id="BotaoAcessosAlunos" href="#">
               <span class="float-left">Ver Detalhes</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
