@@ -112,7 +112,7 @@
                   <div class="h4 mb-0 text-primary">
                   <?php 
                   $ar = explode(":",$rebelde);
-                  echo $ar[0]."<br>".$ar[1]; ?>
+                  echo "Nº ".$ar[0]."<br>".$ar[1]; ?>
 
                   </div>
                   <div class="small text-muted">Pior do Mês</div>
@@ -120,7 +120,7 @@
                   <div class="h4 mb-0 text-success">
                     <?php 
                   $ar = explode(":",$rebeldeWK);
-                  echo $ar[0]."<br>".$ar[1]; ?>
+                  echo "Nº ".$ar[0]."<br>".$ar[1]; ?>
                   </div>
                   <div class="small text-muted">Da Semana</div>
                 </div>
