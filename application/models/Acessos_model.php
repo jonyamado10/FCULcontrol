@@ -2133,7 +2133,7 @@ class Acessos_model extends CI_Model {
                 					WHERE  data > '$umMesAntes' and sensores.id=acessos.id_sensor);";
 			$query = $this->db->query($sql);
 			if($query->num_rows() == 0){
-				return false;
+				return array();
 			}
 			else{
 				$data= array();
