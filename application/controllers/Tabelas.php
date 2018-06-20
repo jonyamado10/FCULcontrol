@@ -899,7 +899,7 @@ public function acessos_naoDocentes_corrigidos()
           echo json_encode($output);
           exit();
      }
-  function build_sorter($key) {
+  function cmp() {
        return strcmp($a["fruit"], $b["fruit"]);
   }
  public function tabela_aulas()
@@ -950,7 +950,7 @@ public function acessos_naoDocentes_corrigidos()
 
                    );
               }
-usort($data, $this->build_sorter());         
+usort($data, $this->cmp());         
  $total_disciplinas = sizeof($data) ;
           $output = array(
                "draw" => $draw,
