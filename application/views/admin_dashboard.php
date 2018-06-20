@@ -100,7 +100,7 @@
           <div class="card mb-3">
               
             <div class="card-header">
-              <i class="fa fa-bar-chart"></i> Bar Chart Example</div>
+              <i class="fa fa-bar-chart"></i> TOP 10 alunos que não passam cartão.</div>
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-8 my-auto">
@@ -141,7 +141,7 @@ var myLineChart = new Chart(ctx, {
     labels: javascript_array,
     datasets: [{
       label: "Acessos",
-      backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745', '#f58231 ','#911eb4','#46f0f0','#f032e6','#d2f53c','#fabebe'],
+      backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745', '#f58293 ','#911eb4','#46f0f0','#f032e6','#d2f53c','#fabebe'],
       borderColor: "rgba(2,117,216,1)",
       data:  <?php echo json_encode(array_values($top10));?>,
     }],
@@ -156,7 +156,7 @@ var myLineChart = new Chart(ctx, {
           display: false
         },
         ticks: {
-          maxTicksLimit: 11
+          maxTicksLimit: 10
         }
       }],
       yAxes: [{
