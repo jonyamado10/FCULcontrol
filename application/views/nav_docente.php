@@ -36,7 +36,7 @@
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion" style= "margin-top:100px;">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" id = "BotaoDashboard">
-            <i class="fa fa-fw fa-dashboard"></i>
+            <i class="fa fa-fw fa-tachometer-alt"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
@@ -143,7 +143,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" href="<?php echo base_url('Login/logout') ?>" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+            <i class="fa fa-fw fa-sign-out-alt"></i>Logout</a>
         </li>
       </ul>
     </div>
