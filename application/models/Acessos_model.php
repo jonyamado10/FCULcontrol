@@ -2217,7 +2217,7 @@ class Acessos_model extends CI_Model {
 		order by num desc";
 		$query = $this->db->query($sql);
 		$result = array();
-		foreach ($query->result(); as $row) {
+		foreach ($query->result() as $row) {
 			$result[$row->aluno] = $row->num;
 		}
 		return $result;
