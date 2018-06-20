@@ -120,6 +120,16 @@
         $('#content').html("<div class='loader'></div> ");
         $("#content").load("<?php echo base_url('Admin/tabela_alertas') ?>");
     });
+    $("#BotaoVerAcessosAlunos").click(function(){
+         $('.container-fluid').remove();
+         $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Admin/tabela_acessos_alunos') ?>");
+    });
+      $("#BotaoVerAcessos24").click(function(){
+        $('.container-fluid').remove();
+        $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Admin/grafico_acessos24') ?>");
+    });
 // end 
 
 
