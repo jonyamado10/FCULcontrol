@@ -2209,6 +2209,17 @@ class Acessos_model extends CI_Model {
 		$query = $this->db->query($sql);
 		return $query->result();
 	}
-
-}
+	function get_top10_alunos(){
+		$sql = "SELECT top 10 concat(a.num_aluno,':',al.nome, ' ',al.apelido)as aluno, count(a.num_aluno) as num from acessos_alunos_corrigidos as a
+		join alunos as al on a.num_aluno = al.num_aluno
+		where id_acesso < 0
+		group by a.num_aluno,apelido,al.nome
+		order by num desc";
+		$query = $this->db->query($sql);
+		$result = array();
+		foreach ($query->result(); as $row) {
+			$result[$row->aluno] = $row->num;
+		}
+		return $result;
+}	
 ?>

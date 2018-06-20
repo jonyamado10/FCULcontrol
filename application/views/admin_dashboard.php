@@ -97,15 +97,91 @@
          <?php } ?>
       </div>
       <!-- Area Chart Example-->
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-area-chart"></i> Area Chart Example</div>
-        <div class="card-body">
-          <canvas id="myAreaChart" width="100%" height="30"></canvas>
+          <div class="card mb-3">
+              
+            <div class="card-header">
+              <i class="fa fa-bar-chart"></i> Bar Chart Example</div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-8 my-auto">
+                  <canvas id="grafico6m" width="100" height="50"></canvas>
+                </div>
+                <div class="col-sm-4 text-center my-auto">
+                  <div class="h4 mb-0 text-primary">
+                  <?php
+                      
+                      echo 20. " Acessos";
+                  ?>
+
+                  </div>
+                  <div class="small text-muted">Nos Ultimos 6 meses</div>
+                  <hr>
+                  <div class="h4 mb-0 text-success">
+                    <?php
+                      echo 30 ." Acessos";
+                  ?></div>
+                  <div class="small text-muted">Por Mês</div>
+                </div>
+              </div>
+            </div>
+        <div class="card-footer small text-muted"><?php date_default_timezone_set("Europe/Lisbon");
+echo "Atualizado pela última vez às: " . date("G:i");
+?>
+      
         </div>
-        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-      </div>
+    </div>
       
       <!-- Example DataTables Card-->
 
     </div>
+    <script type="text/javascript">
+    <?php 
+  $js_array = json_encode(array_keys($top10));
+  echo "var javascript_array = ". $js_array . ";\n";
+  ?>
+var ctx = document.getElementById("grafico6m");
+var myLineChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: javascript_array,
+    datasets: [{
+      label: "Acessos",
+      backgroundColor: "rgba(2,117,216,1)",
+      borderColor: "rgba(2,117,216,1)",
+      data:  <?php echo json_encode(array_values($top10));?>,
+    }],
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        time: {
+          unit: 'month'
+        },
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          maxTicksLimit: 6
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          min: 0,
+          max:  Math.max(...<?php echo json_encode(array_values($top10));?>) +100,
+          maxTicksLimit: 5
+        },
+        gridLines: {
+          display: true
+        }
+      }],
+    },
+    legend: {
+      display: false
+    }
+  }
+});
+
+ 
+
+
+</script>
