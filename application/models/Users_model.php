@@ -690,7 +690,7 @@ class Users_model extends CI_model{
 				  group by dl.designacao;";
 	 $query = $this->db->query($sql);
 	   if ($query->num_rows()==1) {
-	    return $query->result();
+	    return $query->result()[0];
 	   }
 	   else{return 0;}
     }
