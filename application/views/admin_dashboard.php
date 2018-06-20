@@ -104,14 +104,14 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-8 my-auto">
-                  <canvas id="grafico6m" width="100" height="60"></canvas>
+                  <canvas id="graficotop10" width="100" height="60"></canvas>
                 </div>
                 <div class="col-sm-4 text-center my-auto">
                   <div class="h4 mb-0 text-primary">
                 
 
                   </div>
-                  <div class="small text-muted">De Sempre</div>
+                  <div class="small text-muted">Deste Mês</div>
                   <hr>
                   <div class="h4 mb-0 text-success">
                   </div>
@@ -134,7 +134,7 @@ echo "Atualizado pela última vez às: " . date("G:i");
   $js_array = json_encode(array_keys($top10));
   echo "var javascript_array = ". $js_array . ";\n";
   ?>
-var ctx = document.getElementById("grafico6m");
+var ctx = document.getElementById("graficotop10");
 var myLineChart = new Chart(ctx, {
   type: 'bar',
   data: {
@@ -156,7 +156,7 @@ var myLineChart = new Chart(ctx, {
           display: false
         },
         ticks: {
-          maxTicksLimit: 20
+          maxTicksLimit: 9
         }
       }],
       yAxes: [{
