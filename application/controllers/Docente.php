@@ -163,7 +163,7 @@ class Docente extends CI_Controller {
 		{ redirect('Admin');}
 		$this->load->model('Acessos_model');
 		
-	    $data['acessos24'] = $this->Acessos_model->acessos24();
+	    $data['acessos24'] = $this->Acessos_model->user_docente_acessos24();
 	    $this->load->view('docente_grafico_acessos24',$data);
 	     
 	}
