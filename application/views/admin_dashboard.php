@@ -154,7 +154,7 @@ var myLineChart = new Chart(ctx, {
   options: {
     scales: {
       xAxes: [{
-      ,
+      
         gridLines: {
           display: false
         },
