@@ -78,7 +78,7 @@ var myLineChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max:  Math.max(...<?php echo json_encode(array_values($acessos6m));?>) +100,
+          max:  Math.max(...<?php echo json_encode(array_values($acessos6m));?>) +Math.max(...<?php echo json_encode(array_values($acessos6m));?>)/10,
           maxTicksLimit: 5
         },
         gridLines: {
