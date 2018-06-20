@@ -121,7 +121,14 @@ $(function(){
 
 });
     $(document).ready(function(){
-    $(".acessosLive").load('<?php echo base_url("Admin/grafico_acessos24"); ?>');
+    function updateDiv() {
+
+    $("acessosLive").load('<?php echo base_url("Admin/grafico_acessos24"); ?>');
+
+            }  
+             $(document).ready(function() {
+                var time = setTimeout( updateDiv, 3000);
+             }); 
 });
 </script>
 
