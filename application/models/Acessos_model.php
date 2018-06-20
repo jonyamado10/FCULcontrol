@@ -2227,7 +2227,7 @@ class Acessos_model extends CI_Model {
 		join alunos as al on a.num_aluno = al.num_aluno
 		where id_acesso < 0 and data > '2018-05-20'
 		group by a.num_aluno,apelido,al.nome
-		order by num desc"
+		order by num desc";
 		$query = $this->db->query($sql);
 		return $query->result()[0]->aluno;
 
