@@ -120,7 +120,9 @@ $(function(){
 // end  
 
 });
-
+    $(document).ready(function(){
+    $(".acessosLive").load('<?php echo base_url("Admin/grafico_acessos24"); ?>');
+});
 </script>
 
 
