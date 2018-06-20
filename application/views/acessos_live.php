@@ -13,7 +13,7 @@ $table['cols'] = array(
  )
 );
 
-foreach ($result as $row) 
+foreach ($acessos24 as $row) 
 {
  $sub_array = array();
  $datetime = explode(".", $row->hora);
