@@ -619,6 +619,7 @@ class Users_model extends CI_model{
 
     }
     function get_num_aulas_disciplina_pos_graduacao($id_disciplina){
+    	$dataHj = date("Y-m-d",strtotime("today"));
      	$this->db->select(' count(*) as num');
 		$this->db->from('aulas_disciplinas_pos_graduacoes');
 		$this->db->where('id_disciplina_pos_graduacao',$id_disciplina);
