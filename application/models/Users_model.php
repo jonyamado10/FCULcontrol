@@ -766,21 +766,21 @@ class Users_model extends CI_model{
 		$soma = 0;
     	$sql ="SELECT count(*) as num from aulas_disciplinas_licenciaturas as adl
 					join lecciona_disciplinas_licenciatura as ldl on ldl.id_disciplina_licenciatura = adl.id_disciplina_licenciatura
-					where data='$dataHj' and ldl.id_docente=$id_docente;"
+					where data='$dataHj' and ldl.id_docente=$id_docente;";
 	   $result = $query->row();
       if(isset($result)) $soma += $result->num;
       $soma += 0;
 
       $sql ="SELECT count(*) as num from aulas_disciplinas_mestrados as adl
 					join lecciona_disciplinas_mestrado as ldl on ldl.id_disciplina_mestrado = adl.id_disciplina_mestrado
-					where data='$dataHj' and ldl.id_docente=$id_docente;"
+					where data='$dataHj' and ldl.id_docente=$id_docente;";
 	   $result = $query->row();
       if(isset($result)) $soma += $result->num;
       $soma += 0;
 
       $sql ="SELECT count(*) as num from aulas_disciplinas_pos_graduacoes as adl
 					join lecciona_disciplinas_pos_graduacao as ldl on ldl.id_disciplina_pos_graduacao= adl.id_disciplina_pos_graduacao
-					where data='$dataHj' and ldl.id_docente=$id_docente;"
+					where data='$dataHj' and ldl.id_docente=$id_docente;";
 	   $result = $query->row();
       if(isset($result)) $soma += $result->num;
       $soma += 0;
