@@ -122,15 +122,19 @@ var myLineChart = new Chart(ctx, {
   options: {
     scales: {
       xAxes: [{
-      
+     
+        
         gridLines: {
           display: false
         },
         ticks: {
-          maxTicksLimit: 6
+          maxTicksLimit: <?php echo sizeof($graf_assiduidades);?>
         }
       }],
       yAxes: [{
+        time: {
+          unit: '%'
+        }
         ticks: {
           min: 0,
           max:  Math.max(...<?php echo json_encode(array_values($graf_assiduidades));?>) +2,
