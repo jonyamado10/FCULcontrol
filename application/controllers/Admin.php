@@ -211,7 +211,7 @@ class Admin extends CI_Controller {
 	{
 	
 $this->load->model('Users_model');
-echo $this->Users_model->get_avg_percentagem_por_disciplina_docentes();
+echo $this->Users_model->get_avg_percentagem_por_disciplina_docentes2();
 	}
 }
 ?>
