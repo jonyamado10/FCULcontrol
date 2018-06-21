@@ -312,7 +312,7 @@ sensores.id
 			$this->db->where('num_aluno',$num_aluno);
 			$query = $this->db->get();
 			$id_aluno = $query->result_array()[0]['id'];
-			$acessos_aluno = array();
+			$acessos_alunos = array();
 			$ids_acessos = range($last_id - ($n_acessos-1), $last_id);
 			shuffle($ids_acessos);
 		
