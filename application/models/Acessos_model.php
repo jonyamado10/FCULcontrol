@@ -2326,9 +2326,9 @@ class Acessos_model extends CI_Model {
 		$query = $this->db->get();
 		$num_funcionario = $query->result_array()[0]['num_funcionario'];
 		date_default_timezone_set("Europe/Lisbon"); 
-		$hoje = date("Y-m-d",strtotime("-1 week"));
+		$umaSemanaAtras = date("Y-m-d",strtotime("-1 week"));
   		$sql = "SELECT count(*) as num from acessos_docentes_corrigidos 
-					where data>='$dataHj' and num_funcionario=$num_funcionario and id_acesso < 0;";
+					where data>='$umaSemanaAtras' and num_funcionario=$num_funcionario and id_acesso < 0;";
 		$query = $this->db->query($sql);
 		$result = $query->row();
       	if(isset($result)) return $result->num;
