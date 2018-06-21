@@ -1076,7 +1076,7 @@ group by id_docente,nome,apelido,d.id_funcionario;";
 
           foreach ($data as $row) {
             
-             $data1["designacao"] = round($row["total_presencas"]/$row["total_presencas_possiveis"] * 100,3);
+             $data1[$row["designacao"]] = round($row["total_presencas"]/$row["total_presencas_possiveis"] * 100,3);
                    
                     
          }
