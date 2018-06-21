@@ -189,8 +189,11 @@ class Docente extends CI_Controller {
 	     
 	}
 	public function teste(){
-		$this->load->model('Users_model');
-		print_r($this->Users_model->get_avg_percentagem_por_disciplina_user_docente());
+		$hora = date("G:i");
+		if(sizeof($hora)<=4){
+			$hora = "0".$hora;
+		}
+		echo $hora;
 		
 	}
 }
