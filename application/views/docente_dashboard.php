@@ -132,9 +132,7 @@ var myLineChart = new Chart(ctx, {
         }
       }],
       yAxes: [{
-        time: {
-          unit: '%'
-        }
+       
         ticks: {
           min: 0,
           max:  Math.max(...<?php echo json_encode(array_values($graf_assiduidades));?>) +2,
