@@ -7,7 +7,7 @@
           <a href="#">Dashboard</a>
         </li>
         <li class="breadcrumb-item active">My Dashboard</li>
-		<li class="breadcrumb-item">Servidor da BD:<?php echo $_SERVER["location"]; echo "  |   "; echo $this->db->hostname; ?></li> 
+		<li class="breadcrumb-item">Servidor da BD: <?php echo $_SERVER["location"]; echo "  |   "; echo $this->db->hostname; ?></li> 
       </ol>
       <!-- Icon Cards-->
       <div class="row">
@@ -17,7 +17,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-map-marker"></i>
               </div>
-              <div class="mr-5"><?php echo $num_acessos_hj ?> Acessos nas últimas 24 horas!</div>
+              <div class="mr-5"><?php echo $num_acessos_hj ?> acessos nas últimas 24 horas!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" id="BotaoVerAcessos24" href="#">
               <span class="float-left">Ver Detalhes</span>
@@ -34,7 +34,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fas fa-trophy"></i>
               </div>
-              <div class="mr-5"><?php echo $num_acessos_corrigidos_hj;?> Acessos Corrigidos nas últimas 24 horas!</div>
+              <div class="mr-5"><?php echo $num_acessos_corrigidos_hj;?> acessos corrigidos nas últimas 24 horas!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" id="BotaoVerAcessosAlunos" href="#">
               <span class="float-left">Ver Detalhes</span>
@@ -50,7 +50,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-exclamation"></i>
               </div>
-                <div class="mr-5"><?php echo $num_alunos_nao_passou_cartao?> Alunos que não passaram cartão nas últimas 24 horas!</div>
+                <div class="mr-5"><?php echo $num_alunos_nao_passou_cartao?> alunos não passaram o cartão nas últimas 24 horas!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" id="BotaoVerAlunosCorrigidos" href="#">
               <span class="float-left">Ver Detalhes</span>
@@ -101,7 +101,7 @@
           <div class="card mb-3">
               
             <div class="card-header">
-              <i class="fa fa-bar-chart"></i> TOP 10 alunos que não passam cartão.</div>
+              <i class="fa fa-bar-chart"></i> Top 10 alunos que não passam cartão</div>
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-8 my-auto">
@@ -121,7 +121,7 @@
                   $ar = explode(":",$rebeldeWK);
                   echo "Nº ".$ar[0]."<br>".$ar[1]; ?>
                   </div>
-                  <div class="small text-muted">Da Semana</div>
+                  <div class="small text-muted">Pior da Semana</div>
                 </div>
               </div>
             </div>
