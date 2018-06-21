@@ -44,7 +44,7 @@
             type : 'GET'
         },
               "language": {
-            "emptyTable": "Não tem alunos Inscritos."
+            "emptyTable": "Não tem alunos inscritos."
         }
     });
 

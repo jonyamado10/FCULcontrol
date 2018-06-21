@@ -10,7 +10,7 @@
     <div class="card mb-3">
               
             <div class="card-header">
-              <i class="fa fa-bar-chart"></i> Acessos Ultimos 6 Meses</div>
+              <i class="fa fa-bar-chart"></i> Acessos últimos 6 Meses</div>
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-8 my-auto">
@@ -25,7 +25,7 @@
                   ?>
 
                   </div>
-                  <div class="small text-muted">Nos Ultimos 6 meses</div>
+                  <div class="small text-muted">Nos últimos 6 meses</div>
                   <hr>
                   <div class="h4 mb-0 text-success">
                     <?php
@@ -33,7 +33,7 @@
                       $average = array_sum($a)/6;
                       echo round($average)." Acessos";
                   ?></div>
-                  <div class="small text-muted">Por Mês</div>
+                  <div class="small text-muted">Por mês</div>
                 </div>
               </div>
             </div>

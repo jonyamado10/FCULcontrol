@@ -9,7 +9,7 @@
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Minhas Aulas
+          <i class="fa fa-table"></i> As minhas aulas
           </div>
 
         <div class="card-body">
@@ -18,13 +18,13 @@
             <table class="table table-bordered" id="tabela" width="100%" cellspacing="0">
              <thead>
            <tr>
-        <th>Nº Funcionário</th><th>Nome</th><th>Data</th><th>Hora</th><th>Porta</th><th>Sentido</th><th>Passou Cartão?</th></tr>
+        <th>Nº</th><th>Nome</th><th>Data</th><th>Hora</th><th>Porta</th><th>Sentido</th><th>Passou Cartão?</th></tr>
              </thead>
              <tbody>
              </tbody>
               <tfoot>
            <tr>
-        <th>Nº Funcionário</th><th>Nome</th><th>Data</th><th>Hora</th><th>Porta</th><th>Sentido</th><th>Passou Cartão?</th></tr>
+        <th>Nº</th><th>Nome</th><th>Data</th><th>Hora</th><th>Porta</th><th>Sentido</th><th>Passou Cartão?</th></tr>
                       </tfoot>
              </table>
 

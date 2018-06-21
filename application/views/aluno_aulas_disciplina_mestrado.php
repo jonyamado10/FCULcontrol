@@ -9,12 +9,12 @@
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> As minhas Aulas
+          <i class="fa fa-table"></i> As minhas aulas
         <a id = "retrocederBtn" href="#" >Voltar a Disciplinas</a></div>
         <div class="card-body">
           <div class="table-responsive">
      
-    <table class="table table-bordered" id="tabela" width="100%" cellspacing="0">
+    <table class="table table-bordered" id="tabela" cellspacing="0">
      <thead>
    <tr>
     <th>Disciplina</th><th>Turma</th><th>Data</th><th>Horário</th><th>Sala</th><th>Aula Nº</th><th>Presente?</th></tr>
