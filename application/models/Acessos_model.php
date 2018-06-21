@@ -2413,7 +2413,7 @@ class Acessos_model extends CI_Model {
 			return array_reverse($acessos);
 			    		 
     	}
-    function get_num_acessos_semana_user_docente(){
+    function get_num_acessos_24_user_docente(){
     	$id =  $this->session->userdata('id');
     	$this->db->select('id');
 		$this->db->from('docentes');

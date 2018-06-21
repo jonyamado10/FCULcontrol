@@ -15,7 +15,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-map-marker"></i>
               </div>
-              <div class="mr-5"><? echo $n_acessos ?> acesso(s) esta semana!</div>
+              <div class="mr-5"><? echo $n_acessos ?> acesso(s) nas ultimas 24 horas!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" id="acessosSemana" href="#" >
               <span class="float-left">Ver Acessos</span>
