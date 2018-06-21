@@ -318,7 +318,7 @@ sensores.id
 		
 			foreach ($ids_acessos as $id_acesso) {
 				
-					$rand_aluno = array_rand($ids_alunos);
+					
 					$acesso_aluno = array('id_acesso' => $id_acesso ,
 											'id_aluno' => $id_aluno);
 					array_push($acessos_alunos, $acesso_aluno);
