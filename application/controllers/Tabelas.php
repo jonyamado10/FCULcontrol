@@ -1484,7 +1484,7 @@ function cmp($a, $b)
                     $row["turma"],
                     $row["total_presencas"],
                     $row["total_presencas_possiveis"],
-                    round($row["total_presencas"]/$row["total_presencas_possiveis"] * 100,3)
+                    round($row["total_presencas"]/$row["total_presencas_possiveis"] * 100,3)."%"
                     );
          }
           $total_disciplinas = sizeof($data1);
