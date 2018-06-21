@@ -31,7 +31,7 @@ class Acessos_model extends CI_Model {
 
     	$this->db->select('id');
 		$this->db->from('sensores');
-		$query = $this->db->query($sql); 
+		$query = $this->db->get(); 
         return $query->result_array();
     }
    
