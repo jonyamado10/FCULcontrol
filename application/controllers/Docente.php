@@ -181,7 +181,7 @@ class Docente extends CI_Controller {
 	    $this->load->view('docente_grafico_acessos24',$data);
 	     
 	}
-	public function grafico_acessos24()
+	public function tabela_assiduidades_medias()
 	{
 		if (!isset($_SERVER['HTTP_REFERER']))
 		{ redirect('Admin');}
