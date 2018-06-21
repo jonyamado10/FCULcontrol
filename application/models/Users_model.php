@@ -674,7 +674,7 @@ class Users_model extends CI_model{
 	   }
 	   else{return 0;}
     }
-    function get_percentagem_por_disciplina_user_docente($id){
+    function get_percentagem_por_disciplina_user_docente(){
     	$this->db->select('id');
 		$this->db->from('docentes');
 		$this->db->where('id_funcionario',$id);
@@ -727,7 +727,7 @@ class Users_model extends CI_model{
 
     }
     function get_avg_percentagem_por_disciplina_user_docente(){
-    	$disciplinas = $this->get_percentagem_por_disciplina_user_docente($id=$this->session->userdata('id'));
+    	$disciplinas = $this->get_percentagem_por_disciplina_user_docente();
     	$soma=0;
     	foreach ($disciplinas as $disciplina) {
     			$soma += round($disciplina["total_presencas"]/$disciplina["total_presencas_possiveis"] * 100,3);
@@ -753,7 +753,7 @@ class Users_model extends CI_model{
      	foreach ($docentes as $docente) {
      		$nome =$this->get_nome_funcionario($docente->id_funcionario);
      		$nomeCom = $nome->nome." ".$nome->apelido;
-     		$disciplinas = $this->get_percentagem_por_disciplina_user_docente($docente->id);
+     		$disciplinas = $this->get_percentagem_por_disciplina_user_docente2($docente->id);
     		$soma=0;
     		foreach ($disciplinas as $disciplina) {
     			$soma += round($disciplina["total_presencas"]/$disciplina["total_presencas_possiveis"] * 100,3);
