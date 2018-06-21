@@ -65,7 +65,7 @@
           </div>
         </div>
         <div class="col-xl-3 col-sm-6 mb-3">
-          <?php if($n_nao_passou_cartao <5){ ?>
+          <?php if($n_nao_passou_cartao < 5){ ?>
           <div class="card text-white bg-sucess o-hidden h-100">
           <?php } else { ?>
 
