@@ -1479,7 +1479,6 @@ function cmp($a, $b)
           $data1 = array();
 
           foreach ($data as $row) {
-            print_r($row);
             $data1[] = array(
                     $row["designacao"],
                     $row["turma"],
