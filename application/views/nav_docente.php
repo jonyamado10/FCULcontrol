@@ -70,7 +70,7 @@
               <a id = "BotaoTabelaAulas" href="#">A Minha Agenda</a>
             </li>
             <li>
-              <a id = "BotaoTabelaAssiduidades" href="#"> Tabela de assiduidades médias</a>
+              <a id = "BotaoTabelaAssiduidades" href="#"> Tabela de Assiduidades Médias</a>
             </li>
           </ul>
         </li>
