@@ -865,5 +865,152 @@ class Users_model extends CI_model{
       	if(isset($result)) return $result->num;
         return 0;
     }
+        function get_num_aulas_hoje_aluno(){
+    	$dataHj = date("Y-m-d",strtotime("today"));
+    	$id =  $this->session->userdata('id');
+		$soma = 0;
+    	$sql ="SELECT count(*) as num from aulas_disciplinas_licenciaturas as adl
+					join alunos_inscritos_licenciatura as ldl on ldl.id_disciplina = adl.id_disciplina_licenciatura
+					where data='$dataHj' and ldl.id_aluno=$id;";
+	  $query = $this->db->query($sql);
+	  $result = $query->row();
+      if(isset($result)) $soma += $result->num;
+      $soma += 0;
+
+      $sql ="SELECT count(*) as num from aulas_disciplinas_mestrados as adl
+					join alunos_inscritos_mestrado as ldl on ldl.id_disciplina = adl.id_disciplina_mestrado
+					where data='$dataHj' and ldl.id_aluno=$id;";
+	   $result = $query->row();
+      if(isset($result)) $soma += $result->num;
+      $soma += 0;
+      $query = $this->db->query($sql);
+      $sql ="SELECT count(*) as num from aulas_disciplinas_pos_graduacoes as adl
+					join alunos_inscritos_pos_graduacoes as ldl on ldl.id_disciplina = adl.id_disciplina_pos_graduacao
+					where data='$dataHj' and ldl.id_aluno=$id;";
+		$query = $this->db->query($sql);
+	   $result = $query->row();
+      if(isset($result)) $soma += $result->num;
+      $soma += 0;
+
+      return $soma;
+    }
+     function get_percentagem_por_disciplina_user_aluno(){
+    	$id =  $this->session->userdata('id');
+		$sql = "SELECT id_disciplina as id, dl.designacao,t.designacao as turma from alunos_inscritos_licenciatura as ldl
+				join disciplinas_licenciatura as dl on dl.id = ldl.id_disciplina
+				join turmas_licenciatura as t on t.id =dl.id_turma 
+				where id_aluno = $id";
+	  $disciplinas_licenciatura = $this->db->query($sql);
+	  $data = array();
+	  foreach ($disciplinas_licenciatura->result() as $disciplina) {
+	  		$data[] = array(
+	  				"designacao" => $disciplina->designacao,
+	  				"turma" => $disciplina->turma,
+                    "total_presencas" =>
+                    $this->get_num_total_presenca_aluno_disciplina_licenciatura($disciplina->id),
+                    "num_aulas_disciplina" =>$this->get_num_aulas_disciplina_licenciatura($disciplina->id)
+	  				);
+	  }
+	  $sql = "SELECT id_disciplina as id, dl.designacao,t.designacao as turma from alunos_inscritos_mestrado as ldl
+				join disciplinas_mestrado as dl on dl.id = ldl.id_disciplina
+				join turmas_mestrado as t on t.id =dl.id_turma 
+				where id_aluno = $id;";
+	  $disciplinas_mestrado = $this->db->query($sql);
+	  foreach ($disciplinas_mestrado->result() as $disciplina) {
+	  		$data[] = array(
+	  				"designacao" => $disciplina->designacao,
+	  				"turma" => $disciplina->turma,
+                    "total_presencas" =>
+                    $this->get_num_total_presencas_aluno_disciplina_mestrado($disciplina->id),
+                    "num_aulas_disciplina" =>$this->get_num_aulas_disciplina_mestrado($disciplina->id)
+	  }
+	   $sql = "SELECT id_disciplina as id, dl.designacao,t.designacao as turma from alunos_inscritos_pos_graduacoes as ldl
+				join disciplinas_pos_graduacoes as dl on dl.id = ldl.id_disciplina
+				join turmas_pos_graduacoes as t on t.id =dl.id_turma 
+				where id_aluno = $id;";
+	  $disciplinas_pg = $this->db->query($sql);
+	  foreach ($disciplinas_pg->result() as $disciplina) {
+	  		$data[] = array(
+	  				"designacao" => $disciplina->designacao,
+	  				"turma" => $disciplina->turma,
+                    "total_presencas" =>
+                    $this->get_num_total_presencas_aluno_disciplina_posgraduacao($disciplina->id),
+                    "num_aulas_disciplina" =>$this->get_num_aulas_disciplina_pos_graduacao($disciplina->id)
+	  				);
+	  }
+	  return $data;
+
+    }
+
+    function get_avg_percentagem_por_disciplina_user_aluno(){
+    	$disciplinas = $this->get_percentagem_por_disciplina_user_aluno();
+    	$soma=0;
+    	foreach ($disciplinas as $disciplina) {
+    			$soma += round($disciplina["total_presencas"]/$disciplina["num_aulas_disciplina"] * 100,3);
+    	}
+    	return round($soma/sizeof($disciplinas),3);
+    }
+    function get_num_total_presencas_aluno_disciplina_licenciatura($id_disciplina){
+    	$id =  $this->session->userdata('id');
+
+    	$sql = "SELECT dl.designacao, count(*) AS n_presencas
+				FROM 
+				acessos_alunos_corrigidos as aac
+				  join alunos on alunos.num_aluno = aac.num_aluno
+				  join portas as p on concat(p.edificio, '.',p.piso,'.',p.num_porta) = aac.porta
+				  join salas as sal on sal.id_porta = p.id
+				  join aulas_disciplinas_licenciaturas as adl on sal.id = adl.id_sala
+				  join disciplinas_licenciatura as dl on dl.id = adl.id_disciplina_licenciatura
+				  join alunos_inscritos_licenciatura as ail on ail.id_disciplina = dl.id
+				  where aac.data = adl.data and (aac.hora > adl.hora_inicial and aac.hora < adl.hora_final) and sentido = 'Entrada' and aac.id_acesso > 0 and ail.id_aluno = alunos.id and dl.id = $id_disciplina and alunos.id=$id
+				  group by dl.designacao;";
+	  $query = $this->db->query($sql);
+	   if ($query->num_rows()==1) {
+	    return $query->result()[0]->n_presencas;
+	   }
+	   else{return 0;}
+    }
+    function get_num_total_presencas__aluno_disciplina_mestrado($id_disciplina){
+    	$id =  $this->session->userdata('id');
+
+    	$sql = "SELECT dl.designacao, count(*) AS n_presencas
+				FROM 
+				acessos_alunos_corrigidos as aac
+				  join alunos on alunos.num_aluno = aac.num_aluno
+				  join portas as p on concat(p.edificio, '.',p.piso,'.',p.num_porta) = aac.porta
+				  join salas as sal on sal.id_porta = p.id
+				  join aulas_disciplinas_mestrados as adl on sal.id = adl.id_sala
+				  join disciplinas_mestrado as dl on dl.id = adl.id_disciplina_mestrado
+				  join alunos_inscritos_mestrado as ail on ail.id_disciplina = dl.id
+				  where aac.data = adl.data and (aac.hora > adl.hora_inicial and aac.hora < adl.hora_final) and sentido = 'Entrada' and aac.id_acesso > 0 and ail.id_aluno = alunos.id and dl.id = $id_disciplina and alunos.id=$id
+				  group by dl.designacao;";
+		$query = $this->db->query($sql);
+	   if ($query->num_rows()==1) {
+	    return $query->result()[0]->n_presencas;
+	   }
+	   else{return 0;}
+	 
+    }
+    function get_num_total_presencas_aluno_disciplina_posgraduacao($id_disciplina){
+    	$id =  $this->session->userdata('id');
+
+    	$sql = "SELECT dl.designacao, count(*) AS n_presencas
+				FROM 
+				acessos_alunos_corrigidos as aac
+				  join alunos on alunos.num_aluno = aac.num_aluno
+				  join portas as p on concat(p.edificio, '.',p.piso,'.',p.num_porta) = aac.porta
+				  join salas as sal on sal.id_porta = p.id
+				  join aulas_disciplinas_pos_graduacoes as adl on sal.id = adl.id_sala
+				  join disciplinas_pos_graduacoes as dl on dl.id = adl.id_disciplina_pos_graduacao
+				  join alunos_inscritos_pos_graduacoes as ail on ail.id_disciplina = dl.id
+				  where aac.data = adl.data and (aac.hora > adl.hora_inicial and aac.hora < adl.hora_final) and sentido = 'Entrada' and aac.id_acesso > 0 and ail.id_aluno = alunos.id and dl.id = $id_disciplina and alunos.id=$id
+				  group by dl.designacao;";
+	 $query = $this->db->query($sql);
+	   if ($query->num_rows()==1) {
+	    return $query->result()[0]->n_presencas;
+	   }
+	   else{return 0;}
+    }
+
 }
 ?>

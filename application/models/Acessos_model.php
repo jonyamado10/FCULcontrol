@@ -2339,5 +2339,38 @@ class Acessos_model extends CI_Model {
       	if(isset($result)) return $result->num;
         return 0;
   }	
+      function get_num_acessos_semana_user_aluno(){
+    	$id =  $this->session->userdata('id');
+		date_default_timezone_set("Europe/Lisbon"); 
+		$hoje = date("Y-m-d",strtotime("today"));
+		$ontem = date("Y-m-d",strtotime("yesterday"));
+		$hora = date("G:i");
+		if(sizeof($hora)<=4){
+			$hora = "0".$hora;
+		}
+		$sql = "SELECT COUNT(*) AS num from acessos_alunos as ad
+						join acessos as a on a.id = ad.id_acesso
+				where ((data = '$ontem' and hora >= '$hora') or (data = '$hoje' and hora <= '$hora')) and id_docente =$id";
+		$query = $this->db->query($sql);
+		$result = $query->row();
+      	if(isset($result)) return $result->num;
+        return 0;
+	}
+	function get_num_vezes_aluno_n_passou_cartao_semana(){
+  		$id =  $this->session->userdata('id');
+    	$this->db->select('num_aluno');
+		$this->db->from('alunos');
+		$this->db->where('id',$id);
+		$query = $this->db->get();
+		$num_aluno = $query->result_array()[0]['num_aluno'];
+		date_default_timezone_set("Europe/Lisbon"); 
+		$umaSemanaAtras = date("Y-m-d",strtotime("-1 week"));
+  		$sql = "SELECT count(*) as num from acessos_alunos_corrigidos 
+					where data>='$umaSemanaAtras' and num_aluno=$num_aluno and id_acesso < 0;";
+		$query = $this->db->query($sql);
+		$result = $query->row();
+      	if(isset($result)) return $result->num;
+        return 0;
+  }	
 }
 ?>
