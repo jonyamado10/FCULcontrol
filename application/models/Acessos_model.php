@@ -243,9 +243,9 @@ sensores.id
 		$this->db->where('num_aluno',$num_aluno);
 		$query = $this->db->get();
 		if($query->num_rows()==1) 
-			{return 1;}
+			{return true;}
 		else{
-		return 0;
+		return false;
     	}
     }
 
