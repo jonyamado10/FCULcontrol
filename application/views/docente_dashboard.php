@@ -95,16 +95,14 @@
                 <div class="col-sm-4 text-center my-auto">
                   <div class="h4 mb-0 text-primary">
                   <?php 
-                  $ar = explode(":",$rebelde);
-                  echo "Nº ".$ar[0]."<br>".$ar[1]; ?>
+                  echo 3;?>
 
                   </div>
                   <div class="small text-muted">Pior do mês</div>
                   <hr>
                   <div class="h4 mb-0 text-success">
                     <?php 
-                  $ar = explode(":",$rebeldeWK);
-                  echo "Nº ".$ar[0]."<br>".$ar[1]; ?>
+                 echo "2"; ?>
                   </div>
                   <div class="small text-muted">Pior da semana</div>
                 </div>
@@ -122,7 +120,7 @@ echo "Atualizado pela última vez às: " . date("G:i");
     </div>
     <script type="text/javascript">
     <?php 
-  $js_array = json_encode(array_keys($top10));
+  $js_array = json_encode(array_keys($graf_assiduidades));
   echo "var javascript_array = ". $js_array . ";\n";
   ?>
 var ctx = document.getElementById("graficotop10");
@@ -134,7 +132,7 @@ var myLineChart = new Chart(ctx, {
       label: "Acessos",
       backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745', '#f58293 ','#911eb4','#46f0f0','#f032e6','#d2f53c','#fabebe'],
       borderColor: "rgba(2,117,216,1)",
-      data:  <?php echo json_encode(array_values($top10));?>,
+      data:  <?php echo json_encode(array_values($graf_assiduidades));?>,
     }],
   },
   options: {
@@ -151,7 +149,7 @@ var myLineChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max:  Math.max(...<?php echo json_encode(array_values($top10));?>) +2,
+          max:  Math.max(...<?php echo json_encode(array_values($graf_assiduidades));?>) +2,
           maxTicksLimit: 10
         },
         gridLines: {

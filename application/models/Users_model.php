@@ -789,7 +789,7 @@ group by id_docente,nome,apelido,d.id_funcionario;";
     			$data[$nomeCom] = round($soma/sizeof($disciplinas),3);
     		}
      	}
-    	$data1 = asort($data)
+    	$data1 = asort($data);
     	return array_splice($data,0,5);
     }
     function get_num_aulas_hoje(){
