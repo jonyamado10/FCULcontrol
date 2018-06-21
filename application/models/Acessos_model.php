@@ -2248,6 +2248,11 @@ class Acessos_model extends CI_Model {
 	}
 	public function user_docente_acessos24(){
 			$id = $this->session->userdata("id");
+			$this->db->select('id');
+			$this->db->from('docentes');
+			$this->db->where('id_funcionario',$id);
+			$query = $this->db->get();
+			$id_docente = $query->result_array()[0]['id'];
 			date_default_timezone_set("Europe/Lisbon");
 			$datas = array(date("Y-m-d H",strtotime("+1 hour")));
 			for ($i=0; $i < 23; $i++) { 
