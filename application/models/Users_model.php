@@ -749,7 +749,7 @@ class Users_model extends CI_model{
 	  $disciplinas_licenciatura = $this->db->query($sql);
 	  $data = array();
 	  foreach ($disciplinas_licenciatura->result() as $disciplina) {
-	  	if($this->get_num_alunos_inscritos_disciplina_licenciatura($disciplina->id)){continue;}
+	  	if($this->get_num_alunos_inscritos_disciplina_licenciatura($disciplina->id) == 0){continue;}
 	  		$data[] = array(
 	  				"designacao" => $disciplina->designacao,
 	  				"turma" => $disciplina->turma,
