@@ -9,20 +9,20 @@
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Os meus Acessos</div>
+          <i class="fa fa-table"></i> Os meus acessos</div>
         <div class="card-body">
           <div class="table-responsive">
      
     <table class="table table-bordered" id="tabela" width="100%" cellspacing="0">
      <thead>
    <tr>
-<th>Funcionário Nº</th><th>Nome</th><th>Data</th><th>Hora</th><th>Porta</th><th>Sentido</th></tr>
+<th>Nº</th><th>Nome</th><th>Data</th><th>Hora</th><th>Porta</th><th>Sentido</th></tr>
      </thead>
      <tbody>
      </tbody>
       <tfoot>
    <tr>
-<th>Funcionário Nº</th><th>Nome</th><th>Data</th><th>Hora</th><th>Porta</th><th>Sentido</th></tr>
+<th>Nº</th><th>Nome</th><th>Data</th><th>Hora</th><th>Porta</th><th>Sentido</th></tr>
      </tfoot>
      </table>
 

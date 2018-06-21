@@ -9,7 +9,7 @@
       <!-- Example DataTables Card-->
       <div class="card mb-3">
            <div class="card-header">
-              <i class="fa fa-pie-chart"></i> Alunos Por Departamento</div>
+              <i class="fa fa-pie-chart"></i> Alunos por Departamento</div>
             <div class="card-body">
               <canvas id="alunosDepartamento" width="100%" height="50"></canvas>
             </div>

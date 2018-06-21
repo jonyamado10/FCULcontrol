@@ -1,12 +1,10 @@
-
-
     <div class="container-fluid">
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">My Dashboard</li>
+        <li class="breadcrumb-item active">A minha área</li>
 		<li class="breadcrumb-item">Servidor da BD: <?php echo $_SERVER["location"]; echo "  |   "; echo $this->db->hostname; ?></li> 
       </ol>
       <!-- Icon Cards-->
@@ -85,7 +83,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-exclamation-triangle"></i>
               </div>
-                <div class="mr-5"><?php echo sizeof($num_sensores); ?> Sensores Possivelmente Danificados!</div>
+                <div class="mr-5"><?php echo sizeof($num_sensores); ?> sensores possivelmente danificados!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" id="BotaoVerTodosAlertas" href="#">
               <span class="float-left">Ver Detalhes</span>
@@ -114,14 +112,14 @@
                   echo "Nº ".$ar[0]."<br>".$ar[1]; ?>
 
                   </div>
-                  <div class="small text-muted">Pior do Mês</div>
+                  <div class="small text-muted">Pior do mês</div>
                   <hr>
                   <div class="h4 mb-0 text-success">
                     <?php 
                   $ar = explode(":",$rebeldeWK);
                   echo "Nº ".$ar[0]."<br>".$ar[1]; ?>
                   </div>
-                  <div class="small text-muted">Pior da Semana</div>
+                  <div class="small text-muted">Pior da semana</div>
                 </div>
               </div>
             </div>

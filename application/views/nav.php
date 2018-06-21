@@ -209,7 +209,7 @@
               <a class="dropdown-item" href="#">
                 <span class="text-danger">
                   <strong>
-                    <i class="fa fa-long-arrow-alt-down fa-fw"></i>Possiveis Falhas</strong>
+                    <i class="fa fa-long-arrow-alt-down fa-fw"></i>Possíveis Falhas</strong>
                 </span>
                 <span class="medium float-right text-danger"><?php echo $sensor->porta; ?></span>
                 <div class="dropdown-message small">O sensor de <?php echo $sensor->sentido." da porta ".$sensor->porta;?> não <br>regista nenhum acesso desde <?php echo $sensor->data; ?></div>
@@ -229,14 +229,14 @@
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-bell"></i>
-            <span class="d-lg-none"> Sem Alertas
+            <span class="d-lg-none"> Sem alertas
             </span>
              <span class="indicator text-success d-none d-lg-block">
               <i class="fa fa-fw fa-circle"></i>
             </span>
           </a>
           <div class="dropdown-menu" aria-labelledby="alertsDropdown">
-            <h6 class="dropdown-header">Estado Sensores:</h6>
+            <h6 class="dropdown-header">Estado dos sensores:</h6>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">
               <span class="text-success">

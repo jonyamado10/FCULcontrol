@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>FCUL-Controlo de Acessos</title>
+	<title>FCUL - Controlo de Acessos</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -57,7 +57,7 @@
 			</button>
 
 			<div class="contact100-form-title" style="background-image: url(<?php echo base_url("assets/images/bg-02.jpg"); ?>">
-				<span>Login</span>
+				<span>Iniciar sessão</span>
 			</div>
 
 				<?php  

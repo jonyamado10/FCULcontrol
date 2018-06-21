@@ -9,7 +9,7 @@
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> As minhas Disciplinas
+          <i class="fa fa-table"></i> As minhas disciplinas
         <a id = "retrocederBtn" href="#" >Voltar a Aulas</a></div>
 
         <div class="card-body">
@@ -18,13 +18,13 @@
     <table class="table table-bordered" id="tabela-disciplinas" width="100%" cellspacing="0">
      <thead>
    <tr>
-    <th>Disciplina</th><th>Regente</th><th>Semestre</th><th>ECTS</th><th>Turma</th><th>Ano Lectivo</th><th>Grau</th><th>Nº Alunos Inscritos</th><th></th></tr>
+    <th>Disciplina</th><th>Regente</th><th>Semestre</th><th>ECTS</th><th>Turma</th><th>Ano Letivo</th><th>Grau</th><th>Nº Alunos Inscritos</th><th></th></tr>
      </thead>
      <tbody>
      </tbody>
       <tfoot>
    <tr>
-<th>Disciplina</th><th>Regente</th><th>Semestre</th><th>ECTS</th><th>Turma</th><th>Ano Lectivo</th><th>Grau</th><th>Nº Alunos Inscritos</th><th></th></tr>
+<th>Disciplina</th><th>Regente</th><th>Semestre</th><th>ECTS</th><th>Turma</th><th>Ano Letivo</th><th>Grau</th><th>Nº Alunos Inscritos</th><th></th></tr>
               </tfoot>
      </table>
 

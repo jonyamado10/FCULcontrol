@@ -47,7 +47,7 @@
             <div class="wrap-input100 validate-input" > 
  
             <select name="num_acessos" id="num_acessos" class="input100" style = "height: 60px;")">
-              <option value=""<?php echo  set_select('num_acessos', 'none', TRUE); ?>>Nº Acessos a Gerar</option>
+              <option value=""<?php echo  set_select('num_acessos', 'none', TRUE); ?>>Nº de acessos a gerar</option>
                 <option value="500">500</option>
                 <option value="1000">1000</option>
                 <option value="1500">1500</option>

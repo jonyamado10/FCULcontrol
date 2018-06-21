@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Fcul - Controlo de Acessos</title>
+  <title>FCUL - Controlo de Acessos</title>
   <link rel="icon" type="image/png" href="<?php echo base_url("assets/images/icons/favicon.ico") ?>"/>
 
   <!-- Bootstrap core CSS-->
@@ -50,7 +50,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents1">
             <li>
-              <a id ="BotaoMeusAcessos24h" href = "#">Acessos 24h</a>
+              <a id ="BotaoMeusAcessos24h" href = "#">Acessos últimas 24 h</a>
             </li>
           </ul>
         </li>
@@ -70,7 +70,7 @@
               <a id = "BotaoTabelaAulas" href="#">A Minha Agenda</a>
             </li>
             <li>
-              <a id = "BotaoTabelaAssiduidades" href="#"> Tabela de Assiduidades Médias</a>
+              <a id = "BotaoTabelaAssiduidades" href="#">Assiduidades Médias</a>
             </li>
           </ul>
         </li>
@@ -144,12 +144,12 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item" style=" margin:0 auto;">
           <a class="nav-link" style="color:white; cursor: default;">
-            <i class="fa fa-fw fa-user-secret"></i><?php echo "Olá ".$this->session->userdata('nome')?>
+            <i class="fa fa-fw fa-user-secret"></i><?php echo "Bem-vindo, ".$this->session->userdata('nome')?>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" href="<?php echo base_url('Login/logout') ?>" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out-alt"></i>Logout</a>
+            <i class="fa fa-fw fa-sign-out-alt"></i>Terminar sessão</a>
         </li>
       </ul>
     </div>
