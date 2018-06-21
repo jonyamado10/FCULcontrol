@@ -542,7 +542,10 @@ class Acessos_model extends CI_Model {
 	}
 	function acessos_alunos_search($limit,$start,$search,$col,$dir,$colsearch)
     {
+
     	$search_s = $search.'%';
+    	$search_s = $this->db->escape($search_s);
+    	$colsearch = $this->db->escape($colsearch);
     	$sql = "SELECT m.id_acesso,al.num_aluno,concat(al.nome, ' ',al.apelido) as nome,s.sentido,  
     			a.data,a.hora,concat(p.edificio, '.',p.piso,'.',p.num_porta) as porta,s.sentido
 				FROM 
@@ -596,7 +599,10 @@ class Acessos_model extends CI_Model {
     }
     function acessos_alunos_search_count($search,$colsearch)
     {
+
     	$search_s = $search.'%';
+    	$search_s = $this->db->escape($search_s);
+    	$colsearch = $this->db->escape($colsearch);
     	$sql = "SELECT count(*) as num
 				FROM 
 				  acessos_alunos AS m 

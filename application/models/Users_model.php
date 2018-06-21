@@ -201,27 +201,7 @@ class Users_model extends CI_model{
     	return $docentes_departamentos;
     }
 
-	function get_edificios(){
-    	$this->db->select('id,designacao');
-		$this->db->from('edificios');
-		$query = $this->db->get(); 
-        return $query->result_array();
-    }
 
-	function get_num_pessoas_por_edificio(){
-    	$pessoas_por_edificio = array();
-    	$edificios = $this->get_edificios();
-    	foreach ($edificios as $edificio) {
-    		$this->db->select('id');
-			$this->db->from('pessoas');
-			$this->db->where('id_edificio',$edificio['id']);
-			$query = $this->db->get();
-			$pessoas_por_edificios[$edificio['designacao']] = $query->num_rows();
-
-    	}
-    	
-    	return $pessoas_por_edificios;
-    }
     function get_disciplinas_licenciatura_docente() {
     	$id =  $this->session->userdata('id');
     	$this->db->select('id');
