@@ -790,7 +790,7 @@ group by id_docente,nome,apelido,d.id_funcionario;";
     			print_r($disciplina);
     			$soma += round($disciplina["total_presencas"]/$disciplina["total_presencas_possiveis"] * 100,3);
     		}
-    		if(sizeof($disciplinas>0)){
+    		if(sizeof($disciplinas)>0)){
     			$data[$nomeCom] = round($soma/sizeof($disciplinas),3);
     		}
      	}
