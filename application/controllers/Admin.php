@@ -210,8 +210,8 @@ class Admin extends CI_Controller {
 	public function teste()
 	{
 	
-$this->load->model('Acessos_model');
-echo $this->Acessos_model->get_avg_percentagem_por_disciplina_docentes();
+$this->load->model('Users_model');
+echo $this->Users_model->get_avg_percentagem_por_disciplina_docentes();
 	}
 }
 ?>
