@@ -99,7 +99,11 @@ $(function(){
          $('#content').html("<div class='loader'></div> ");
         $("#content").load("<?php echo base_url('Docente/minhasAulas') ?>");
     });
-
+ $( "#BotaoTabelaAssiduidades" ).click(function() {
+        $('.container-fluid').remove();
+         $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Docente/tabela_assiduidades_medias') ?>");
+});
 // end  
 });
 </script>
