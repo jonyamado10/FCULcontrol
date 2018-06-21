@@ -1073,14 +1073,15 @@ group by id_docente,nome,apelido,d.id_funcionario;";
     function grafico_assiduidades_user_docente(){
   
           $data = $this->get_percentagem_por_disciplina_user_docente();
-          $data = array();
+          $data1 = array();
 
           foreach ($data as $row) {
             
-             $data["designacao"] = round($row["total_presencas"]/$row["total_presencas_possiveis"] * 100,3);
+             $data1["designacao"] = round($row["total_presencas"]/$row["total_presencas_possiveis"] * 100,3);
                    
                     
          }
+         return $data1;
           
     }
 
