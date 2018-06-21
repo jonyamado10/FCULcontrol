@@ -70,9 +70,6 @@
         $('#content').html("<div class='loader'></div> ");
         $("#content").load("<?php echo base_url('Admin/grafico_alunos_por_departamento') ?>");
     });
-
-
-
     $("#BotaoTabelaAlunos").click(function(){
       $('.container-fluid').remove();
         $('#content').html("<div class='loader'></div> ");
@@ -93,6 +90,12 @@ $('.container-fluid').remove();
         $('#content').html("<div class='loader'></div> ");
         $("#content").load("<?php echo base_url('Admin/gerar_acessos_detalhados') ?>");
     });
+    $("#BotaoGerarAcessosDetalhadosAluno").click(function(){
+      $('.container-fluid').remove();
+        $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Admin/gerar_acessos_detalhados') ?>");
+    });
+    
     $("#BotaoAcessosAlunos").click(function(){
          $('.container-fluid').remove();
          $('#content').html("<div class='loader'></div> ");

@@ -116,6 +116,9 @@
               <li>
               <a id = "BotaoGerarAcessosDetalhados" href="#"">Gerar Acessos Detalhados</a>
             </li>
+            <li>
+              <a id = "BotaoGerarAcessosDetalhadosAluno" href="#"">Gerar Acessos Detalhados c/ Aluno</a>
+            </li>
           </ul>
         </li>
         <!--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
