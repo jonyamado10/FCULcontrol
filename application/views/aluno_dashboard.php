@@ -14,7 +14,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-map-marker"></i>
               </div>
-              <div class="mr-5"><? echo 1; ?> acessos esta semana!</div>
+              <div class="mr-5"><? echo 1; ?> acesso(s) esta semana!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" id="acessosSemana" href="#" >
               <span class="float-left">Ver Acessos</span>
@@ -30,7 +30,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-list"></i>
               </div>
-              <div class="mr-5"><? echo 1; ?> aulas hoje!</div>
+              <div class="mr-5"><? echo 1; ?> aula(s) hoje!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#" id ="aulasHoje">
               <span class="float-left">Ver Aulas</span>
@@ -63,7 +63,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-exclamation-triangle"></i>
               </div>
-              <div class="mr-5"><?php echo 1; ?> vezes que não passou o cartão na última semana!</div>
+              <div class="mr-5"><?php echo 1; ?> vez(es) que não passou o cartão na última semana!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#" id ="nacessosSemana">
               <span class="float-left">Ver Acessos</span>
