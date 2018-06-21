@@ -50,7 +50,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents1">
             <li>
-              <a id ="BotaoMeusAcessos24h" href = "#">Acessos últimas 24h</a>
+              <a id ="BotaoMeusAcessos24h" href = "#">Acessos últimas 24 h</a>
             </li>
           </ul>
         </li>
@@ -70,7 +70,7 @@
               <a id = "BotaoTabelaAulas" href="#">A Minha Agenda</a>
             </li>
             <li>
-              <a id = "BotaoTabelaAssiduidades" href="#"> Tabela de Assiduidades Médias</a>
+              <a id = "BotaoTabelaAssiduidades" href="#">Assiduidades Médias</a>
             </li>
           </ul>
         </li>

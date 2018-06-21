@@ -9,7 +9,7 @@
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Assiduidade Média Disciplina/Turma</div>
+          <i class="fa fa-table"></i> Assiduidade média por disciplina/turma</div>
         <div class="card-body">
           <div class="table-responsive">
      
@@ -17,9 +17,9 @@
      <thead>
         <tr><th>Disciplina</th>
       <th>Turma</th>
-      <th>Total de presencas</th>
-      <th>Presenças Máximas esperadas</th>
-      <th>Assiduidade %</th>
+      <th>Total de presenças</th>
+      <th>Nº máximo de presenças esperadas</th>
+      <th>Assiduidade (%)</th>
      </tr>
      </thead>
      <tbody>
@@ -27,9 +27,9 @@
       <tfoot>
        <tr><th>Disciplina</th>
       <th>Turma</th>
-      <th>Total de presencas</th>
-      <th>Presenças Máximas esperadas</th>
-      <th>Assiduidade %</th>
+      <th>Total de presenças</th>
+      <th>Nº máximo de presenças esperadas</th>
+      <th>Assiduidade (%)</th>
      </tr>
               </tfoot>
      </table>
