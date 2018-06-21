@@ -128,7 +128,7 @@ var myLineChart = new Chart(ctx, {
           display: false
         },
         ticks: {
-          maxTicksLimit: <?php echo sizeof($graf_assiduidades);?>
+          maxTicksLimit: 10
         }
       }],
       yAxes: [{
