@@ -763,7 +763,7 @@ class Users_model extends CI_model{
     }
  
      function get_ids_docentes() {
-        $sql = "SELECT id_docente as id,d.id_funcionario as id_funcionario,nome,apelido from lecciona_disciplinas_licenciatura as ldl
+        $sql = "SELECT id_docente as id,d.id_funcionario as id_funcionario from lecciona_disciplinas_licenciatura as ldl
 join docentes as d on d.id = ldl.id
 join funcionarios as f on f.id = d.id_funcionario
 
