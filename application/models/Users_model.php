@@ -735,7 +735,7 @@ class Users_model extends CI_model{
     	}
     	return round($soma/sizeof($disciplinas),3);
     }
-        function get_percentagem_por_disciplina_user_docente2($id_docente){
+/*        function get_percentagem_por_disciplina_user_docente2($id_docente){
     	
     
 		$sql = "SELECT id_disciplina_licenciatura as id, dl.designacao,t.designacao as turma from lecciona_disciplinas_licenciatura as ldl
@@ -791,7 +791,7 @@ group by id_docente,nome,apelido,d.id_funcionario;";
      	}
     	$data1 = asort($data);
     	return array_splice($data,0,5);
-    }
+    }*/
     function get_num_aulas_hoje(){
     	$dataHj = date("Y-m-d",strtotime("today"));
     	$id =  $this->session->userdata('id');

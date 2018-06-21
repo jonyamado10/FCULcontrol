@@ -191,6 +191,7 @@ class Docente extends CI_Controller {
 	     
 	}
 	public function teste(){
+		$this->load->model("Users_model");
 		print_r($this->Users_model->grafico_assiduidades_user_docente());
 		
 	}
