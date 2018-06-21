@@ -758,7 +758,7 @@ class Users_model extends CI_model{
                     "total_presencas_possiveis" =>$this->get_num_aulas_disciplina_licenciatura($disciplina->id) * $this->get_num_alunos_inscritos_disciplina_licenciatura($disciplina->id)
 	  				);
 	  	}
-	  }
+	  
 	  $sql = "SELECT id_disciplina_mestrado as id, dl.designacao,t.designacao as turma from lecciona_disciplinas_mestrado as ldl
 				join disciplinas_mestrado as dl on dl.id = ldl.id_disciplina_mestrado
 				join turmas_mestrado as t on t.id =dl.id_turma 
