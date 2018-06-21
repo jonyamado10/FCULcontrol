@@ -1523,7 +1523,7 @@ public function tabela_disciplinas_user_aluno()
                     $r->ano_lectivo,
                     "Licenciatura em ".$r->licenciatura,
                     "<a id = 'BotaoVeAulasL".$r->id. "'href= '#' value=".$r->id.">Ver Plano de Aulas</a><script>$('#BotaoVeAulasL".$r->id."').click(function(){
-        $('#content').load("."'".base_url('Docente/aulasPorDisciplinaLicenciatura/').$r->id."'".")
+        $('#content').load("."'".base_url('Aluno/aulasPorDisciplinaLicenciatura/').$r->id."'".")
     });</script>"
 
                );
@@ -1541,7 +1541,7 @@ public function tabela_disciplinas_user_aluno()
                     $r->ano_lectivo,
                     "Mestrado em ".$r->mestrado,
                     "<a id = 'BotaoVeAulasL".$r->id. "'href= '#' value=".$r->id.">Ver Plano de Aulas</a><script>$('#BotaoVeAulasL".$r->id."').click(function(){
-        $('#content').load("."'".base_url('Docente/aulasPorDisciplinaLicenciatura/').$r->id."'".")
+        $('#content').load("."'".base_url('Aluno/aulasPorDisciplinaMestrado/').$r->id."'".")
     });</script>"
                );
           }
@@ -1556,7 +1556,7 @@ public function tabela_disciplinas_user_aluno()
                     $r->ano_lectivo,
                     "Pós-Graduação em ".$r->pos_graduacao,
                     "<a id = 'BotaoVeAulasL".$r->id. "'href= '#' value=".$r->id.">Ver Plano de Aulas</a><script>$('#BotaoVeAulasL".$r->id."').click(function(){
-        $('#content').load("."'".base_url('Docente/aulasPorDisciplinaLicenciatura/').$r->id."'".")
+        $('#content').load("."'".base_url('Docente/aulasPorDisciplinaPosGraduacao/').$r->id."'".")
     });</script>"
                );
           }
@@ -1570,6 +1570,148 @@ public function tabela_disciplinas_user_aluno()
           echo json_encode($output);
           exit();
      }        
-   
+    public function tabela_aulas_aluno_disciplina_licenciatura($id_disciplina)
+     {
+          $this->load->model('Users_model');
+          // Datatables Variables
+          $draw = intval($this->input->get("draw"));
+          $start = intval($this->input->get("start"));
+          $length = intval($this->input->get("length"));
+
+          $aulas_disciplina = $this->Users_model->get_aulas_disciplina_licenciatura($id_disciplina);
+
+          
+
+          $data = array();
+          $i=1;
+          foreach($aulas_disciplina->result() as $r) {
+                if($this->Users_model->ve_se_user_aluno_presente_aula_disciplina_licenciatura($r->id_aula) != 0){
+                  $presente = "Sim"
+                }
+                else{
+                  $presente = "Não"
+                }
+                if($i<10)
+                { $aula = "0".$i;} else{$aula = $i;}
+               $data[] = array(
+                    $r->disciplina,
+                    $r->turma,
+                    $r->data,
+                    $r->horario,
+                    $r->sala,
+                    "Aula ".$aula,
+                    $presente
+
+
+               );
+               $i++;
+          }
+
+          $total_disciplinas = sizeof($aulas_disciplina);
+          $output = array(
+               "draw" => $draw,
+                 "recordsTotal" => $total_disciplinas,
+                 "recordsFiltered" => $total_disciplinas,
+                 "data" => $data
+            );
+          echo json_encode($output);
+          exit();
+     }
+  public function tabela_aulas_aluno_disciplina_mestrado($id_disciplina)
+     {
+          $this->load->model('Users_model');
+          // Datatables Variables
+          $draw = intval($this->input->get("draw"));
+          $start = intval($this->input->get("start"));
+          $length = intval($this->input->get("length"));
+
+          $aulas_disciplina = $this->Users_model->get_aulas_disciplina_mestrado($id_disciplina);
+
+          
+
+          $data = array();
+          $i=1;
+     foreach($aulas_disciplina->result() as $r) {
+                if($this->Users_model->ve_se_user_aluno_presente_aula_disciplina_mestrado($r->id_aula) != 0){
+                  $presente = "Sim"
+                }
+                else{
+                  $presente = "Não"
+                }
+                if($i<10)
+                { $aula = "0".$i;} else{$aula = $i;}
+               $data[] = array(
+                    $r->disciplina,
+                    $r->turma,
+                    $r->data,
+                    $r->horario,
+                    $r->sala,
+                    "Aula ".$aula,
+                    $presente
+
+
+               );
+               $i++;
+          }
+
+
+          $total_disciplinas = sizeof($aulas_disciplina);
+          $output = array(
+               "draw" => $draw,
+                 "recordsTotal" => $total_disciplinas,
+                 "recordsFiltered" => $total_disciplinas,
+                 "data" => $data
+            );
+          echo json_encode($output);
+          exit();
+     } public function tabela_aulas_aluno_disciplina_pos_graduacao($id_disciplina)
+     {
+          $this->load->model('Users_model');
+          // Datatables Variables
+          $draw = intval($this->input->get("draw"));
+          $start = intval($this->input->get("start"));
+          $length = intval($this->input->get("length"));
+
+          $aulas_disciplina = $this->Users_model->get_aulas_disciplina_pos_graduacao($id_disciplina);
+
+          
+
+          
+          $data = array();
+          $i=1;
+                foreach($aulas_disciplina->result() as $r) {
+                if($this->Users_model->ve_se_user_aluno_presente_aula_disciplina_pos_graduacao($r->id_aula) != 0){
+                  $presente = "Sim"
+                }
+                else{
+                  $presente = "Não"
+                }
+                if($i<10)
+                { $aula = "0".$i;} else{$aula = $i;}
+               $data[] = array(
+                    $r->disciplina,
+                    $r->turma,
+                    $r->data,
+                    $r->horario,
+                    $r->sala,
+                    "Aula ".$aula,
+                    $presente
+
+
+               );
+               $i++;
+          }
+
+
+          $total_disciplinas = sizeof($aulas_disciplina);
+          $output = array(
+               "draw" => $draw,
+                 "recordsTotal" => $total_disciplinas,
+                 "recordsFiltered" => $total_disciplinas,
+                 "data" => $data
+            );
+          echo json_encode($output);
+          exit();
+     }
 }
 

@@ -47,5 +47,29 @@ class Aluno extends CI_Controller {
 		{ redirect('Admin');}
 	    $this->load->view('aluno_disciplinas');     
 	}
+	public function aulasPorDisciplinaLicenciatura($id_disciplina)
+	{
+		if (!isset($_SERVER['HTTP_REFERER']))
+		{ redirect('Docente');}
+		$data['id_disciplina']=$id_disciplina;
+  		$this->load->view('aluno_aulas_disciplina_licenciatura',$data);
+
+	}
+	public function aulasPorDisciplinaMestrado($id_disciplina)
+	{
+		if (!isset($_SERVER['HTTP_REFERER']))
+		{ redirect('Docente');}
+		$data['id_disciplina']=$id_disciplina;
+  		$this->load->view('aluno_aulas_disciplina_mestrado',$data);
+
+	}
+	public function aulasPorDisciplinaPosGraduacao($id_disciplina)
+	{
+		if (!isset($_SERVER['HTTP_REFERER']))
+		{ redirect('Docente');}
+		$data['id_disciplina']=$id_disciplina;
+  		$this->load->view('aluno_aulas_disciplina_pos_graduacao',$data);
+
+	}
 
 }
