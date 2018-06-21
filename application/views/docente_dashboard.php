@@ -89,7 +89,7 @@
               <i class="fa fa-bar-chart"></i> Top 10 alunos que não passam cartão</div>
             <div class="card-body">
            
-                  <canvas id="graficotop10" width="100" height="70"></canvas>
+                  <canvas id="graficotop10" width="100" height="50"></canvas>
                
             </div>
         <div class="card-footer small text-muted"><?php date_default_timezone_set("Europe/Lisbon");
