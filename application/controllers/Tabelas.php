@@ -1497,7 +1497,70 @@ function cmp($a, $b)
           echo json_encode($output);
           exit();
      }
-        
+public function tabela_disciplinas_user_aluno()
+     {
+          $this->load->model('Users_model');
+          // Datatables Variables
+          $draw = intval($this->input->get("draw"));
+          $start = intval($this->input->get("start"));
+          $length = intval($this->input->get("length"));
+
+          $disciplinas_licenciatura = $this->Users_model->get_disciplinas_licenciatura_user_aluno();
+          $disciplinas_mestrado = $this->Users_model->get_disciplinas_mestrado_user_aluno();
+          $disciplinas_pos_graduacao = $this->Users_model->get_disciplinas_pos_graduacao_user_aluno();
+          
+
+          $data = array();
+
+          foreach($disciplinas_licenciatura->result() as $r) {
+
+              $data[] = array(
+                    $r->disciplina,
+                    $r->regente,
+                    $r->semestre,
+                    $r->ects,
+                    $r->turma,
+                    $r->ano_lectivo,
+                    "Licenciatura em ".$r->licenciatura
+
+               );
+
+          }
+
+          foreach($disciplinas_mestrado->result() as $r) {
+              
+               $data[] = array(
+                    $r->disciplina,
+                    $r->regente,
+                    $r->semestre,
+                    $r->ects,
+                    $r->turma,
+                    $r->ano_lectivo,
+                    "Mestrado em ".$r->mestrado
+               );
+          }
+          foreach($disciplinas_pos_graduacao->result() as $r) {
+             
+               $data[] = array(
+                    $r->disciplina,
+                    $r->regente,
+                    $r->semestre,
+                    $r->ects,
+                    $r->turma,
+                    $r->ano_lectivo,
+                    "Pós-Graduação em ".$r->pos_graduacao
+               );
+          }
+          $total_disciplinas = sizeof($disciplinas_licenciatura) +  sizeof($disciplinas_mestrado) +  sizeof($disciplinas_pos_graduacao);
+          $output = array(
+               "draw" => $draw,
+                 "recordsTotal" => $total_disciplinas,
+                 "recordsFiltered" => $total_disciplinas,
+                 "data" => $data
+            );
+          echo json_encode($output);
+          exit();
+     }        
    
 }
 

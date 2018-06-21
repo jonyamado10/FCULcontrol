@@ -789,5 +789,50 @@ class Users_model extends CI_model{
 
       return $soma;
     }
+    function get_disciplinas_licenciatura_user_aluno() {
+    	$id =  $this->session->userdata('id');
+   	
+		$sql = "SELECT dl.id as id,dl.designacao as disciplina, concat(fu.nome , ' ',fu.apelido) as regente,semestre, ects,tu.designacao as turma,ano_lectivo, l.designacao as licenciatura FROM disciplinas_licenciatura as dl
+					JOIN aulas_disciplinas_licenciaturas as al on dl.id = al.id_disciplina_licenciatura
+					join funcionarios as fu on dl.id_regente = fu.id
+					join turmas_licenciatura as tu on dl.id_turma = tu.id
+					join licenciaturas as l on l.id = tu.id_licenciatura
+					join alunos_inscritos_licenciatura as ldl on ldl.id_disciplina = dl.id
+					where ldl.id_aluno = $id
+					group by dl.id,dl.designacao,fu.nome, fu.apelido, semestre,ects, tu.designacao,l.ano_lectivo,l.designacao;";
+
+		return $this->db->query($sql);
+
+    }
+    function get_disciplinas_mestrado_user_aluno() {
+    	$id =  $this->session->userdata('id');
+   	
+		$sql = "SELECT dl.id as id,dl.designacao as disciplina, concat(fu.nome , ' ',fu.apelido) as regente,semestre, ects,tu.designacao as turma,ano_lectivo, l.designacao as mestrado FROM disciplinas_mestrado as dl
+					JOIN aulas_disciplinas_mestrados as al on dl.id = al.id_disciplina_mestrado
+					join funcionarios as fu on dl.id_regente = fu.id
+					join turmas_mestrado as tu on dl.id_turma = tu.id
+					join mestrados as l on l.id = tu.id_mestrado
+					join alunos_inscritos_mestrado as ldl on ldl.id_disciplina = dl.id
+					where ldl.id_aluno = $id
+					group by dl.id,dl.designacao,fu.nome, fu.apelido, semestre,ects, tu.designacao,l.ano_lectivo,l.designacao;";
+
+		return $this->db->query($sql);
+
+    }
+    function get_disciplinas_pos_graduacao_user_aluno() {
+    	$id =  $this->session->userdata('id');
+   	
+		$sql = "SELECT dl.id as id,dl.designacao as disciplina, concat(fu.nome , ' ',fu.apelido) as regente,semestre, ects,tu.designacao as turma,ano_lectivo, l.designacao as pos_graduacoe FROM disciplinas_pos_graduacoes as dl
+					JOIN aulas_disciplinas_pos_graduacoes as al on dl.id = al.id_disciplina_pos_graduacao
+					join funcionarios as fu on dl.id_regente = fu.id
+					join turmas_pos_graduacoes as tu on dl.id_turma = tu.id
+					join pos_graduacoes as l on l.id = tu.id_pos_graduacao
+					join alunos_inscritos_pos_graduacoes as ldl on ldl.id_disciplina = dl.id
+					where ldl.id_aluno = $id
+					group by dl.id,dl.designacao,fu.nome, fu.apelido, semestre,ects, tu.designacao,l.ano_lectivo,l.designacao;";
+					
+		return $this->db->query($sql);
+
+    }
 }
 ?>

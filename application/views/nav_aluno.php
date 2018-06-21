@@ -63,6 +63,9 @@
             <li>
               <a id = "BotaoTabelaMeusAcessos" href="#">Os Meus Acessos</a>
             </li>
+            <li>
+              <a id = "minhasDisciplinas" href="#">As Minhas Disciplinas</a>
+            </li>
           </ul>
         </li>
       </ul>
