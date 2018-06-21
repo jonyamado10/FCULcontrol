@@ -89,7 +89,7 @@
               <i class="fa fa-bar-chart"></i> Assiduidades Médias Disciplina</div>
               <div class="card-body">
              
-                    <canvas id="graficotop10" width="100" height="30"></canvas>
+                    <canvas id="graficotop10" width="100" height="20"></canvas>
                  
               </div>
             </div>
