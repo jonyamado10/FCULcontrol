@@ -87,10 +87,11 @@
               
             <div class="card-header">
               <i class="fa fa-bar-chart"></i> Assiduidades Médias Disciplina</div>
-            <div class="card-body">
-           
-                  <canvas id="graficotop10" width="100" height="50"></canvas>
-               
+              <div class="card-body">
+             
+                    <canvas id="graficotop10" width="100" height="30"></canvas>
+                 
+              </div>
             </div>
         <div class="card-footer small text-muted"><?php date_default_timezone_set("Europe/Lisbon");
 echo "Atualizado pela última vez às: " . date("G:i");
