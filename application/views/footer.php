@@ -93,7 +93,7 @@ $('.container-fluid').remove();
     $("#BotaoGerarAcessosDetalhadosAluno").click(function(){
       $('.container-fluid').remove();
         $('#content').html("<div class='loader'></div> ");
-        $("#content").load("<?php echo base_url('Admin/gerar_acessos_detalhados') ?>");
+        $("#content").load("<?php echo base_url('Admin/gerar_acessos_detalhados_aluno') ?>");
     });
     
     $("#BotaoAcessosAlunos").click(function(){
