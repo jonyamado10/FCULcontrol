@@ -2317,6 +2317,18 @@ class Acessos_model extends CI_Model {
 		$result = $query->row();
       	if(isset($result)) return $result->num;
         return 0;
-	}	
+	}
+  function get_num_vezes_docente_n_passou_cartao_Semana(){
+  	$id =  $this->session->userdata('id');
+    	$this->db->select('num_funcionario');
+		$this->db->from('funcionarios');
+		$this->db->where('id',$id);
+		$query = $this->db->get();
+		$num_funcionario = $query->result_array()[0]['num_funcionario'];
+		date_default_timezone_set("Europe/Lisbon"); 
+		$hoje = date("Y-m-d",strtotime("-1 week"));
+  		$sql = "SELECT count(*) as num from acessos_docentes_corrigidos 
+					where data>='$dataHj' and num_funcionario=$num_funcionario and id_acesso < 0;";
+  }	
 }
 ?>
