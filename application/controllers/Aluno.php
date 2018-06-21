@@ -11,10 +11,10 @@ class Aluno extends CI_Controller {
 	{
 		if($this->session->userdata('is_logged_in_aluno')){
 			$this->load->model('Users_model');
-			$data["n_acessos"]=$this->Acessos_model->get_num_acessos_semana_user_aluno();
+			$data["n_acessos"]=$this->Users_model->get_num_acessos_semana_user_aluno();
 			$data["percentagem"]=$this->Users_model->get_avg_percentagem_por_disciplina_user_aluno();
 			$data["n_aulas"]=$this->Users_model->get_num_aulas_hoje_aluno();
-			$data["n_nao_passou_cartao"]=$this->Acessos_model->get_num_vezes_aluno_n_passou_cartao_semana();
+			$data["n_nao_passou_cartao"]=$this->Users_model->get_num_vezes_aluno_n_passou_cartao_semana();
 
 			$this->load->view('nav_aluno');
 			$this->load->view('aluno_dashboard');
@@ -29,10 +29,10 @@ class Aluno extends CI_Controller {
 		if (!isset($_SERVER['HTTP_REFERER']))
 		{ redirect('Aluno');}
 		$this->load->model('Users_model');
-		$data["n_acessos"]=$this->Acessos_model->get_num_acessos_semana_user_aluno();
+		$data["n_acessos"]=$this->Users_model->get_num_acessos_semana_user_aluno();
 		$data["percentagem"]=$this->Users_model->get_avg_percentagem_por_disciplina_user_aluno();
 		$data["n_aulas"]=$this->Users_model->get_num_aulas_hoje_aluno();
-		$data["n_nao_passou_cartao"]=$this->Acessos_model->get_num_vezes_aluno_n_passou_cartao_semana();
+		$data["n_nao_passou_cartao"]=$this->Users_model->get_num_vezes_aluno_n_passou_cartao_semana();
 		$this->load->view('aluno_dashboard');
 	}
 	public function tabela_meus_acessos()
