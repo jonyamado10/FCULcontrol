@@ -2304,7 +2304,7 @@ class Acessos_model extends CI_Model {
 		$query = $this->db->get();
 		$id_docente = $query->result_array()[0]['id'];
 		date_default_timezone_set("Europe/Lisbon"); 
-		$hoje = date("Y-m-d",strtotime("-1 week"));
+		$hoje = date("Y-m-d",strtotime("today"));
 		$ontem = date("Y-m-d",strtotime("yesterday"));
 		$hora = date("G:i");
 		if(sizeof($hora)<=4){
@@ -2318,7 +2318,7 @@ class Acessos_model extends CI_Model {
       	if(isset($result)) return $result->num;
         return 0;
 	}
-  function get_num_vezes_docente_n_passou_cartao_Semana(){
+  function get_num_vezes_docente_n_passou_cartao_semana(){
   	$id =  $this->session->userdata('id');
     	$this->db->select('num_funcionario');
 		$this->db->from('funcionarios');
@@ -2329,6 +2329,10 @@ class Acessos_model extends CI_Model {
 		$hoje = date("Y-m-d",strtotime("-1 week"));
   		$sql = "SELECT count(*) as num from acessos_docentes_corrigidos 
 					where data>='$dataHj' and num_funcionario=$num_funcionario and id_acesso < 0;";
+		$query = $this->db->query($sql);
+		$result = $query->row();
+      	if(isset($result)) return $result->num;
+        return 0;
   }	
 }
 ?>

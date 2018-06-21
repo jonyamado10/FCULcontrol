@@ -54,7 +54,7 @@
                 <i class="fa fa-fw fa-thumbs-down"></i>
               </div>
               <?php }?>
-              <div class="mr-5"><?php echo $percentagem ?> % Média de assiduidade nas suas aulas!</div>
+              <div class="mr-5"><?php echo $percentagem ?>% Média de assiduidade nas suas aulas!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">Ver Detalhes</span>
@@ -70,7 +70,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-exclamation-triangle"></i>
               </div>
-              <div class="mr-5">13 vezes que nao passou o cartão na ultima semana!</div>
+              <div class="mr-5"><?php echo $n_nao_passou_cartao ?> vezes que nao passou o cartão na ultima semana!</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">Ver Acessos</span>
