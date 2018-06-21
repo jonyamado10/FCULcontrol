@@ -12,7 +12,7 @@ class Aluno extends CI_Controller {
 		if($this->session->userdata('is_logged_in_aluno')){
 			$this->load->model('Users_model');
 			$this->load->model('Acessos_model');
-			$data["n_acessos"]=$this->Acessos_model->get_num_acessos_semana_user_aluno();
+			$data["n_acessos"]=$this->Acessos_model->get_num_acessos_24_user_aluno();
 			$data["percentagem"]=$this->Users_model->get_avg_percentagem_por_disciplina_user_aluno();
 			$data["n_aulas"]=$this->Users_model->get_num_aulas_hoje_aluno();
 			$data["n_nao_passou_cartao"]=$this->Acessos_model->get_num_vezes_aluno_n_passou_cartao_semana();
@@ -31,7 +31,7 @@ class Aluno extends CI_Controller {
 		{ redirect('Aluno');}
 		$this->load->model('Users_model');
 		$this->load->model('Acessos_model');
-		$data["n_acessos"]=$this->Acessos_model->get_num_acessos_semana_user_aluno();
+		$data["n_acessos"]=$this->Acessos_model->get_num_acessos_24_user_aluno();
 		$data["percentagem"]=$this->Users_model->get_avg_percentagem_por_disciplina_user_aluno();
 		$data["n_aulas"]=$this->Users_model->get_num_aulas_hoje_aluno();
 		$data["n_nao_passou_cartao"]=$this->Acessos_model->get_num_vezes_aluno_n_passou_cartao_semana();

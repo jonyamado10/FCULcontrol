@@ -2424,7 +2424,7 @@ class Acessos_model extends CI_Model {
 		$hoje = date("Y-m-d",strtotime("today"));
 		$ontem = date("Y-m-d",strtotime("yesterday"));
 		$hora = date("G:i");
-		if(sizeof($hora)<=4){
+		if(strlen($hora)<=4){
 			$hora = "0".$hora;
 		}
 		$sql = "SELECT COUNT(*) AS num from acessos_docentes as ad
@@ -2451,13 +2451,13 @@ class Acessos_model extends CI_Model {
       	if(isset($result)) return $result->num;
         return 0;
   }	
-      function get_num_acessos_semana_user_aluno(){
+      function get_num_acessos_24_user_aluno(){
     	$id =  $this->session->userdata('id');
 		date_default_timezone_set("Europe/Lisbon"); 
 		$hoje = date("Y-m-d",strtotime("today"));
 		$ontem = date("Y-m-d",strtotime("yesterday"));
 		$hora = date("G:i");
-		if(sizeof($hora)<=4){
+		if(strlen($hora)<=4){
 			$hora = "0".$hora;
 		}
 		$sql = "SELECT COUNT(*) AS num from acessos_alunos as ad

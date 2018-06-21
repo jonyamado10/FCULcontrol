@@ -33,7 +33,7 @@ class Docente extends CI_Controller {
 		$this->load->model("Users_model");
 		$this->load->model("Acessos_model");
 		$data["n_nao_passou_cartao"]=$this->Acessos_model->get_num_vezes_docente_n_passou_cartao_semana();
-		$data["n_acessos"]=$this->Acessos_model->get_num_acessos_semana_user_docente();
+		$data["n_acessos"]=$this->Acessos_model->get_num_acessos_24_user_docente();
 		$data["percentagem"]=$this->Users_model->get_avg_percentagem_por_disciplina_user_docente();
 		$data["n_aulas"]=$this->Users_model->get_num_aulas_hoje();
 
