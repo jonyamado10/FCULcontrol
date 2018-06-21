@@ -18,7 +18,7 @@ class Aluno extends CI_Controller {
 			$data["n_nao_passou_cartao"]=$this->Acessos_model->get_num_vezes_aluno_n_passou_cartao_semana();
 
 			$this->load->view('nav_aluno');
-			$this->load->view('aluno_dashboard');
+			$this->load->view('aluno_dashboard',$data);
 			$this->load->view('footer_aluno');
 		}
 		else{
@@ -35,7 +35,7 @@ class Aluno extends CI_Controller {
 		$data["percentagem"]=$this->Users_model->get_avg_percentagem_por_disciplina_user_aluno();
 		$data["n_aulas"]=$this->Users_model->get_num_aulas_hoje_aluno();
 		$data["n_nao_passou_cartao"]=$this->Acessos_model->get_num_vezes_aluno_n_passou_cartao_semana();
-		$this->load->view('aluno_dashboard');
+		$this->load->view('aluno_dashboard',$data);
 	}
 	public function tabela_meus_acessos()
 	{
