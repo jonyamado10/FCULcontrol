@@ -2274,7 +2274,7 @@ class Acessos_model extends CI_Model {
 		$hoje = date("Y-m-d",strtotime("today"));
 		$ontem = date("Y-m-d",strtotime("yesterday"));
 		$hora = date("G:i");
-		if(sizeof($hora)<=4){
+		if(strlen($hora)<=4){
 			$hora = "0".$hora;
 		}
 		$sql = "SELECT COUNT(*) AS num from acessos
@@ -2313,7 +2313,7 @@ class Acessos_model extends CI_Model {
 		$hoje = date("Y-m-d",strtotime("today"));
 		$ontem = date("Y-m-d",strtotime("yesterday"));
 		$hora = date("G:i");
-		if(sizeof($hora)<=4){
+		if(strlen($hora)<=4){
 			$hora = "0".$hora;
 		}
 		$sql = "SELECT num_aluno, count(*) as num from acessos_alunos_corrigidos
