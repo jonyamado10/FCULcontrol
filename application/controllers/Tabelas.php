@@ -1477,7 +1477,9 @@ function cmp($a, $b)
 
           $data = $this->Users_model->get_percentagem_por_disciplina_user_docente();
           $data1 = array();
+
           foreach ($data as $row) {
+            print_r($row);
             $data1[] = array(
                     $row["designacao"],
                     $row["turma"],
