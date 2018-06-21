@@ -491,7 +491,9 @@ class Acessos_model extends CI_Model {
     }
     
 	function get_acessos_alunos($limit,$start,$col,$dir,$colsearch){
-
+$search_s = $search.'%';
+    	$search_s = $this->db->escape($search_s);
+    	$colsearch = $this->db->escape($colsearch);
 		$sql = "SELECT m.id_acesso,al.num_aluno,concat(al.nome, ' ',al.apelido) as nome,s.sentido as sentido,  
     			a.data,a.hora,concat(p.edificio, '.',p.piso,'.',p.num_porta) as porta
 				FROM 
@@ -545,7 +547,7 @@ class Acessos_model extends CI_Model {
 
     	$search_s = $search.'%';
     	$search_s = $this->db->escape($search_s);
-    	
+    	$colsearch = $this->db->escape($colsearch);
     	$sql = "SELECT m.id_acesso,al.num_aluno,concat(al.nome, ' ',al.apelido) as nome,s.sentido,  
     			a.data,a.hora,concat(p.edificio, '.',p.piso,'.',p.num_porta) as porta,s.sentido
 				FROM 
@@ -561,7 +563,6 @@ class Acessos_model extends CI_Model {
 						num_aluno LIKE '$search_s')";
 
 		foreach (array_keys($colsearch) as $key) {
-			$colsearch = $this->db->escape($colsearch[$key]);
         	if($key == 'porta'){
         		$sql.=" AND concat(p.edificio, '.',p.piso,'.',p.num_porta) LIKE '".$colsearch[$key]."%' ";
         	}
@@ -638,7 +639,8 @@ class Acessos_model extends CI_Model {
       return 0;
  	}
  	function acessos_alunos_search_column_count($colsearch)
-    {
+   
+    	$colsearch = $this->db->escape($colsearch);
 
     	$sql = "SELECT count(*) as num
 				FROM 
