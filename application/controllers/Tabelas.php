@@ -1477,7 +1477,7 @@ function cmp($a, $b)
 
           $data = $this->Users_model->get_percentagem_por_disciplina_user_docente();
           foreach ($data as $row) {
-            $row["media_assiduidades"] = round($row["total_presencas"]/$row["total_presencas_possiveis"] * 100,3);
+            arra_push($row,round($row["total_presencas"]/$row["total_presencas_possiveis"] * 100,3));
           
          }
           $total_disciplinas = sizeof($data);
