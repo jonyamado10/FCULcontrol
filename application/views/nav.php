@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Fcul - Controlo de Acessos</title>
+  <title>FCUL - Controlo de Acessos</title>
   <link rel="icon" type="image/png" href="<?php echo base_url("assets/images/icons/favicon.ico") ?>"/>
 
   <!-- Bootstrap core CSS-->
@@ -75,10 +75,10 @@
               </a>
               <ul class="sidenav-third-level collapse" id="collapseComponents.01">
                 <li>
-                  <a id ="BotaoAcessos24" href = "#">Acessos 24h</a>
+                  <a id ="BotaoAcessos24" href = "#">Acessos últimas 24 h</a>
                 </li>
                 <li>
-                  <a id ="BotaoAcessos6m" href=#>Acessos 6 meses</a>
+                  <a id ="BotaoAcessos6m" href=#>Acessos últimos 6 meses</a>
                 </li>
               </ul>
             </li>
@@ -263,7 +263,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" href="<?php echo base_url('Login/logout') ?>" data-target="#exampleModal">
-            <i class="fa fa-fw fas fa-sign-out-alt"></i>Logout</a>
+            <i class="fa fa-fw fas fa-sign-out-alt"></i>Terminar sessão</a>
         </li>
       </ul>
     </div>
