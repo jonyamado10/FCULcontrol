@@ -86,7 +86,7 @@
        <div class="card mb-3">
               
             <div class="card-header">
-              <i class="fa fa-bar-chart"></i> Top 10 alunos que não passam cartão</div>
+              <i class="fa fa-bar-chart"></i> Assiduidades Médias Disciplina</div>
             <div class="card-body">
            
                   <canvas id="graficotop10" width="100" height="50"></canvas>
