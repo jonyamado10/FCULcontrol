@@ -83,28 +83,3 @@
         </div>
        <div class="card-footer small text-muted"><?php date_default_timezone_set("Europe/Lisbon"); echo "Atualizado pela última vez às: " . date("G:i");?></div>
       </div>
-    </div>
-   
-<script type="text/javascript">
-  
-  $( "#acessosSemana" ).click(function() {
-        $('.container-fluid').remove();
-         $('#content').html("<div class='loader'></div> ");
-        $("#content").load("<?php echo base_url('Docente/tabela_meus_acessos') ?>");
-});
-    $( "#assiduidades" ).click(function() {
-        $('.container-fluid').remove();
-         $('#content').html("<div class='loader'></div> ");
-        $("#content").load("<?php echo base_url('Docente/tabela_assiduidades_medias') ?>");
-});
-    $( "#nacessosSemana" ).click(function() {
-        $('.container-fluid').remove();
-         $('#content').html("<div class='loader'></div> ");
-        $("#content").load("<?php echo base_url('Docente/tabela_meus_acessos') ?>");
-});
-    $( "#aulasHoje" ).click(function() {
-        $('.container-fluid').remove();
-         $('#content').html("<div class='loader'></div> ");
-        $("#content").load("<?php echo base_url('Docente/minhasAulas') ?>");
-});
-</script>
