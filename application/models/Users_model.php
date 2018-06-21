@@ -907,7 +907,7 @@ class Users_model extends CI_model{
 	  				"designacao" => $disciplina->designacao,
 	  				"turma" => $disciplina->turma,
                     "total_presencas" =>
-                    $this->get_num_total_presenca_aluno_disciplina_licenciatura($disciplina->id),
+                    $this->get_num_total_presencas_aluno_disciplina_licenciatura($disciplina->id),
                     "num_aulas_disciplina" =>$this->get_num_aulas_disciplina_licenciatura($disciplina->id)
 	  				);
 	  }
