@@ -9,7 +9,7 @@
       <!-- Example DataTables Card-->
       <div class="card mb-3">
 <?php  
-        echo form_open('Acessos/acessos_detalhados_validation','class="contact100-form validate-form" id = "myForm"'); 
+        echo form_open('Acessos/acessos_detalhados_aluno_validation','class="contact100-form validate-form" id = "myForm"'); 
         echo validation_errors();
         $attr = array(
         'class'         => 'form-control input100',

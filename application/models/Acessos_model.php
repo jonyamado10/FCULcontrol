@@ -237,6 +237,111 @@ sensores.id
 		}
 
     }
+    function num_aluno_existe($num_aluno){
+    	$this->db->select('id');
+		$this->db->from('alunos');
+		$this->db->where('num_aluno',$num_aluno);
+		$query = $this->db->get();
+		if($query->num_rows()==1) return 1;
+		return 0;
+    }
+    function gerar_acessos_detalhados_aluno(){
+    	$data = $this->input->post('data');
+    	if($this->input->post('hora_final') < $this->input->post('hora_inicial')){
+    		    list($hora_inicial, $min_inicial) = explode(":", $this->input->post('hora_inicial'));
+    			list($hora_final, $min_final) = explode(":", '23:59');
+    	}
+    	else{
+    		    list($hora_inicial, $min_inicial) = explode(":", $this->input->post('hora_inicial'));
+    			list($hora_final, $min_final) = explode(":", $this->input->post('hora_final'));
+    	}
+
+    	$n_acessos = $this->input->post('num_acessos');
+    	$acessos = array();
+    	$sensores = $this->get_sensores();
+    	$num_aluno = $this->input->post('num_aluno');
+
+    	for ($i = 0; $i < $n_acessos; $i++) {
+    		$rand_sensor = array_rand($sensores);
+    		$horaRandom = mt_rand($hora_inicial,$hora_final);
+    		if ($horaRandom<10){
+    			if($horaRandom == $hora_inicial){
+    				$hora = "0".$horaRandom.":".str_pad(mt_rand($min_inicial,59), 2, "0", STR_PAD_LEFT);
+    			}
+    			elseif($horaRandom == $hora_final){
+    				$hora = "0".$horaRandom.":".str_pad(mt_rand(0,$min_final), 2, "0", STR_PAD_LEFT);
+
+    			}
+    			else{
+    				$hora = "0".$horaRandom.":".str_pad(mt_rand(0,59), 2, "0", STR_PAD_LEFT);
+
+    			}
+ 
+    		}
+    		
+    		else{
+        		if($horaRandom == $hora_inicial){
+    				$hora = $horaRandom.":".str_pad(mt_rand($min_inicial,59), 2, "0", STR_PAD_LEFT);
+    			}
+    			elseif($horaRandom == $hora_final){
+    				$hora = $horaRandom.":".str_pad(mt_rand(0,$min_final), 2, "0", STR_PAD_LEFT);
+
+    			}
+    			else{
+    				$hora = $horaRandom.":".str_pad(mt_rand(0,59), 2, "0", STR_PAD_LEFT);
+
+    			}
+    		}
+    		
+		
+
+    		$acesso = array(
+    		'id_sensor' => $sensores[$rand_sensor]['id'],
+			'data' => $data,
+			'hora' => $hora);
+    		array_push($acessos, $acesso);
+
+
+		}
+		$query = $this->db->insert_batch('acessos', $acessos);
+		$last_id = $this->db->insert_id();
+
+		if($query){
+			$this->db->select('id');
+			$this->db->from('alunos');
+			$this->db->where('num_aluno',$num_aluno);
+			$query = $this->db->get();
+			$id_aluno = $query->result_array()[0]['id'];
+			$acessos_aluno = array();
+		
+			foreach ($ids_acessos as $id_acesso) {
+				
+					$rand_aluno = array_rand($ids_alunos);
+					$acesso_aluno = array('id_acesso' => $id_acesso ,
+											'id_aluno' => $id_aluno);
+					array_push($acessos_alunos, $acesso_aluno);
+					
+				
+				$i++;
+			}
+			$query1 = $this->db->insert_batch('acessos_alunos', $acessos_alunos);
+			if ($query1) {
+				return true;
+			}
+			else{
+				$this->db->trans_rollback();
+				return false;
+			}	
+		
+			
+		}
+		else{
+			$this->db->trans_rollback();
+			return false;
+		}
+
+    }
+
 
     //ACESSOS Corrigidos ALUNOS
     function ha_novos_acessos_alunos(){
