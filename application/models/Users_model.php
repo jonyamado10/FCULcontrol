@@ -923,7 +923,7 @@ class Users_model extends CI_model{
                     "total_presencas" =>
                     $this->get_num_total_presencas_aluno_disciplina_mestrado($disciplina->id),
                     "num_aulas_disciplina" =>$this->get_num_aulas_disciplina_mestrado($disciplina->id)
-                )
+                );
 	  	}
 	   $sql = "SELECT id_disciplina as id, dl.designacao,t.designacao as turma from alunos_inscritos_pos_graduacoes as ldl
 				join disciplinas_pos_graduacoes as dl on dl.id = ldl.id_disciplina
