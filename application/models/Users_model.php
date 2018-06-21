@@ -790,9 +790,9 @@ class Users_model extends CI_model{
     }
  
      function get_ids_docentes() {
-        $this->db->select('id,id_funcionario');
-		$this->db->from('docentes');
-		$query = $this->db->get(); 
+        $sql = "SELECT id_docente from lecciona_disciplinas_licenciatura
+group by id_docente;";
+		$query = $this->db->query($sql); 
         return $query->result();
     }
     function get_nome_funcionario($id){
