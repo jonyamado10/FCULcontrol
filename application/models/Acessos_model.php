@@ -545,7 +545,7 @@ class Acessos_model extends CI_Model {
 
     	$search_s = $search.'%';
     	$search_s = $this->db->escape($search_s);
-    	$colsearch = $this->db->escape($colsearch);
+    	
     	$sql = "SELECT m.id_acesso,al.num_aluno,concat(al.nome, ' ',al.apelido) as nome,s.sentido,  
     			a.data,a.hora,concat(p.edificio, '.',p.piso,'.',p.num_porta) as porta,s.sentido
 				FROM 
@@ -561,6 +561,7 @@ class Acessos_model extends CI_Model {
 						num_aluno LIKE '$search_s')";
 
 		foreach (array_keys($colsearch) as $key) {
+			$colsearch = $this->db->escape($colsearch[$key]);
         	if($key == 'porta'){
         		$sql.=" AND concat(p.edificio, '.',p.piso,'.',p.num_porta) LIKE '".$colsearch[$key]."%' ";
         	}
