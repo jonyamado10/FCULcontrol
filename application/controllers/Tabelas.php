@@ -1491,7 +1491,7 @@ function cmp($a, $b)
                "draw" => $draw,
                  "recordsTotal" => $total_disciplinas,
                  "recordsFiltered" => $total_disciplinas,
-                 "data" => $data
+                 "data" => $data1
             );
           echo json_encode($output);
           exit();
