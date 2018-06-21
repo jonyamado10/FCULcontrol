@@ -1476,11 +1476,17 @@ function cmp($a, $b)
           $length = intval($this->input->get("length"));
 
           $data = $this->Users_model->get_percentagem_por_disciplina_user_docente();
+          $data1 = array();
           foreach ($data as $row) {
-            array_push($row,round($row["total_presencas"]/$row["total_presencas_possiveis"] * 100,3));
-          
+            $data1[] = array(
+                    $row["designacao"],
+                    $row["turma"],
+                    $row["total_presencas"],
+                    $row["total_presencas_possiveis"],
+                    round($row["total_presencas"]/$row["total_presencas_possiveis"] * 100,3);
+                    );
          }
-          $total_disciplinas = sizeof($data);
+          $total_disciplinas = sizeof($data1);
           $output = array(
                "draw" => $draw,
                  "recordsTotal" => $total_disciplinas,
