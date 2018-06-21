@@ -77,10 +77,10 @@ $(function(){
         $("#content").load("<?php echo base_url('Aluno/grafico_acessos24') ?>");
     });
 
-    $("#BotaoRequisitarSala").click(function(){
+    $("#minhasDisciplinas").click(function(){
       $('.container-fluid').remove();
          $('#content').html("<div class='loader'></div> ");
-        $("#content").load("<?php echo base_url('Aluno/tabela_alunos') ?>");
+        $("#content").load("<?php echo base_url('Aluno/minhasDisciplinas') ?>");
     });
 
 // end  
