@@ -708,7 +708,7 @@ class Users_model extends CI_model{
 	  $disciplinas_licenciatura = $this->db->query($sql);
 	  $data = array();
 	  foreach ($disciplinas_licenciatura->result() as $disciplina) {
-	  		$data[]= $data[] = array(
+	  		$data[] = array(
 	  				"designacao" => $disciplina->designacao,
 	  				"turma" => $disciplina->turma,
                     "total_presencas" =>
@@ -722,7 +722,7 @@ class Users_model extends CI_model{
 				where id_docente = $id_docente";
 	  $disciplinas_mestrado = $this->db->query($sql);
 	  foreach ($disciplinas_mestrado->result() as $disciplina) {
-	  		$data[]= $data[] = array(
+	  		$data[] = array(
 	  				"designacao" => $disciplina->designacao,
 	  				"turma" => $disciplina->turma,
                     "total_presencas" =>
@@ -736,7 +736,7 @@ class Users_model extends CI_model{
 				where id_docente = $id_docente";
 	  $disciplinas_pg = $this->db->query($sql);
 	  foreach ($disciplinas_pg->result() as $disciplina) {
-	  		$data[]= $data[] = array(
+	  		$data[] = array(
 	  				"designacao" => $disciplina->designacao,
 	  				"turma" => $disciplina->turma,
                     "total_presencas" =>
