@@ -45,10 +45,7 @@
         },
               "language": {
             "emptyTable": "Não tem disciplinas."
-        },
-        "columnDefs": [
-    { "orderable": false, "targets": 8 }
-  ]
+        }
     });
 
 </script>
