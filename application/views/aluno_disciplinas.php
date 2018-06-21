@@ -47,7 +47,7 @@
             "emptyTable": "Não tem disciplinas."
         },
          "columnDefs": [
-    { "orderable": false, "targets": 7 }
+    { "orderable": false, "targets": 7 }]
     });
 
 </script>
