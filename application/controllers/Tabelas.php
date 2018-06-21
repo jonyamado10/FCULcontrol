@@ -1586,10 +1586,10 @@ public function tabela_disciplinas_user_aluno()
           $i=1;
           foreach($aulas_disciplina->result() as $r) {
                 if($this->Users_model->ve_se_user_aluno_presente_aula_disciplina_licenciatura($r->id_aula) != 0){
-                  $presente = "Sim"
+                  $presente = "Sim";
                 }
                 else{
-                  $presente = "Não"
+                  $presente = "Não";
                 }
                 if($i<10)
                 { $aula = "0".$i;} else{$aula = $i;}
@@ -1633,10 +1633,10 @@ public function tabela_disciplinas_user_aluno()
           $i=1;
      foreach($aulas_disciplina->result() as $r) {
                 if($this->Users_model->ve_se_user_aluno_presente_aula_disciplina_mestrado($r->id_aula) != 0){
-                  $presente = "Sim"
+                  $presente = "Sim";
                 }
                 else{
-                  $presente = "Não"
+                  $presente = "Não";
                 }
                 if($i<10)
                 { $aula = "0".$i;} else{$aula = $i;}
@@ -1681,10 +1681,10 @@ public function tabela_disciplinas_user_aluno()
           $i=1;
                 foreach($aulas_disciplina->result() as $r) {
                 if($this->Users_model->ve_se_user_aluno_presente_aula_disciplina_pos_graduacao($r->id_aula) != 0){
-                  $presente = "Sim"
+                  $presente = "Sim";
                 }
                 else{
-                  $presente = "Não"
+                  $presente = "Não";
                 }
                 if($i<10)
                 { $aula = "0".$i;} else{$aula = $i;}
