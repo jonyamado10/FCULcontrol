@@ -37,7 +37,7 @@ class Acessos extends CI_Controller{
 		$this->form_validation->set_rules('num_acessos', 'num_acessos', 'required|trim');
 
 		if($this->form_validation->run()){
-			if($this->Acessos_model->num_aluno_existe(intval($this->input->post("num_aluno"))){
+			if($this->Acessos_model->num_aluno_existe(intval($this->input->post("num_aluno")))){
 			   if($this->Acessos_model->gerar_acessos_detalhados()){
 			    $sucess = "Acessos gerados com sucesso!";
 	          	echo $sucess;
