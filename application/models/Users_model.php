@@ -735,6 +735,67 @@ class Users_model extends CI_model{
     	}
     	return round($soma/sizeof($disciplinas),3);
     }
+        function get_percentagem_por_disciplina_user_docent2($id){
+    	
+    	$this->db->select('id');
+		$this->db->from('docentes');
+		$this->db->where('id_funcionario',$id);
+		$query = $this->db->get();
+		$id_docente = $query->result_array()[0]['id'];
+		$sql = "SELECT id_disciplina_licenciatura as id, dl.designacao,t.designacao as turma from lecciona_disciplinas_licenciatura as ldl
+				join disciplinas_licenciatura as dl on dl.id = ldl.id_disciplina_licenciatura
+				join turmas_licenciatura as t on t.id =dl.id_turma 
+				where id_docente = $id_docente";
+	  $disciplinas_licenciatura = $this->db->query($sql);
+	  $data = array();
+	  foreach ($disciplinas_licenciatura->result() as $disciplina) {
+	  		$data[] = array(
+	  				"designacao" => $disciplina->designacao,
+	  				"turma" => $disciplina->turma,
+                    "total_presencas" =>
+                    $this->get_num_total_presencas_disciplina_licenciatura($disciplina->id),
+                    "total_presencas_possiveis" =>$this->get_num_aulas_disciplina_licenciatura($disciplina->id) * $this->get_num_alunos_inscritos_disciplina_licenciatura($disciplina->id)
+	  				);
+	  }
+	  $sql = "SELECT id_disciplina_mestrado as id, dl.designacao,t.designacao as turma from lecciona_disciplinas_mestrado as ldl
+				join disciplinas_mestrado as dl on dl.id = ldl.id_disciplina_mestrado
+				join turmas_mestrado as t on t.id =dl.id_turma 
+				where id_docente = $id_docente";
+	  $disciplinas_mestrado = $this->db->query($sql);
+	  foreach ($disciplinas_mestrado->result() as $disciplina) {
+	  		$data[] = array(
+	  				"designacao" => $disciplina->designacao,
+	  				"turma" => $disciplina->turma,
+                    "total_presencas" =>
+                    $this->get_num_total_presencas_disciplina_mestrado($disciplina->id),
+                    "total_presencas_possiveis" =>$this->get_num_aulas_disciplina_mestrado($disciplina->id) * $this->get_num_alunos_inscritos_disciplina_mestrado($disciplina->id)
+	  				);
+	  }
+	   $sql = "SELECT id_disciplina_pos_graduacao as id, dl.designacao,t.designacao as turma from lecciona_disciplinas_pos_graduacao as ldl
+				join disciplinas_pos_graduacoes as dl on dl.id = ldl.id_disciplina_pos_graduacao
+				join turmas_pos_graduacoes t on t.id =dl.id_turma 
+				where id_docente = $id_docente";
+	  $disciplinas_pg = $this->db->query($sql);
+	  foreach ($disciplinas_pg->result() as $disciplina) {
+	  		$data[] = array(
+	  				"designacao" => $disciplina->designacao,
+	  				"turma" => $disciplina->turma,
+                    "total_presencas" =>
+                    $this->get_num_total_presencas_disciplina_posgraduacao($disciplina->id),
+                    "total_presencas_possiveis" =>$this->get_num_aulas_disciplina_pos_graduacao($disciplina->id) * $this->get_num_alunos_inscritos_disciplina_pos_graduacao($disciplina->id)
+	  				);
+	  }
+	  return $data;
+
+    }
+    function get_avg_percentagem_por_disciplina_user_docente($id){
+    	$disciplinas = $this->get_percentagem_por_disciplina_user_docente();
+    	$soma=0;
+    	foreach ($disciplinas as $disciplina) {
+    			$soma += round($disciplina["total_presencas"]/$disciplina["total_presencas_possiveis"] * 100,3);
+    	}
+    	return round($soma/sizeof($disciplinas),3);
+    }
      function get_ids_docentes() {
         $this->db->select('id,id_funcionario');
 		$this->db->from('docentes');
@@ -748,7 +809,7 @@ class Users_model extends CI_model{
 		$query = $this->db->get(); 
         return $query->result()[0];
     }
-     function get_avg_percentagem_por_disciplina_docentes(){
+     function get_avg_percentagem_por_disciplina_docentes2(){
      	$docentes = $this->get_ids_docentes();
      	$data = array();
      	foreach ($docentes as $docente) {
