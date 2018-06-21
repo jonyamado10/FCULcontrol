@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous"><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -62,17 +61,7 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-          <a id = "navFerramentas"class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents3" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text">Ferramentas</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseComponents3">
-            <li>
-              <a id = "BotaoRequisitarSala" href="#"">Requisitar Sala</a>
-            </li>
-          </ul>
-        </li>
+
         <!--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-file"></i>
@@ -141,7 +130,7 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item" style=" margin:0 auto;">
           <a class="nav-link" style="color:white; cursor: default;">
-            <i class="fa fa-fw fa-user-tie"></i><?php echo "Olá ".$this->session->userdata('nome')?>
+            <i class="fa fa-fw fa-user"></i><?php echo "Olá ".$this->session->userdata('nome')?>
           </a>
         </li>
         <li class="nav-item">
