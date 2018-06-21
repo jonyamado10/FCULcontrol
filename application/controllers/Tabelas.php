@@ -1479,7 +1479,7 @@ function cmp($a, $b)
           foreach ($data as $row) {
             $row["media_assiduidades"] = round($row["total_presencas"]/$row["total_presencas_possiveis"] * 100,3);
           
-         
+         }
           $total_disciplinas = sizeof($data);
           $output = array(
                "draw" => $draw,
