@@ -16,7 +16,7 @@ class Docente extends CI_Controller {
 			$data["percentagem"]=$this->Users_model->get_avg_percentagem_por_disciplina_user_docente();
 			$data["n_aulas"]=$this->Users_model->get_num_aulas_hoje();
 			$data["n_nao_passou_cartao"]=$this->Acessos_model->get_num_vezes_docente_n_passou_cartao_semana();
-			$data["graf_assiduidades"] = $this->Acessos_model->grafico_assiduidades_user_docente();
+			$data["graf_assiduidades"] = $this->Users_model->grafico_assiduidades_user_docente();
 
 			
 			$this->load->view('nav_docente');
@@ -37,7 +37,7 @@ class Docente extends CI_Controller {
 		$data["n_acessos"]=$this->Acessos_model->get_num_acessos_24_user_docente();
 		$data["percentagem"]=$this->Users_model->get_avg_percentagem_por_disciplina_user_docente();
 		$data["n_aulas"]=$this->Users_model->get_num_aulas_hoje();
-		$data["graf_assiduidades"] = $this->Acessos_model->grafico_assiduidades_user_docente();
+		$data["graf_assiduidades"] = $this->Users_model->grafico_assiduidades_user_docente();
 
 		$this->load->view('docente_dashboard',$data);
 	}

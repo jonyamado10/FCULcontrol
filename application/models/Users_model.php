@@ -754,8 +754,7 @@ class Users_model extends CI_model{
                     "total_presencas_possiveis" =>$this->get_num_aulas_disciplina_licenciatura($disciplina->id) * $this->get_num_alunos_inscritos_disciplina_licenciatura($disciplina->id)
 	  				);
 	  	}
-	  	$data1 = asort($data);
-	  return array_splice($data1,0,5);
+	  return $data;
 
     }
  
@@ -790,8 +789,8 @@ group by id_docente,nome,apelido,d.id_funcionario;";
     			$data[$nomeCom] = round($soma/sizeof($disciplinas),3);
     		}
      	}
-    	
-    	return $data;
+    	$data1 = asort($data)
+    	return array_splice($data,0,5);
     }
     function get_num_aulas_hoje(){
     	$dataHj = date("Y-m-d",strtotime("today"));
