@@ -22,7 +22,7 @@
         <div class="card-body">
           <div class="table-responsive">
     
-            <table class="table table-bordered" id="tabela" width="100%" cellspacing="0">
+            <table class="table table-bordered" id="tabela" width="" cellspacing="0">
              <thead>
            <tr>
         <th>Nº Funcionário</th><th>Nome</th><th>Data</th><th>Hora</th><th>Porta</th><th>Sentido</th><th>Passou Cartão?</th></tr>
