@@ -198,7 +198,7 @@
             </span>
           </a>
           <div class="dropdown-menu" aria-labelledby="alertsDropdown" >
-            <h6 class="dropdown-header">Estado Sensores:</h6>
+            <h6 class="dropdown-header">Estado dos sensores:</h6>
             
             <?php 
             $i=0;
@@ -258,7 +258,7 @@
         </li>
         <li class="nav-item" style=" margin:0 auto;">
           <a class="nav-link" style="color:white; cursor: default;">
-            <i class="fa fa-fw fa-user-secret"></i><?php echo "Olá ".$this->session->userdata('nome')?>
+            <i class="fa fa-fw fa-user-secret"></i><?php echo "Bem-vindo, ".$this->session->userdata('nome')?>
           </a>
         </li>
         <li class="nav-item">
