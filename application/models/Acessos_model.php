@@ -2266,7 +2266,7 @@ class Acessos_model extends CI_Model {
 				$sql = "SELECT count (*) as num
 				FROM   acessos as a
 				join acessos_docentes as ad on a.id=ad.id_acesso
-				WHERE  data = '$d' and hora LIKE '$search_s' and id_docente= $id;" ;
+				WHERE  data = '$d' and hora LIKE '$search_s' and id_docente= $id_docente;" ;
 				$query = $this->db->query($sql);
 				$result = $query->row();
      			if(isset($result)){ $acessos[$h.':00'] = $result->num;}
