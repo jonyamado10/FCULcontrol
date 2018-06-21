@@ -28,11 +28,9 @@ class Acessos_model extends CI_Model {
         return $query->result_array();
     }
     function get_sensores(){
-    	$sql = "SELECT 
-sensores.id
-  FROM sensores
-  join portas on id_porta = portas.id
-  where portas.edificio = 2 and piso = 3";
+
+    	$this->db->select('id');
+		$this->db->from('sensores');
 		$query = $this->db->query($sql); 
         return $query->result_array();
     }
