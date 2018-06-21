@@ -56,7 +56,7 @@
               <?php }?>
               <div class="mr-5"><?php echo $percentagem ?>% Média de assiduidade nas suas aulas!</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" href="#" id ="assiduidades">
               <span class="float-left">Ver Detalhes</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -72,7 +72,7 @@
               </div>
               <div class="mr-5"><?php echo $n_nao_passou_cartao ?> vezes que nao passou o cartão na ultima semana!</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" href="#" id ="acessosSemana">
               <span class="float-left">Ver Acessos</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
