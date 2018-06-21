@@ -2,7 +2,7 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Acesso</a>
+          <a href="#">Acessos</a>
         </li>
         <li class="breadcrumb-item active">Tabelas</li>
       </ol>
