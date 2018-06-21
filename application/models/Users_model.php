@@ -847,9 +847,9 @@ class Users_model extends CI_model{
 				  join alunos_inscritos_licenciatura as ail on ail.id_disciplina = dl.id
 					  where aac.data = adl.data and (aac.hora > adl.hora_inicial and aac.hora < adl.hora_final) and sentido = 'Entrada' and ail.id_aluno = alunos.id and adl.id=$id_aula and alunos.id = $id_aluno;";
 	    $query = $this->db->query($sql);
-	    $result = $query->result();
-	    if(isset($result)) return $result->num;
-	    return 0;
+		$result = $query->row();
+      	if(isset($result)) return $result->num;
+        return 0;
     }
     function ve_se_user_aluno_presente_aula_disciplina_mestrado($id_aula){
     	$id_aluno = $this->session->userdata("id");
@@ -864,9 +864,9 @@ class Users_model extends CI_model{
 				  join alunos_inscritos_mestrado as ail on ail.id_disciplina = dl.id
 					  where aac.data = adl.data and (aac.hora > adl.hora_inicial and aac.hora < adl.hora_final) and sentido = 'Entrada' and ail.id_aluno = alunos.id and adl.id=$id_aula and alunos.id = $id_aluno;";
 	    $query = $this->db->query($sql);
-	    $result = $query->result();;
-	    if(isset($result)) return $result->num;
-	    return 0;
+	    $result = $query->row();
+      	if(isset($result)) return $result->num;
+        return 0;
     }
         function ve_se_user_aluno_presente_aula_disciplina_pos_graduacao($id_aula){
     	$id_aluno = $this->session->userdata("id");
@@ -881,9 +881,9 @@ class Users_model extends CI_model{
 				  join alunos_inscritos_pos_graduacoes as ail on ail.id_disciplina = dl.id
 					  where aac.data = adl.data and (aac.hora > adl.hora_inicial and aac.hora < adl.hora_final) and sentido = 'Entrada' and ail.id_aluno = alunos.id and adl.id=$id_aula and alunos.id = $id_aluno;";
 	    $query = $this->db->query($sql);
-	    $result = $query->result();
-	    if(isset($result)) return $result->num;
-	    return 0;
+	    $result = $query->row();
+      	if(isset($result)) return $result->num;
+        return 0;
     }
 }
 ?>
