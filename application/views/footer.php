@@ -5,7 +5,7 @@
     <footer class="sticky-footer">
       <div class="container2">
         <div class="text-center">
-          <small>Copyright © PTI/PTR - Grupo 4 2018</small>
+          <small>Copyright © PTI/PTR - Grupo 4 - 2018</small>
         </div>
       </div>
     </footer>
@@ -19,9 +19,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Tem a certeza que pretende sair?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
+            
           </div>
           <div class="modal-footer">
             <a class="btn btn-primary" href="<?php echo base_url('Login/logout') ?>">Sim</a>
