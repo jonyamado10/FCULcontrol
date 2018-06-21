@@ -556,11 +556,11 @@ $search_s = $search.'%';
 				  join sensores as s on s.id = a.id_sensor
 				  join portas as p on p.id = s.id_porta
 				  join alunos as al on m.id_aluno = al.id
-				WHERE (concat(al.nome, ' ',al.apelido)  LIKE '$search_s' OR 
-						data LIKE '$search_s' OR 
-						concat (p.edificio, '.',p.piso,'.',p.num_porta) LIKE '$search_s' or 
-						hora LIKE  '$search_s' or
-						num_aluno LIKE '$search_s')";
+				WHERE (concat(al.nome, ' ',al.apelido)  LIKE $search_s OR 
+						data LIKE $search_s OR 
+						concat (p.edificio, '.',p.piso,'.',p.num_porta) LIKE $search_s or 
+						hora LIKE  $search_s or
+						num_aluno LIKE $search_s)";
 
 		foreach (array_keys($colsearch) as $key) {
         	if($key == 'porta'){
