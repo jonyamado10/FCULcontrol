@@ -93,10 +93,16 @@
     </div>
    
 <script type="text/javascript">
+  
   $( "#acessosSemana" ).click(function() {
         $('.container-fluid').remove();
          $('#content').html("<div class='loader'></div> ");
         $("#content").load("<?php echo base_url('Docente/tabela_meus_acessos') ?>");
+});
+    $( "#assiduidades" ).click(function() {
+        $('.container-fluid').remove();
+         $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Docente/tabela_assiduidades_medias') ?>");
 });
     $( "#nacessosSemana" ).click(function() {
         $('.container-fluid').remove();

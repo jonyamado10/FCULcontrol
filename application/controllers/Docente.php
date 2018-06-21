@@ -181,6 +181,13 @@ class Docente extends CI_Controller {
 	    $this->load->view('docente_grafico_acessos24',$data);
 	     
 	}
+	public function grafico_acessos24()
+	{
+		if (!isset($_SERVER['HTTP_REFERER']))
+		{ redirect('Admin');}
+	    $this->load->view('tabela_assiduidades_medias');
+	     
+	}
 	public function teste(){
 		$this->load->model('Users_model');
 		print_r($this->Users_model->get_avg_percentagem_por_disciplina_user_docente());

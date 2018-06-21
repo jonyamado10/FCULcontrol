@@ -1466,5 +1466,29 @@ function cmp($a, $b)
           echo json_encode($output);
           exit();
      }
+     
+     public function assiduidades_medias()
+     {
+          $this->load->model('Users_model');
+          // Datatables Variables
+          $draw = intval($this->input->get("draw"));
+          $start = intval($this->input->get("start"));
+          $length = intval($this->input->get("length"));
+
+          $data = $this->Users_model->get_percentagem_por_disciplina_user_docente();
+
+         
+          $total_disciplinas = sizeof($data);
+          $output = array(
+               "draw" => $draw,
+                 "recordsTotal" => $total_disciplinas,
+                 "recordsFiltered" => $total_disciplinas,
+                 "data" => $data
+            );
+          echo json_encode($output);
+          exit();
+     }
         
+   
 }
+
