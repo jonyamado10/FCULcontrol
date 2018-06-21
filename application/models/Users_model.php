@@ -1070,6 +1070,19 @@ group by id_docente,nome,apelido,d.id_funcionario;";
 	   }
 	   else{return 0;}
     }
+    function grafico_assiduidades_user_docente(){
+  
+          $data = $this->get_percentagem_por_disciplina_user_docente();
+          $data = array();
+
+          foreach ($data as $row) {
+            
+             $data["designacao"] = round($row["total_presencas"]/$row["total_presencas_possiveis"] * 100,3);
+                   
+                    
+         }
+          
+    }
 
 }
 ?>
