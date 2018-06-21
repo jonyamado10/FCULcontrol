@@ -735,13 +735,9 @@ class Users_model extends CI_model{
     	}
     	return round($soma/sizeof($disciplinas),3);
     }
-        function get_percentagem_por_disciplina_user_docente2($id){
+        function get_percentagem_por_disciplina_user_docente2($id_docente){
     	
-    	$this->db->select('id');
-		$this->db->from('docentes');
-		$this->db->where('id',$id);
-		$query = $this->db->get();
-		$id_docente = $query->result_array()[0]['id'];
+    
 		$sql = "SELECT id_disciplina_licenciatura as id, dl.designacao,t.designacao as turma from lecciona_disciplinas_licenciatura as ldl
 				join disciplinas_licenciatura as dl on dl.id = ldl.id_disciplina_licenciatura
 				join turmas_licenciatura as t on t.id =dl.id_turma 
