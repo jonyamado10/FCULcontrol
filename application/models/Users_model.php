@@ -1076,7 +1076,7 @@ group by id_docente,nome,apelido,d.id_funcionario;";
 
           foreach ($data as $row) {
              $assiduidade = round($row["total_presencas"]/$row["total_presencas_possiveis"] * 100,3);
-             if($assiduidade === 0){
+             if($assiduidade != 0){
              $data1[$row["designacao"]] = $assiduidade;
          	 }
                    
