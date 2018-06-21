@@ -185,7 +185,7 @@ class Docente extends CI_Controller {
 	{
 		if (!isset($_SERVER['HTTP_REFERER']))
 		{ redirect('Admin');}
-	    $this->load->view('tabela_assiduidades_medias');
+	    $this->load->view('tabela_media_assiduidades');
 	     
 	}
 	public function teste(){
