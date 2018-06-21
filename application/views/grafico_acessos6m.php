@@ -21,7 +21,7 @@
                   <?php
                       $a = array_filter($acessos6m);
                       $total = array_sum($a);
-                      echo $total . " Acessos";
+                      echo $total . " acessos";
                   ?>
 
                   </div>
@@ -31,7 +31,7 @@
                     <?php
                       $a = array_filter($acessos6m);
                       $average = array_sum($a)/6;
-                      echo round($average)." Acessos";
+                      echo round($average)." acessos";
                   ?></div>
                   <div class="small text-muted">, em média, por mês</div>
                 </div>
