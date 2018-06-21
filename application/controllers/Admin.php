@@ -211,14 +211,7 @@ class Admin extends CI_Controller {
 	{
 	
 $this->load->model('Acessos_model');
-			$data['sensores'] = $this->Acessos_model->sensores_avariados();	
-			
-			if(empty($data['sensores'])){
-				echo "vazio";
-			}
-          	else{
-          		print_r($data['sensores']);
-          	}
+echo $this->Acessos_model->num_aluno_existe("42124"));
 	}
 }
 ?>
