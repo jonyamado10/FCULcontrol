@@ -638,7 +638,7 @@ $search_s = $search.'%';
       if(isset($result)) return $result->num;
       return 0;
  	}
- 	function acessos_alunos_search_column_count($colsearch)
+ 	function acessos_alunos_search_column_count($colsearch){
    
     	$colsearch = $this->db->escape($colsearch);
 
