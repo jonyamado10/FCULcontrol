@@ -15,7 +15,7 @@
      
     <table class="table table-bordered" id="tabela-docentes" width="100%" cellspacing="0">
      <thead>
-     <tr><th>Nº Funcionário</th>
+     <tr><th>Nº</th>
       <th>Nome</th>
       <th>Email</th>
       <th>Nº Cartão de Cidadão</th>
@@ -24,7 +24,7 @@
      <tbody>
      </tbody>
       <tfoot>
-         <tr><th>Nº Funcionário</th>
+         <tr><th>Nº</th>
       <th>Nome</th>
       <th>Email</th>
       <th>Nº Cartão de Cidadão</th>

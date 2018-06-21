@@ -2,7 +2,7 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Acesso</a>
+          <a href="#">Acessos</a>
         </li>
         <li class="breadcrumb-item active">Tabelas</li>
       </ol>
@@ -24,13 +24,13 @@
             <table class="table table-bordered" id="tabela" width="100%" cellspacing="0">
              <thead>
            <tr>
-        <th>Aluno Nº</th><th>Nome</th><th>Data</th><th>Hora</th><th>Porta</th><th>Sentido</th><th>Passou Cartão?</th></tr>
+        <th>Nº</th><th>Nome</th><th>Data</th><th>Hora</th><th>Porta</th><th>Sentido</th><th>Passou Cartão?</th></tr>
              </thead>
              <tbody>
              </tbody>
               <tfoot>
            <tr>
-        <th>Aluno Nº</th><th>Nome</th><th>Data</th><th>Hora</th><th>Porta</th><th>Sentido</th><th>Passou Cartão?</th></tr>
+        <th>Nº</th><th>Nome</th><th>Data</th><th>Hora</th><th>Porta</th><th>Sentido</th><th>Passou Cartão?</th></tr>
                       </tfoot>
              </table>
 
