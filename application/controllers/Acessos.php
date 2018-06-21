@@ -38,26 +38,10 @@ class Acessos extends CI_Controller{
 
 		if($this->form_validation->run()){
 			if($this->Acessos_model->num_aluno_existe(intval($this->input->post("num_aluno")))){
-			   if($this->Acessos_model->gerar_acessos_detalhados()){
-			    $sucess = "Acessos gerados com sucesso!";
-	          	echo $sucess;
-	           
-			   }
-			   else{
-			   	echo "Erro interno, a gerar Acessos, Tente novamente!";
-			   	return false;
-			   }
+			echo $this->input->post("num_aluno");
 
-			}
-			else{
-				echo "Número de Aluno Introduzido não existe.";
-			}
 		}
-		else{
-
- 			echo "Todos os Campos tem que ser preenchidos, Tente novamente!";
-			return false;
-		}
+		else{ echo "nao entro";}
 
 	}
 		public function acessos_detalhados_aluno_validation(){

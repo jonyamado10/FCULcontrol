@@ -237,7 +237,7 @@ sensores.id
 		}
 
     }
-    function num_aluno_existe($num_aluno){
+    public function num_aluno_existe($num_aluno){
     	$this->db->select('id');
 		$this->db->from('alunos');
 		$this->db->where('num_aluno',$num_aluno);
