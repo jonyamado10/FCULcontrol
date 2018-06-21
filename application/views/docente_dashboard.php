@@ -72,7 +72,7 @@
               </div>
               <div class="mr-5"><?php echo $n_nao_passou_cartao ?> vezes que nao passou o cartão na ultima semana!</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#" id ="acessosSemana">
+            <a class="card-footer text-white clearfix small z-1" href="#" id ="nacessosSemana">
               <span class="float-left">Ver Acessos</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -94,6 +94,11 @@
    
 <script type="text/javascript">
   $( "#acessosSemana" ).click(function() {
+        $('.container-fluid').remove();
+         $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Docente/tabela_meus_acessos') ?>");
+});
+    $( "#nacessosSemana" ).click(function() {
         $('.container-fluid').remove();
          $('#content').html("<div class='loader'></div> ");
         $("#content").load("<?php echo base_url('Docente/tabela_meus_acessos') ?>");
