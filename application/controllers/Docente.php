@@ -192,7 +192,7 @@ class Docente extends CI_Controller {
 		date_default_timezone_set("Europe/Lisbon"); 
 		$hora = date("G:i");
 		$myhora = (string)$hora;
-		echo $sizeof($hora);
+		echo sizeof($hora);
 		if(sizeof($myhora)<=3){
 			$myhora = "0".$hora;
 		}
