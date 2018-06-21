@@ -71,16 +71,6 @@ class Admin extends CI_Controller {
 
 	}
 
-	public function grafico_pessoas_por_edificio()
-	{
-		if (!isset($_SERVER['HTTP_REFERER']))
-		{ redirect('Admin');}
-
-		$this->load->model('Users_model');
-		$data['pessoas_edificio']  = $this->Users_model->get_num_pessoas_por_edificio();
-		$this->load->view('grafico_pessoas_edificio',$data);
-
-	}
 	public function gerar_acessos()
 
 	{
