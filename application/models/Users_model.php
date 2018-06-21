@@ -758,39 +758,6 @@ class Users_model extends CI_model{
                     "total_presencas_possiveis" =>$this->get_num_aulas_disciplina_licenciatura($disciplina->id) * $this->get_num_alunos_inscritos_disciplina_licenciatura($disciplina->id)
 	  				);
 	  	}
-	  
-	  $sql = "SELECT id_disciplina_mestrado as id, dl.designacao,t.designacao as turma from lecciona_disciplinas_mestrado as ldl
-				join disciplinas_mestrado as dl on dl.id = ldl.id_disciplina_mestrado
-				join turmas_mestrado as t on t.id =dl.id_turma 
-				where id_docente = $id_docente";
-	  $disciplinas_mestrado = $this->db->query($sql);
-	  foreach ($disciplinas_mestrado->result() as $disciplina) {
-	  		  	if($this->get_num_alunos_inscritos_disciplina_mestrado($disciplina->id)){continue;}
-
-	  		$data[] = array(
-	  				"designacao" => $disciplina->designacao,
-	  				"turma" => $disciplina->turma,
-                    "total_presencas" =>
-                    $this->get_num_total_presencas_disciplina_mestrado($disciplina->id),
-                    "total_presencas_possiveis" =>$this->get_num_aulas_disciplina_mestrado($disciplina->id) * $this->get_num_alunos_inscritos_disciplina_mestrado($disciplina->id)
-	  				);
-	  }
-	   $sql = "SELECT id_disciplina_pos_graduacao as id, dl.designacao,t.designacao as turma from lecciona_disciplinas_pos_graduacao as ldl
-				join disciplinas_pos_graduacoes as dl on dl.id = ldl.id_disciplina_pos_graduacao
-				join turmas_pos_graduacoes t on t.id =dl.id_turma 
-				where id_docente = $id_docente";
-	  $disciplinas_pg = $this->db->query($sql);
-	  foreach ($disciplinas_pg->result() as $disciplina) {
-	  		  	if($this->get_num_alunos_inscritos_disciplina_pos_graduacao($disciplina->id)){continue;}
-
-	  		$data[] = array(
-	  				"designacao" => $disciplina->designacao,
-	  				"turma" => $disciplina->turma,
-                    "total_presencas" =>
-                    $this->get_num_total_presencas_disciplina_posgraduacao($disciplina->id),
-                    "total_presencas_possiveis" =>$this->get_num_aulas_disciplina_pos_graduacao($disciplina->id) * $this->get_num_alunos_inscritos_disciplina_pos_graduacao($disciplina->id)
-	  				);
-	  }
 	  return $data;
 
     }
