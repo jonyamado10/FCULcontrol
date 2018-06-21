@@ -754,8 +754,8 @@ class Users_model extends CI_model{
                     "total_presencas_possiveis" =>$this->get_num_aulas_disciplina_licenciatura($disciplina->id) * $this->get_num_alunos_inscritos_disciplina_licenciatura($disciplina->id)
 	  				);
 	  	}
-	  	$data1 = array_slice($data,0,5);
-	  return asort($data1,0,3);
+	  	$data1 = asort($data);
+	  return array_splice($data1,0,5);
 
     }
  
