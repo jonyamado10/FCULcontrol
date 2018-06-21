@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,6 +21,9 @@
   <!-- Page level plugin CSS-->
   <link href="<?php echo base_url('assets/vendor/datatables/dataTables.bootstrap4.css') ?>" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+    <script src=<?php echo base_url("assets/vendor/jquery/jquery.min.js") ?>></script>
+
 
 </head>
 
@@ -59,9 +63,19 @@
             <li>
               <a id = "BotaoTabelaMeusAcessos" href="#">Os Meus Acessos</a>
             </li>
+            <li>
+              <a id = "BotaoTabelaDisciplinas" href="#">As Minhas Disciplinas</a>
+            </li>
+              <li>
+              <a id = "BotaoTabelaAulas" href="#">A Minha Agenda</a>
+            </li>
+            <li>
+              <a id = "BotaoTabelaAssiduidades" href="#"> Tabela de Assiduidades Médias</a>
+            </li>
           </ul>
         </li>
 
+   
         <!--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-file"></i>
@@ -130,7 +144,7 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item" style=" margin:0 auto;">
           <a class="nav-link" style="color:white; cursor: default;">
-            <i class="fa fa-fw fa-user"></i><?php echo "Olá ".$this->session->userdata('nome')?>
+            <i class="fa fa-fw fa-user-secret"></i><?php echo "Olá ".$this->session->userdata('nome')?>
           </a>
         </li>
         <li class="nav-item">
