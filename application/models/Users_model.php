@@ -739,7 +739,7 @@ class Users_model extends CI_model{
     	
     	$this->db->select('id');
 		$this->db->from('docentes');
-		$this->db->where('id_funcionario',$id);
+		$this->db->where('id',$id);
 		$query = $this->db->get();
 		$id_docente = $query->result_array()[0]['id'];
 		$sql = "SELECT id_disciplina_licenciatura as id, dl.designacao,t.designacao as turma from lecciona_disciplinas_licenciatura as ldl
