@@ -727,8 +727,7 @@ class Users_model extends CI_model{
 
     }
     function get_avg_percentagem_por_disciplina_user_docente(){
-    	$disciplinas = $this->get_percentagem_por_disciplina_user_docente( $id= $this->session->userdata('id');
-);
+    	$disciplinas = $this->get_percentagem_por_disciplina_user_docente($id=$this->session->userdata('id'));
     	$soma=0;
     	foreach ($disciplinas as $disciplina) {
     			$soma += round($disciplina["total_presencas"]/$disciplina["total_presencas_possiveis"] * 100,3);
