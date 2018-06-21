@@ -491,9 +491,7 @@ class Acessos_model extends CI_Model {
     }
     
 	function get_acessos_alunos($limit,$start,$col,$dir,$colsearch){
-$search_s = $search.'%';
-    	$search_s = $this->db->escape($search_s);
-    	$colsearch = $this->db->escape($colsearch);
+
 		$sql = "SELECT m.id_acesso,al.num_aluno,concat(al.nome, ' ',al.apelido) as nome,s.sentido as sentido,  
     			a.data,a.hora,concat(p.edificio, '.',p.piso,'.',p.num_porta) as porta
 				FROM 
@@ -544,10 +542,7 @@ $search_s = $search.'%';
 	}
 	function acessos_alunos_search($limit,$start,$search,$col,$dir,$colsearch)
     {
-
     	$search_s = $search.'%';
-    	$search_s = $this->db->escape($search_s);
-    	$colsearch = $this->db->escape($colsearch);
     	$sql = "SELECT m.id_acesso,al.num_aluno,concat(al.nome, ' ',al.apelido) as nome,s.sentido,  
     			a.data,a.hora,concat(p.edificio, '.',p.piso,'.',p.num_porta) as porta,s.sentido
 				FROM 
@@ -556,11 +551,11 @@ $search_s = $search.'%';
 				  join sensores as s on s.id = a.id_sensor
 				  join portas as p on p.id = s.id_porta
 				  join alunos as al on m.id_aluno = al.id
-				WHERE (concat(al.nome, ' ',al.apelido)  LIKE $search_s OR 
-						data LIKE $search_s OR 
-						concat (p.edificio, '.',p.piso,'.',p.num_porta) LIKE $search_s or 
-						hora LIKE  $search_s or
-						num_aluno LIKE $search_s)";
+				WHERE (concat(al.nome, ' ',al.apelido)  LIKE '$search_s' OR 
+						data LIKE '$search_s' OR 
+						concat (p.edificio, '.',p.piso,'.',p.num_porta) LIKE '$search_s' or 
+						hora LIKE  '$search_s' or
+						num_aluno LIKE '$search_s')";
 
 		foreach (array_keys($colsearch) as $key) {
         	if($key == 'porta'){
@@ -601,10 +596,7 @@ $search_s = $search.'%';
     }
     function acessos_alunos_search_count($search,$colsearch)
     {
-
     	$search_s = $search.'%';
-    	$search_s = $this->db->escape($search_s);
-    	$colsearch = $this->db->escape($colsearch);
     	$sql = "SELECT count(*) as num
 				FROM 
 				  acessos_alunos AS m 
@@ -638,9 +630,8 @@ $search_s = $search.'%';
       if(isset($result)) return $result->num;
       return 0;
  	}
- 	function acessos_alunos_search_column_count($colsearch){
-   
-    	$colsearch = $this->db->escape($colsearch);
+ 	function acessos_alunos_search_column_count($colsearch)
+    {
 
     	$sql = "SELECT count(*) as num
 				FROM 
