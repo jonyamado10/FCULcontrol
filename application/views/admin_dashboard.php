@@ -5,7 +5,7 @@
           <a href="#">Dashboard</a>
         </li>
         <li class="breadcrumb-item active">A minha área</li>
-		<li class="breadcrumb-item">Servidor da BD: <?php echo $_SERVER["location"]; echo "  |   "; echo $this->db->hostname; ?></li> 
+		<li class="breadcrumb-item"> Localização Servidor: <?php echo $_SERVER["location"]; echo "  | Servidor da BD:  "; echo $this->db->hostname; ?></li> 
       </ol>
       <!-- Icon Cards-->
       <div class="row">
