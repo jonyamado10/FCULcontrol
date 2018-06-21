@@ -734,6 +734,35 @@ class Users_model extends CI_model{
     	}
     	return round($soma/sizeof($disciplinas),3);
     }
+     function get_ids_docentes() {
+        $this->db->select('id,id_funcionario');
+		$this->db->from('docentes');
+		$query = $this->db->get(); 
+        return $query->result();
+    }
+    function get_nome_funcionario($id){
+    	$this->db->select('nome,apelido');
+		$this->db->from('funcionarios');
+		$this->db->from('id',$id);
+		$query = $this->db->get(); 
+        return $query->result()[0];
+    }
+     function get_avg_percentagem_por_disciplina_docentes(){
+     	$docentes = $this->get_ids_docentes();
+     	$data = array();
+     	foreach ($docentes as $docente) {
+     		$nome =$this->get_nome_funcionario($docente->id_funcionario);
+     		$nomeCom = $nome->nome." ".$nome->apelido;
+     		$disciplinas = $this->get_percentagem_por_disciplina_user_docente($docente->id);
+    		$soma=0;
+    		foreach ($disciplinas as $disciplina) {
+    			$soma += round($disciplina["total_presencas"]/$disciplina["total_presencas_possiveis"] * 100,3);
+    		}
+    		$data[$nomeCom] = round($soma/sizeof($disciplinas),3);
+     	}
+    	
+    	return $data;
+    }
     function get_num_aulas_hoje(){
     	$dataHj = date("Y-m-d",strtotime("today"));
     	$id =  $this->session->userdata('id');

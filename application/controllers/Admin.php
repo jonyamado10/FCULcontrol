@@ -211,7 +211,7 @@ class Admin extends CI_Controller {
 	{
 	
 $this->load->model('Acessos_model');
-echo $this->Acessos_model->num_aluno_existe("4223232124");
+echo $this->Acessos_model->get_avg_percentagem_por_disciplina_docentes();
 	}
 }
 ?>
