@@ -1521,7 +1521,10 @@ public function tabela_disciplinas_user_aluno()
                     $r->ects,
                     $r->turma,
                     $r->ano_lectivo,
-                    "Licenciatura em ".$r->licenciatura
+                    "Licenciatura em ".$r->licenciatura,
+                    "<a id = 'BotaoVeAulasL".$r->id. "'href= '#' value=".$r->id.">Ver Plano de Aulas</a><script>$('#BotaoVeAulasL".$r->id."').click(function(){
+        $('#content').load("."'".base_url('Docente/aulasPorDisciplinaLicenciatura/').$r->id."'".")
+    });</script>"
 
                );
 
@@ -1536,7 +1539,10 @@ public function tabela_disciplinas_user_aluno()
                     $r->ects,
                     $r->turma,
                     $r->ano_lectivo,
-                    "Mestrado em ".$r->mestrado
+                    "Mestrado em ".$r->mestrado,
+                    "<a id = 'BotaoVeAulasL".$r->id. "'href= '#' value=".$r->id.">Ver Plano de Aulas</a><script>$('#BotaoVeAulasL".$r->id."').click(function(){
+        $('#content').load("."'".base_url('Docente/aulasPorDisciplinaLicenciatura/').$r->id."'".")
+    });</script>"
                );
           }
           foreach($disciplinas_pos_graduacao->result() as $r) {
@@ -1548,7 +1554,10 @@ public function tabela_disciplinas_user_aluno()
                     $r->ects,
                     $r->turma,
                     $r->ano_lectivo,
-                    "Pós-Graduação em ".$r->pos_graduacao
+                    "Pós-Graduação em ".$r->pos_graduacao,
+                    "<a id = 'BotaoVeAulasL".$r->id. "'href= '#' value=".$r->id.">Ver Plano de Aulas</a><script>$('#BotaoVeAulasL".$r->id."').click(function(){
+        $('#content').load("."'".base_url('Docente/aulasPorDisciplinaLicenciatura/').$r->id."'".")
+    });</script>"
                );
           }
           $total_disciplinas = sizeof($data);

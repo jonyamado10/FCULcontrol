@@ -18,13 +18,13 @@
     <table class="table table-bordered" id="tabela-disciplinas" width="100%" cellspacing="0">
      <thead>
    <tr>
-    <th>Disciplina</th><th>Regente</th><th>Semestre</th><th>ECTS</th><th>Turma</th><th>Ano Lectivo</th><th>Grau</th></tr>
+    <th>Disciplina</th><th>Regente</th><th>Semestre</th><th>ECTS</th><th>Turma</th><th>Ano Lectivo</th><th>Grau</th><th></th></tr>
      </thead>
      <tbody>
      </tbody>
       <tfoot>
    <tr>
-<th>Disciplina</th><th>Regente</th><th>Semestre</th><th>ECTS</th><th>Turma</th><th>Ano Lectivo</th><th>Grau</th></tr>
+<th>Disciplina</th><th>Regente</th><th>Semestre</th><th>ECTS</th><th>Turma</th><th>Ano Lectivo</th><th>Grau</th><th></th></tr>
               </tfoot>
      </table>
 
