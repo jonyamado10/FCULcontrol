@@ -45,7 +45,7 @@ class Aluno extends CI_Controller {
 	{
 		if (!isset($_SERVER['HTTP_REFERER']))
 		{ redirect('Admin');}
-	    $this->load->view('tabela_disciplinas');     
+	    $this->load->view('aluno_disciplinas');     
 	}
 
 }
