@@ -242,9 +242,13 @@ sensores.id
 		$this->db->from('alunos');
 		$this->db->where('num_aluno',$num_aluno);
 		$query = $this->db->get();
-		if($query->num_rows()==1) return 1;
+		if($query->num_rows()==1) 
+			{return 1;}
+		else{
 		return 0;
+    	}
     }
+
     function gerar_acessos_detalhados_aluno(){
     	$data = $this->input->post('data');
     	if($this->input->post('hora_final') < $this->input->post('hora_inicial')){
