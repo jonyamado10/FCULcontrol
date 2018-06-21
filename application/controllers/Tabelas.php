@@ -1551,7 +1551,7 @@ public function tabela_disciplinas_user_aluno()
                     "Pós-Graduação em ".$r->pos_graduacao
                );
           }
-          $total_disciplinas = sizeof($disciplinas_licenciatura) +  sizeof($disciplinas_mestrado) +  sizeof($disciplinas_pos_graduacao);
+          $total_disciplinas = sizeof($data);
           $output = array(
                "draw" => $draw,
                  "recordsTotal" => $total_disciplinas,
