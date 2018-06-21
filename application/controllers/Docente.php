@@ -191,14 +191,7 @@ class Docente extends CI_Controller {
 	     
 	}
 	public function teste(){
-		date_default_timezone_set("Europe/Lisbon"); 
-		$hora = date("G:i");
-		$myhora = (string)$hora;
-		echo strlen($hora);
-		if(sizeof($myhora)<=3){
-			$myhora = "0".$hora;
-		}
-		echo $myhora;
+		print_r($this->Users_model->grafico_assiduidades_user_docente());
 		
 	}
 }
