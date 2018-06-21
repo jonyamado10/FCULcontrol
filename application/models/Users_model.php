@@ -743,7 +743,7 @@ class Users_model extends CI_model{
     function get_nome_funcionario($id){
     	$this->db->select('nome,apelido');
 		$this->db->from('funcionarios');
-		$this->db->from('id',$id);
+		$this->db->where('id',$id);
 		$query = $this->db->get(); 
         return $query->result()[0];
     }
