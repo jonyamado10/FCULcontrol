@@ -164,7 +164,7 @@ var myLineChart = new Chart(ctx, {
   $( "#acessosSemana" ).click(function() {
         $('.container-fluid').remove();
          $('#content').html("<div class='loader'></div> ");
-        $("#content").load("<?php echo base_url('Aluno/tabela_meus_acessos') ?>");
+        $("#content").load("<?php echo base_url('Aluno/grafico_acessos24') ?>");
 });
     $( "#assiduidades" ).click(function() {
         $('.container-fluid').remove();
