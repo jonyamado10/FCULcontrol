@@ -1722,7 +1722,7 @@ public function tabela_disciplinas_user_aluno()
           $start = intval($this->input->get("start"));
           $length = intval($this->input->get("length"));
 
-          $aulas_licenciatura = $this->Users_model->get_aulas_licenciatura_user_aluno();
+          $aulas_licenciatura = $this->Users_model->get_aulas_licenciatura_aluno();
           $aulas_mestrado = $this->Users_model->get_aulas_mestrado_aluno();
           $aulas_pos_graduacoes = $this->Users_model->get_aulas_pos_graduacoes_aluno();
 
