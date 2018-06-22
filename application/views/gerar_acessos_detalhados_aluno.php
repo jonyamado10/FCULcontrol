@@ -73,7 +73,7 @@
                 <input id = "porta" type="text" class="input100" placeholder="Nº Porta">
                 <span class="focus-input100"></span>
                 <label class="label-input100" for="porta">
-                  <span ><i class="fas fa-door-closed"></i></span>
+                  <span ><i class="fas fa-chess-rook""></i></span>
                 </label>
            
            </div>
