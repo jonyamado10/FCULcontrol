@@ -273,7 +273,7 @@ class Acessos_model extends CI_Model {
 
 
 		
-		$query = $this->db->insert_batc('acessos', $acesso);
+		$query = $this->db->insert('acessos', $acesso);
 		$last_id = $this->db->insert_id();
 
 		if($query){
