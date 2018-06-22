@@ -39,7 +39,7 @@ class Acessos_model extends CI_Model {
 		join portas as p on s.id_porta = p.id
 		where sentido = 'Entrada' and p.edificio = $edificio and p.piso =$piso and p.num_porta = $porta;";
 		$this->db->query($sql);
-        return $query->result()[0]->['id'];
+        return $query->result()[0]->id;
     }
    
     function gerar_acessos(){
