@@ -57,6 +57,8 @@ $(function(){
     });*/
 
     $("#BotaoDashboard").click(function(){
+      $('.container-fluid').remove();
+         $('#content').html("<div class='loader'></div> ");
         $("#content").load("<?php echo base_url('Aluno/dashboard') ?>");
     });
 
