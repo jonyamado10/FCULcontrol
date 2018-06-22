@@ -2201,7 +2201,7 @@ class Acessos_model extends CI_Model {
 		}
 		public function sensores_avariados(){
 			date_default_timezone_set("Europe/Lisbon"); 
-			$umMesAntes = date("Y-m-d",strtotime("-1 month"));
+			$umMesAntes = date("Y-m-d",strtotime("-1 week"));
 			$sql = "SELECT id from sensores
 				WHERE  not EXISTS (SELECT *
                   					FROM   acessos
