@@ -291,7 +291,7 @@ class Acessos_model extends CI_Model {
 					
 				
 			
-			$query1 = $this->db->insert('acessos_alunos', $acessos_aluno);
+			$query1 = $this->db->insert('acessos_alunos', $acesso_aluno);
 			if ($query1) {
 				return true;
 			}
