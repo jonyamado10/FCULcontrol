@@ -62,7 +62,6 @@ class Acessos extends CI_Controller{
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('data', 'data', 'required|trim');
 		$this->form_validation->set_rules('hora_inicial', 'hora_inicial', 'required|trim');
-		$this->form_validation->set_rules('hora_final', 'hora_final', 'required|trim');
 		$this->form_validation->set_rules('edificio', 'edificio', 'required|trim|integer');
 		$this->form_validation->set_rules('porta', 'porta', 'required|trim|integer');
 		$this->form_validation->set_rules('piso', 'piso', 'required|trim|integer');

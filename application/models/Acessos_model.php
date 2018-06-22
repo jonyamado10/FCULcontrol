@@ -256,49 +256,13 @@ class Acessos_model extends CI_Model {
 
     function gerar_acessos_detalhados_aluno(){
     	$data = $this->input->post('data');
-    	if($this->input->post('hora_final') < $this->input->post('hora_inicial')){
-    		    list($hora_inicial, $min_inicial) = explode(":", $this->input->post('hora_inicial'));
-    			list($hora_final, $min_final) = explode(":", '23:59');
-    	}
-    	else{
-    		    list($hora_inicial, $min_inicial) = explode(":", $this->input->post('hora_inicial'));
-    			list($hora_final, $min_final) = explode(":", $this->input->post('hora_final'));
-    	}
+
 
     	$n_acessos = 1;
     	$sensor = $this->get_sensor($this->input->post('edificio'),$this->input->post('piso'),$this->input->post('porta'));
     	$num_aluno = $this->input->post('num_aluno');
 
-    
-    		$horaRandom = mt_rand($hora_inicial,$hora_final);
-    		if ($horaRandom<10){
-    			if($horaRandom == $hora_inicial){
-    				$hora = "0".$horaRandom.":".str_pad(mt_rand($min_inicial,59), 2, "0", STR_PAD_LEFT);
-    			}
-    			elseif($horaRandom == $hora_final){
-    				$hora = "0".$horaRandom.":".str_pad(mt_rand(0,$min_final), 2, "0", STR_PAD_LEFT);
-
-    			}
-    			else{
-    				$hora = "0".$horaRandom.":".str_pad(mt_rand(0,59), 2, "0", STR_PAD_LEFT);
-
-    			}
- 
-    		}
-    		
-    		else{
-        		if($horaRandom == $hora_inicial){
-    				$hora = $horaRandom.":".str_pad(mt_rand($min_inicial,59), 2, "0", STR_PAD_LEFT);
-    			}
-    			elseif($horaRandom == $hora_final){
-    				$hora = $horaRandom.":".str_pad(mt_rand(0,$min_final), 2, "0", STR_PAD_LEFT);
-
-    			}
-    			else{
-    				$hora = $horaRandom.":".str_pad(mt_rand(0,59), 2, "0", STR_PAD_LEFT);
-
-    			}
-    		}
+    	$hora = $this->input->post('hora_inicial');
     		
 		
 

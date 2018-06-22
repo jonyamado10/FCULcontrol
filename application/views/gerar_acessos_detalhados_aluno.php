@@ -46,11 +46,7 @@
                   <span ><i class="fas fa-clock"></i></span>
                 </label>
                </div>
-               <div class = "clockpicker2" data-placement="right" data-align="top" data-autoclose="true">  <input id = "hora_final" type="text" class="input100" placeholder="Hora Final">
-                <span class="focus-input100"></span>
-                <label class="label-input100" for="hora_inicial">
-                  <span ><i class="fas fa-clock"></i></span>
-                </label></div> 
+              
             </div>
 
  
@@ -97,7 +93,6 @@
       $('#lo').html("<div class='loader' style = 'width:120px; height:120px; margin:0 auto'> </div>Aguarde ");
         var data = $("input#data").val();
         var hora_inicial = $("input#hora_inicial").val();
-        var hora_final = $("input#hora_final").val();
         var num_aluno = $("input#num_aluno").val();
         var edificio = $("input#edificio").val();
         var piso = $("input#piso").val();
@@ -105,7 +100,7 @@
 
 
 
-        var dataString = 'data='+ data + '&hora_inicial=' + hora_inicial + '&hora_final=' + hora_final +'&num_aluno=' + num_aluno +'&piso=' + piso +'&edificio=' + edificio +'&porta=' + porta + '&<?php echo $this->security->get_csrf_token_name(); ?>=' + '<?php echo $this->security->get_csrf_hash(); ?>';
+        var dataString = 'data='+ data + '&hora_inicial=' + hora_inicial + '&num_aluno=' + num_aluno +'&piso=' + piso +'&edificio=' + edificio +'&porta=' + porta + '&<?php echo $this->security->get_csrf_token_name(); ?>=' + '<?php echo $this->security->get_csrf_hash(); ?>';
          var url = "<?php echo base_url('Acessos/acessos_detalhados_aluno_validation') ?>"; // the script where you handle the form input.
 
         $.ajax({
@@ -133,5 +128,4 @@
 
 <script type="text/javascript">
 $('.clockpicker1').clockpicker();
-$('.clockpicker2').clockpicker();
 </script>
