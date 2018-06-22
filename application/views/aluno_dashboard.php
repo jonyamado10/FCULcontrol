@@ -124,7 +124,7 @@ var myLineChart = new Chart(ctx, {
   data: {
     labels: javascript_array,
     datasets: [{
-      label: "Acessos",
+      label: "%",
       backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745', '#f58293 ','#911eb4','#46f0f0','#f032e6','#d2f53c','#fabebe'],
       borderColor: "rgba(2,117,216,1)",
       data:  <?php echo json_encode(array_values($graf_assiduidades));?>,
