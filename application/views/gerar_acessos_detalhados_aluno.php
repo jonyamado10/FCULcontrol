@@ -58,8 +58,8 @@
  
                 <input id = "edificio" type="text" class="input100" placeholder="Nº Edificio">
                 <span class="focus-input100"></span>
-                <label class="label-input100" for="Nº Aluno">
-                  <span ><i class="fas fa-user"></i></span>
+                <label class="label-input100" for="edificio">
+                  <span ><i class="fas fa-building"></i></span>
                 </label>
            
            </div>
@@ -67,8 +67,8 @@
  
                 <input id = "piso" type="text" class="input100" placeholder="Nº Piso">
                 <span class="focus-input100"></span>
-                <label class="label-input100" for="Nº Aluno">
-                  <span ><i class="fas fa-user"></i></span>
+                <label class="label-input100" for="piso">
+                  <span ><i class="fas fa-chevron-circle-down"></i></span>
                 </label>
            
            </div>
@@ -76,8 +76,8 @@
  
                 <input id = "porta" type="text" class="input100" placeholder="Nº Porta">
                 <span class="focus-input100"></span>
-                <label class="label-input100" for="Nº Aluno">
-                  <span ><i class="fas fa-user"></i></span>
+                <label class="label-input100" for="porta">
+                  <span ><i class="fas fa-door-open"></i></span>
                 </label>
            
            </div>
