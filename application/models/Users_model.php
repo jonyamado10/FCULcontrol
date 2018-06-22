@@ -1123,7 +1123,7 @@ group by id_docente,nome,apelido,d.id_funcionario;";
 			join alunos_inscritos_mestrado as ldl on ldl.id_disciplina = dl.id
 			join salas as sal on aul.id_sala = sal.id
 			join portas as p on sal.id_porta = p.id
-			where ldl.id_aluno = $id_aluno
+			where ldl.id_aluno = $id
 			order by data desc, hora_inicial desc";
 
 		return $this->db->query($sql);
@@ -1137,7 +1137,7 @@ group by id_docente,nome,apelido,d.id_funcionario;";
 			join alunos_inscritos_pos_graduacoes as ldl on ldl.id_disciplina = dl.id
 			join salas as sal on aul.id_sala = sal.id
 			join portas as p on sal.id_porta = p.id
-			where ldl.id_aluno = $id_aluno
+			where ldl.id_aluno = $id
 			order by data desc, hora_inicial desc";
 
 		return $this->db->query($sql);
