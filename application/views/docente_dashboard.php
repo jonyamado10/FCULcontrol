@@ -93,7 +93,7 @@
                     echo "<canvas id='graficotop10' width='100' height='25'></canvas>";
                   }
                   else{
-                    echo "Não Tem presenças em nenhuma Aula, Aplique-se!";
+                    echo "Os seus alunos não tem presenças em nenhuma das suas aulas, Aplique-se!";
                   }
                   ?>                 
               </div>
