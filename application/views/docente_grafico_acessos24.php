@@ -42,7 +42,7 @@ var myLineChart = new Chart(ctx, {
       pointBackgroundColor: "rgba(2,117,216,1)",
       pointBorderColor: "rgba(255,255,255,0.8)",
       pointHoverRadius: 5,
-      pointHoverBackgroundColor: "rgba(2,117,216,1)",
+      pointHoverBackgroundColor: '#dc3545',
       pointHitRadius: 20,
       pointBorderWidth: 2,
       data:  <?php echo json_encode(array_values($acessos24));?>,
@@ -73,7 +73,7 @@ var myLineChart = new Chart(ctx, {
       }],
     },
     legend: {
-      display: false
+      display: true
     }
   }
 });
