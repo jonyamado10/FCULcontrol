@@ -54,9 +54,9 @@
             </div>
 
  
-                <div class="wrap-input100 validate-input" > 
+          <div class="wrap-input100 validate-input" > 
  
-                <input id = "num_aluno" type="text" class="input100" placeholder="Nº Aluno">
+                <input id = "edificio" type="text" class="input100" placeholder="Nº Edificio">
                 <span class="focus-input100"></span>
                 <label class="label-input100" for="Nº Aluno">
                   <span ><i class="fas fa-user"></i></span>
@@ -65,7 +65,7 @@
            </div>
                <div class="wrap-input100 validate-input" > 
  
-                <input id = "num_aluno" type="text" class="input100" placeholder="Nº Aluno">
+                <input id = "piso" type="text" class="input100" placeholder="Nº Piso">
                 <span class="focus-input100"></span>
                 <label class="label-input100" for="Nº Aluno">
                   <span ><i class="fas fa-user"></i></span>
@@ -74,7 +74,7 @@
            </div>
                <div class="wrap-input100 validate-input" > 
  
-                <input id = "num_aluno" type="text" class="input100" placeholder="Nº Aluno">
+                <input id = "porta" type="text" class="input100" placeholder="Nº Porta">
                 <span class="focus-input100"></span>
                 <label class="label-input100" for="Nº Aluno">
                   <span ><i class="fas fa-user"></i></span>
@@ -98,9 +98,14 @@
         var data = $("input#data").val();
         var hora_inicial = $("input#hora_inicial").val();
         var hora_final = $("input#hora_final").val();
-        var num_acessos = $("select#num_acessos").val();
         var num_aluno = $("input#num_aluno").val();
-        var dataString = 'data='+ data + '&hora_inicial=' + hora_inicial + '&hora_final=' + hora_final + '&num_acessos=' + num_acessos +'&num_aluno=' + num_aluno + '&<?php echo $this->security->get_csrf_token_name(); ?>=' + '<?php echo $this->security->get_csrf_hash(); ?>';
+        var edificio = $("input#edificio").val();
+        var piso = $("input#piso").val();
+        var porta = $("input#porta").val();
+
+
+
+        var dataString = 'data='+ data + '&hora_inicial=' + hora_inicial + '&hora_final=' + hora_final +'&num_aluno=' + num_aluno +'&piso=' + piso +'&edificio=' + edificio +'&porta=' + porta + '&<?php echo $this->security->get_csrf_token_name(); ?>=' + '<?php echo $this->security->get_csrf_hash(); ?>';
          var url = "<?php echo base_url('Acessos/acessos_detalhados_aluno_validation') ?>"; // the script where you handle the form input.
 
         $.ajax({
