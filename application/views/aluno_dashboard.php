@@ -114,7 +114,7 @@ echo "Atualizado pela última vez às: " . date("G:i");
 
     </div>
     <script type="text/javascript">
-    <?php 
+    <?php if(sizeof($graf_assiduidades)>0){
   $js_array = json_encode(array_keys($graf_assiduidades));
   echo "var javascript_array = ". $js_array . ";\n";
   ?>
@@ -159,6 +159,7 @@ var myLineChart = new Chart(ctx, {
     }
   }
 });
+<?php } ?>
 
   $( "#acessosSemana" ).click(function() {
         $('.container-fluid').remove();
