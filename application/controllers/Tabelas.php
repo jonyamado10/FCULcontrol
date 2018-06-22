@@ -1789,7 +1789,7 @@ public function tabela_disciplinas_user_aluno()
                     $row["designacao"],
                     $row["turma"],
                     $row["total_presencas"],
-                    $row["total_presencas_possiveis"],
+                    $row["num_aulas_disciplina"],
                     round($row["total_presencas"]/$row["num_aulas_disciplina"] * 100,3)."%"
                     );
          }
