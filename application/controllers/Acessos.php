@@ -63,8 +63,10 @@ class Acessos extends CI_Controller{
 		$this->form_validation->set_rules('data', 'data', 'required|trim');
 		$this->form_validation->set_rules('hora_inicial', 'hora_inicial', 'required|trim');
 		$this->form_validation->set_rules('hora_final', 'hora_final', 'required|trim');
-		$this->form_validation->set_rules('num_acessos', 'num_acessos', 'required|trim');
-		$this->form_validation->set_rules('num_aluno', 'num_aluno', 'required|trim');
+		$this->form_validation->set_rules('edificio', 'edificio', 'required|trim|integer');
+		$this->form_validation->set_rules('porta', 'porta', 'required|trim|integer');
+		$this->form_validation->set_rules('piso', 'piso', 'required|trim|integer');
+		$this->form_validation->set_rules('num_aluno', 'num_aluno', 'required|trim|integer');
 		if($this->form_validation->run()){
 		   if($this->Acessos_model->num_aluno_existe($this->input->post("num_aluno"))){
 			   if($this->Acessos_model->gerar_acessos_detalhados_aluno()){

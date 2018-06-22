@@ -34,6 +34,13 @@ class Acessos_model extends CI_Model {
 		$query = $this->db->get(); 
         return $query->result_array();
     }
+     function get_sensor($edificio,$piso,$porta){
+     	$sql = "SELECT s.id as id from sensores as s
+		join portas as p on s.id_porta = p.id
+		where sentido = 'Entrada' and p.edificio = $edificio and p.piso =$piso and p.num_porta = $porta;";
+		$this->db->query($sql);
+        return $query->result()[0]->['id'];
+    }
    
     function gerar_acessos(){
     	$data = $this->input->post('data');
@@ -258,13 +265,11 @@ class Acessos_model extends CI_Model {
     			list($hora_final, $min_final) = explode(":", $this->input->post('hora_final'));
     	}
 
-    	$n_acessos = $this->input->post('num_acessos');
-    	$acessos = array();
-    	$sensores = $this->get_sensores();
+    	$n_acessos = 1;
+    	$sensor = $this->get_sensor($this->input->post('edificio'),$this->input->post('piso'),$this->input->post('porta'));
     	$num_aluno = $this->input->post('num_aluno');
 
-    	for ($i = 0; $i < $n_acessos; $i++) {
-    		$rand_sensor = array_rand($sensores);
+    
     		$horaRandom = mt_rand($hora_inicial,$hora_final);
     		if ($horaRandom<10){
     			if($horaRandom == $hora_inicial){
@@ -298,14 +303,13 @@ class Acessos_model extends CI_Model {
 		
 
     		$acesso = array(
-    		'id_sensor' => $sensores[$rand_sensor]['id'],
+    		'id_sensor' => $sensor,
 			'data' => $data,
 			'hora' => $hora);
-    		array_push($acessos, $acesso);
 
 
-		}
-		$query = $this->db->insert_batch('acessos', $acessos);
+		
+		$query = $this->db->insert_batc('acessos', $acesso);
 		$last_id = $this->db->insert_id();
 
 		if($query){
@@ -314,21 +318,16 @@ class Acessos_model extends CI_Model {
 			$this->db->where('num_aluno',$num_aluno);
 			$query = $this->db->get();
 			$id_aluno = $query->result_array()[0]['id'];
-			$acessos_alunos = array();
 			$ids_acessos = range($last_id - ($n_acessos-1), $last_id);
-			shuffle($ids_acessos);
 		
-			foreach ($ids_acessos as $id_acesso) {
 				
 					
-					$acesso_aluno = array('id_acesso' => $id_acesso ,
+			$acesso_aluno = array('id_acesso' => $id_acesso ,
 											'id_aluno' => $id_aluno);
-					array_push($acessos_alunos, $acesso_aluno);
 					
 				
-				$i++;
-			}
-			$query1 = $this->db->insert_batch('acessos_alunos', $acessos_alunos);
+			
+			$query1 = $this->db->insert('acessos_alunos', $acessos_aluno);
 			if ($query1) {
 				return true;
 			}
