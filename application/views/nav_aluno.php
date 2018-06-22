@@ -71,7 +71,7 @@
               <a id = "minhaAgenda" href="#">O Meu Horário</a>
             </li>
             <li>
-              <a id = "tabelaAssiduidades" href="#">As Minhas Disciplinas</a>
+              <a id = "tabelaAssiduidades" href="#">Tabela de Assiduidades</a>
             </li>
           </ul>
         </li>
