@@ -55,17 +55,36 @@
 
             <div class="wrap-input100 validate-input" > 
  
-            <select name="num_acessos" id="num_acessos" class="input100" style = "height: 60px;")">
-              <option value=""<?php echo  set_select('num_acessos', 'none', TRUE); ?>>Nº de acessos a gerar</option>
-                <option value="10">10</option>
-                <option value="20">20</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-                <option value="200">200</option>
-          </select>
+          <div class="wrap-input100 validate-input" > 
+ 
+                <input id = "edificio" type="text" class="input100" placeholder="Edificio">
+                <span class="focus-input100"></span>
+                <label class="label-input100" for="Nº Aluno">
+                  <span ><i class="fas fa-user"></i></span>
+                </label>
+           
+           </div>
                 <span class="focus-input100"></span>
                 <label class="label-input100" for="data">
                   <span ><i class="fas fa-universal-access"></i></span>
+                </label>
+           
+           </div>
+           <div class="wrap-input100 validate-input" > 
+ 
+                <input id = "piso" type="text" class="input100" placeholder="Piso">
+                <span class="focus-input100"></span>
+                <label class="label-input100" for="Nº Aluno">
+                  <span ><i class="fas fa-level"></i></span>
+                </label>
+           
+           </div>
+           <div class="wrap-input100 validate-input" > 
+ 
+                <input id = "porta" type="text" class="input100" placeholder="Porta">
+                <span class="focus-input100"></span>
+                <label class="label-input100" for="Nº Aluno">
+                  <span ><i class="fas fa-door"></i></span>
                 </label>
            
            </div>
