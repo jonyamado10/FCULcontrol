@@ -117,7 +117,7 @@
               <a id = "BotaoGerarAcessosDetalhados" href="#"">Gerar Acessos Detalhados</a>
             </li>
             <li>
-              <a id = "BotaoGerarAcessosDetalhadosAluno" href="#"">Gerar Acessos Detalhados c/ Aluno</a>
+              <a id = "BotaoGerarAcessosDetalhadosAluno" href="#"">Gerar Entrada Detalhada </a>
             </li>
           </ul>
         </li>

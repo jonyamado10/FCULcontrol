@@ -4,7 +4,7 @@
         <li class="breadcrumb-item">
           <a href="#">Ferramentas</a>
         </li>
-        <li class="breadcrumb-item active">Gerar Acessos Detalhados</li>
+        <li class="breadcrumb-item active">Gerar 1 Entrada Detalhada</li>
       </ol>
       <!-- Example DataTables Card-->
       <div class="card mb-3">
