@@ -87,13 +87,92 @@
           </div>
         </div>
       </div>
-      <!-- Area Chart Example-->
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-area-chart"></i> Area Chart Example</div>
-        <div class="card-body">
-          <canvas id="myAreaChart" width="100%" height="30"></canvas>
+    <!-- Area Chart Example-->
+       <div class="card mb-3">
+              
+            <div class="card-header">
+              <i class="fa fa-bar-chart"></i> Assiduidades Médias Disciplina</div>
+              <div class="card-body">
+             
+                    <canvas id="graficotop10" width="100" height="25"></canvas>
+                 
+              </div>
+            </div>
+        <div class="card-footer small text-muted"><?php date_default_timezone_set("Europe/Lisbon");
+echo "Atualizado pela última vez às: " . date("G:i");
+?>
+      
         </div>
-       <div class="card-footer small text-muted"><?php date_default_timezone_set("Europe/Lisbon"); echo "Atualizado pela última vez às: " . date("G:i");?></div>
-      </div>
     </div>
+      
+      <!-- Example DataTables Card-->
+
+    </div>
+    <script type="text/javascript">
+    <?php 
+  $js_array = json_encode(array_keys($graf_assiduidades));
+  echo "var javascript_array = ". $js_array . ";\n";
+  ?>
+var ctx = document.getElementById("graficotop10");
+var myLineChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: javascript_array,
+    datasets: [{
+      label: "Acessos",
+      backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745', '#f58293 ','#911eb4','#46f0f0','#f032e6','#d2f53c','#fabebe'],
+      borderColor: "rgba(2,117,216,1)",
+      data:  <?php echo json_encode(array_values($graf_assiduidades));?>,
+    }],
+  },
+  options: {
+    scales: {
+      xAxes: [{
+     
+        
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          maxTicksLimit: 10
+        }
+      }],
+      yAxes: [{
+       
+        ticks: {
+          min: 0,
+          max:  Math.max(...<?php echo json_encode(array_values($graf_assiduidades));?>) +2,
+          maxTicksLimit: 10
+        },
+        gridLines: {
+          display: true
+        }
+      }],
+    },
+    legend: {
+      display: false
+    }
+  }
+});
+
+  $( "#acessosSemana" ).click(function() {
+        $('.container-fluid').remove();
+         $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Aluno/tabela_meus_acessos') ?>");
+});
+    $( "#assiduidades" ).click(function() {
+        $('.container-fluid').remove();
+         $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Aluno/tabela_assiduidades_medias') ?>");
+});
+    $( "#nacessosSemana" ).click(function() {
+        $('.container-fluid').remove();
+         $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Aluno/tabela_meus_acessos') ?>");
+});
+    $( "#aulasHoje" ).click(function() {
+        $('.container-fluid').remove();
+         $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Aluno/minhasAulas') ?>");
+});
+</script>

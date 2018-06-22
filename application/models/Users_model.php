@@ -1085,6 +1085,22 @@ group by id_docente,nome,apelido,d.id_funcionario;";
          return $data1;
           
     }
+    function grafico_assiduidades_user_aluno(){
+  
+          $data = $this->get_percentagem_por_disciplina_user_aluno();
+          $data1 = array();
+
+          foreach ($data as $row) {
+             $assiduidade = round($row["total_presencas"]/$row["total_presencas_possiveis"] * 100,3);
+             if($assiduidade != 0){
+             $data1[$row["designacao"]] = $assiduidade;
+         	 }
+                   
+                    
+         }
+         return $data1;
+          
+    }
 
 }
 ?>
