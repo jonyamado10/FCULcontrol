@@ -67,6 +67,12 @@
             <li>
               <a id = "minhasDisciplinas" href="#">As Minhas Disciplinas</a>
             </li>
+            <li>
+              <a id = "minhaAgenda" href="#">O Meu Horário</a>
+            </li>
+            <li>
+              <a id = "tabelaAssiduidades" href="#">As Minhas Disciplinas</a>
+            </li>
           </ul>
         </li>
       </ul>

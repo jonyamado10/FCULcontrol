@@ -79,6 +79,16 @@ $(function(){
          $('#content').html("<div class='loader'></div> ");
         $("#content").load("<?php echo base_url('Aluno/minhasDisciplinas') ?>");
     });
+  $( "#minhaAgenda" ).click(function() {
+        $('.container-fluid').remove();
+         $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Aluno/minhasAulas') ?>");
+    });
+  $("#tabelaAssiduidades" ).click(function() {
+        $('.container-fluid').remove();
+         $('#content').html("<div class='loader'></div> ");
+        $("#content").load("<?php echo base_url('Aluno/tabela_assiduidades_medias') ?>");
+});
 
 // end  
 });

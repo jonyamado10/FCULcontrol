@@ -1101,6 +1101,48 @@ group by id_docente,nome,apelido,d.id_funcionario;";
          return $data1;
           
     }
+    function get_aulas_licenciatura_aluno() {
+    	$id =  $this->session->userdata('id');
+		$sql = "SELECT dl.id, dl.designacao as disciplina, tu.designacao as turma, data, concat(hora_inicial , '-',hora_final) as horario, concat(p.edificio, '.',p.piso,'.',p.num_porta) as sala from aulas_disciplinas_licenciaturas as aul
+			JOIN disciplinas_licenciatura as dl on dl.id = aul.id_disciplina_licenciatura
+			join turmas_licenciatura as tu on dl.id_turma = tu.id
+			join alunos_inscritos_licenciatura as ldl on ldl.id_disciplina = dl.id
+			join salas as sal on aul.id_sala = sal.id
+			join portas as p on sal.id_porta = p.id
+			where ldl.id_aluno = $id
+			order by data desc, hora_inicial desc";
+
+		return $this->db->query($sql);
+
+    }
+     function get_aulas_mestrado_aluno() {
+    	$id =  $this->session->userdata('id');	
+		$sql = "SELECT dl.id, dl.designacao as disciplina, tu.designacao as turma, data, concat(hora_inicial , '-',hora_final) as horario, concat(p.edificio, '.',p.piso,'.',p.num_porta) as sala from aulas_disciplinas_mestrados as aul
+			JOIN disciplinas_mestrado as dl on dl.id = aul.id_disciplina_mestrado
+			join turmas_mestrado as tu on dl.id_turma = tu.id
+			join alunos_inscritos_mestrado as ldl on ldl.id_disciplina = dl.id
+			join salas as sal on aul.id_sala = sal.id
+			join portas as p on sal.id_porta = p.id
+			where ldl.id_aluno = $id_aluno
+			order by data desc, hora_inicial desc";
+
+		return $this->db->query($sql);
+
+    }
+      function get_aulas_pos_graduacoes_aluno() {
+    	$id =  $this->session->userdata('id');
+		$sql = "SELECT dl.id, dl.designacao as disciplina, tu.designacao as turma, data, concat(hora_inicial , '-',hora_final) as horario, concat(p.edificio, '.',p.piso,'.',p.num_porta) as sala from aulas_disciplinas_pos_graduacoes as aul
+			JOIN disciplinas_pos_graduacoes as dl on dl.id = aul.id_disciplina_pos_graduacao
+			join turmas_pos_graduacoes as tu on dl.id_turma = tu.id
+			join alunos_inscritos_pos_graduacoes as ldl on ldl.id_disciplina = dl.id
+			join salas as sal on aul.id_sala = sal.id
+			join portas as p on sal.id_porta = p.id
+			where ldl.id_aluno = $id_aluno
+			order by data desc, hora_inicial desc";
+
+		return $this->db->query($sql);
+
+    }
 
 }
 ?>

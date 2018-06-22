@@ -1664,7 +1664,8 @@ public function tabela_disciplinas_user_aluno()
             );
           echo json_encode($output);
           exit();
-     } public function tabela_aulas_aluno_disciplina_pos_graduacao($id_disciplina)
+     } 
+     public function tabela_aulas_aluno_disciplina_pos_graduacao($id_disciplina)
      {
           $this->load->model('Users_model');
           // Datatables Variables
@@ -1713,5 +1714,95 @@ public function tabela_disciplinas_user_aluno()
           echo json_encode($output);
           exit();
      }
+     public function tabela_aulas_aluno()
+     {
+          $this->load->model('Users_model');
+          // Datatables Variables
+          $draw = intval($this->input->get("draw"));
+          $start = intval($this->input->get("start"));
+          $length = intval($this->input->get("length"));
+
+          $aulas_licenciatura = $this->Users_model->get_aulas_licenciatura_user_aluno();
+          $aulas_mestrado = $this->Users_model->get_aulas_mestrado_aluno();
+          $aulas_pos_graduacoes = $this->Users_model->get_aulas_pos_graduacoes_aluno();
+
+          $data = array();
+
+          foreach($aulas_licenciatura->result() as $r) {
+
+               $data[] = array(
+                    $r->disciplina,
+                    $r->turma,
+                    $r->data,
+                    $r->horario,
+                    $r->sala
+
+               );
+          }
+          foreach($aulas_mestrado->result() as $r) {
+
+                   $data[] = array(
+                        $r->disciplina,
+                        $r->turma,
+                        $r->data,
+                        $r->horario,
+                        $r->sala
+
+                   );
+              }
+
+          foreach($aulas_pos_graduacoes->result() as $r) {
+
+                   $data[] = array(
+                        $r->disciplina,
+                        $r->turma,
+                        $r->data,
+                        $r->horario,
+                        $r->sala
+
+                   );
+              }
+         
+ $total_disciplinas = sizeof($data) ;
+          $output = array(
+               "draw" => $draw,
+                 "recordsTotal" => $total_disciplinas,
+                 "recordsFiltered" => $total_disciplinas,
+                 "data" => $data
+            );
+          echo json_encode($output);
+          exit();
+     }
+      public function assiduidades_medias_aluno()
+     {
+          $this->load->model('Users_model');
+          // Datatables Variables
+          $draw = intval($this->input->get("draw"));
+          $start = intval($this->input->get("start"));
+          $length = intval($this->input->get("length"));
+
+          $data = $this->Users_model->get_percentagem_por_disciplina_user_aluno();
+          $data1 = array();
+
+          foreach ($data as $row) {
+            $data1[] = array(
+                    $row["designacao"],
+                    $row["turma"],
+                    $row["total_presencas"],
+                    $row["total_presencas_possiveis"],
+                    round($row["total_presencas"]/$row["num_aulas_disciplina"] * 100,3)."%"
+                    );
+         }
+          $total_disciplinas = sizeof($data1);
+          $output = array(
+               "draw" => $draw,
+                 "recordsTotal" => $total_disciplinas,
+                 "recordsFiltered" => $total_disciplinas,
+                 "data" => $data1
+            );
+          echo json_encode($output);
+          exit();
+     }
+ 
 }
 

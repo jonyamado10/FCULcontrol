@@ -190,9 +190,12 @@ class Docente extends CI_Controller {
 	    $this->load->view('tabela_media_assiduidades');
 	     
 	}
-	public function teste(){
-		$this->load->model("Users_model");
-		print_r($this->Users_model->grafico_assiduidades_user_docente());
-		
+	public function minhasAulas()
+	{
+		if (!isset($_SERVER['HTTP_REFERER']))
+		{ redirect('Docente');}
+  		$this->load->view('aluno_aulas');
+
 	}
+
 }

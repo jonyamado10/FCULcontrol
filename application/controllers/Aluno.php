@@ -86,9 +86,12 @@ class Aluno extends CI_Controller {
   		$this->load->view('aluno_aulas_disciplina_pos_graduacao',$data);
 
 	}
-	public function teste(){
-		$this->load->model("Users_model");
-		$data = $this->Users_model->get_percentagem_por_disciplina_user_aluno();
+	public function tabela_assiduidades_medias()
+	{
+		if (!isset($_SERVER['HTTP_REFERER']))
+		{ redirect('Admin');}
+	    $this->load->view('tabela_media_assiduidades_aluno');
+	     
 	}
 
 

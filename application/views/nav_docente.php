@@ -68,7 +68,7 @@
               <a id = "BotaoTabelaDisciplinas" href="#">As Minhas Disciplinas</a>
             </li>
               <li>
-              <a id = "BotaoTabelaAulas" href="#">A Minha Agenda</a>
+              <a id = "BotaoTabelaAulas" href="#">O Meu Horário</a>
             </li>
             <li>
               <a id = "BotaoTabelaAssiduidades" href="#">Assiduidades Médias</a>

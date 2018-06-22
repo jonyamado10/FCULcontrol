@@ -38,7 +38,7 @@
     $('#tabela').DataTable({
   
         "ajax": {
-            url : "<?php echo base_url("Tabelas/tabela_aulas") ?>",
+            url : "<?php echo base_url("Tabelas/tabela_aulas_aluno") ?>",
             type : 'GET'
         },
               "language": {
