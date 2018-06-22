@@ -16,7 +16,7 @@
               </div>
               <div class="mr-5"><? echo $n_acessos ?> acesso(s) nas últimas 24 horas!</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" id="acessosSemana" href="#" >
+            <a class="card-footer text-white clearfix small z-1" id="acessos24" href="#" >
               <span class="float-left">Ver Acessos</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -161,7 +161,7 @@ var myLineChart = new Chart(ctx, {
 });
 <?php } ?>
 
-  $( "#acessosSemana" ).click(function() {
+  $( "#acessos24" ).click(function() {
         $('.container-fluid').remove();
          $('#content').html("<div class='loader'></div> ");
         $("#content").load("<?php echo base_url('Aluno/grafico_acessos24') ?>");

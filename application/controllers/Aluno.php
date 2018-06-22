@@ -50,7 +50,7 @@ class Aluno extends CI_Controller {
 	public function grafico_acessos24()
 	{
 		if (!isset($_SERVER['HTTP_REFERER']))
-		{ redirect('Admin');}
+		{ redirect('Aluno');}
 		$this->load->model('Acessos_model');
 		
 	    $data['acessos24'] = $this->Acessos_model->user_aluno_acessos24();
@@ -59,13 +59,13 @@ class Aluno extends CI_Controller {
 	public function minhasDisciplinas()
 	{
 		if (!isset($_SERVER['HTTP_REFERER']))
-		{ redirect('Admin');}
+		{ redirect('Aluno');}
 	    $this->load->view('aluno_disciplinas');     
 	}
 	public function aulasPorDisciplinaLicenciatura($id_disciplina)
 	{
 		if (!isset($_SERVER['HTTP_REFERER']))
-		{ redirect('Docente');}
+		{ redirect('Aluno');}
 		$data['id_disciplina']=$id_disciplina;
   		$this->load->view('aluno_aulas_disciplina_licenciatura',$data);
 
@@ -73,7 +73,7 @@ class Aluno extends CI_Controller {
 	public function aulasPorDisciplinaMestrado($id_disciplina)
 	{
 		if (!isset($_SERVER['HTTP_REFERER']))
-		{ redirect('Docente');}
+		{ redirect('Aluno');}
 		$data['id_disciplina']=$id_disciplina;
   		$this->load->view('aluno_aulas_disciplina_mestrado',$data);
 
@@ -81,7 +81,7 @@ class Aluno extends CI_Controller {
 	public function aulasPorDisciplinaPosGraduacao($id_disciplina)
 	{
 		if (!isset($_SERVER['HTTP_REFERER']))
-		{ redirect('Docente');}
+		{ redirect('Aluno');}
 		$data['id_disciplina']=$id_disciplina;
   		$this->load->view('aluno_aulas_disciplina_pos_graduacao',$data);
 
@@ -89,10 +89,16 @@ class Aluno extends CI_Controller {
 	public function tabela_assiduidades_medias()
 	{
 		if (!isset($_SERVER['HTTP_REFERER']))
-		{ redirect('Admin');}
+		{ redirect('Aluno');}
 	    $this->load->view('tabela_media_assiduidades_aluno');
 	     
 	}
-
+	public function minhasAulas()
+	{
+		if (!isset($_SERVER['HTTP_REFERER']))
+		{ redirect('Aluno');}
+	    $this->load->view('aluno_aulas');
+	     
+	}
 
 }
