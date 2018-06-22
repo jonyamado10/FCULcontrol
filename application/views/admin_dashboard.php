@@ -173,7 +173,7 @@ var myLineChart = new Chart(ctx, {
       }],
     },
     legend: {
-      display: True
+      display: true
     }
   }
 });
