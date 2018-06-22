@@ -53,42 +53,35 @@
                 </label></div> 
             </div>
 
-            <div class="wrap-input100 validate-input" > 
  
-          <div class="wrap-input100 validate-input" > 
+                <div class="wrap-input100 validate-input" > 
  
-                <input id = "edificio" type="text" class="input100" placeholder="Edificio">
+                <input id = "num_aluno" type="text" class="input100" placeholder="Nº Aluno">
                 <span class="focus-input100"></span>
                 <label class="label-input100" for="Nº Aluno">
                   <span ><i class="fas fa-user"></i></span>
                 </label>
            
            </div>
-                <span class="focus-input100"></span>
-                <label class="label-input100" for="data">
-                  <span ><i class="fas fa-universal-access"></i></span>
-                </label>
-           
-           </div>
-           <div class="wrap-input100 validate-input" > 
+               <div class="wrap-input100 validate-input" > 
  
-                <input id = "piso" type="text" class="input100" placeholder="Piso">
+                <input id = "num_aluno" type="text" class="input100" placeholder="Nº Aluno">
                 <span class="focus-input100"></span>
                 <label class="label-input100" for="Nº Aluno">
-                  <span ><i class="fas fa-level"></i></span>
+                  <span ><i class="fas fa-user"></i></span>
                 </label>
            
            </div>
-           <div class="wrap-input100 validate-input" > 
+               <div class="wrap-input100 validate-input" > 
  
-                <input id = "porta" type="text" class="input100" placeholder="Porta">
+                <input id = "num_aluno" type="text" class="input100" placeholder="Nº Aluno">
                 <span class="focus-input100"></span>
                 <label class="label-input100" for="Nº Aluno">
-                  <span ><i class="fas fa-door"></i></span>
+                  <span ><i class="fas fa-user"></i></span>
                 </label>
            
            </div>
-
+          
 
             <div class="container-contact100-form-btn">
                   <button class="contact100-form-btn" id= "BotaoGerar">Gerar</button>
