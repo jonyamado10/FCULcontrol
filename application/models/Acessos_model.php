@@ -282,7 +282,7 @@ class Acessos_model extends CI_Model {
 			$this->db->where('num_aluno',$num_aluno);
 			$query = $this->db->get();
 			$id_aluno = $query->result_array()[0]['id'];
-			$ids_acessos = range($last_id - ($n_acessos-1), $last_id);
+			$id_acesso = $last_id +1;
 		
 				
 					
