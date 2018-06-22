@@ -176,7 +176,7 @@ class Docente extends CI_Controller {
 	public function grafico_acessos24()
 	{
 		if (!isset($_SERVER['HTTP_REFERER']))
-		{ redirect('Admin');}
+		{ redirect('Docente');}
 		$this->load->model('Acessos_model');
 		
 	    $data['acessos24'] = $this->Acessos_model->user_docente_acessos24();
@@ -186,16 +186,10 @@ class Docente extends CI_Controller {
 	public function tabela_assiduidades_medias()
 	{
 		if (!isset($_SERVER['HTTP_REFERER']))
-		{ redirect('Admin');}
+		{ redirect('Docente');}
 	    $this->load->view('tabela_media_assiduidades');
 	     
 	}
-	public function minhasAulas()
-	{
-		if (!isset($_SERVER['HTTP_REFERER']))
-		{ redirect('Docente');}
-  		$this->load->view('aluno_aulas');
 
-	}
 
 }
