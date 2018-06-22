@@ -89,8 +89,13 @@
               <i class="fa fa-bar-chart"></i> Assiduidades Médias Disciplina</div>
               <div class="card-body">
              
-                    <canvas id="graficotop10" width="100" height="25"></canvas>
-                 
+                  <?php if(sizeof($graf_assiduidades)>0){
+                    echo "<canvas id='graficotop10' width='100' height='25'></canvas>";
+                  }
+                  else{
+                    echo "Não Tem presenças em nenhuma Aula, Aplique-se!";
+                  }
+                  ?>                 
               </div>
             </div>
         <div class="card-footer small text-muted"><?php date_default_timezone_set("Europe/Lisbon");
